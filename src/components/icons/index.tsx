@@ -33,9 +33,9 @@ export const Icons = {
 			viewBox="0 0 24 24"
 			fill="none"
 			stroke="currentColor"
-			stroke-width="2"
-			stroke-linecap="round"
-			stroke-linejoin="round"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
 			{...props}
 		>
 			<rect x="3" y="2" width="18" height="20" rx="2"></rect>
@@ -43,6 +43,16 @@ export const Icons = {
 			<path d="M3 12h10"></path>
 			<path d="M3 16h10"></path>
 			<path d="M6 4h8v2H6z"></path>
+		</svg>
+	),
+	react: (props: LucideProps) => (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" {...props}>
+			<circle r={2.05} fill="#61dafb" />
+			<g stroke="#61dafb" fill="none">
+				<ellipse rx={11} ry={4.2} />
+				<ellipse rx={11} ry={4.2} transform="rotate(60)" />
+				<ellipse rx={11} ry={4.2} transform="rotate(120)" />
+			</g>
 		</svg>
 	),
 };
