@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import ReactQueryProvider from "@/components/providers/react-query";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PERSONAL_DATA } from "@/data/personal";
@@ -36,9 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <main className="mx-auto max-w-2xl px-4 py-4 sm:py-16 md:px-0 print:p-12">{children}</main>
-        </ThemeProvider>
+        <ReactQueryProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <main className="mx-auto max-w-2xl px-4 py-4 sm:py-16 md:px-0 print:p-12">{children}</main>
+          </ThemeProvider>
+        </ReactQueryProvider>
         {process.env.NODE_ENV === "production" && (
           <>
             <HighlightInit

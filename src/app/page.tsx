@@ -1,9 +1,15 @@
+import ActivityCalendarComponent from "@/components/sections/activity-calendar";
+// import Experience from "@/components/sections/experience";
 import Headers from "@/components/sections/header";
+import About from "@/components/sections/about";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col gap-8">
       <Headers />
-    </>
+      <About />
+      {/* <Experience /> */}
+      <ActivityCalendarComponent />
+    </div>
   );
 }
