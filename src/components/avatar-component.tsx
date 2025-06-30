@@ -1,12 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { cn } from "@/lib/utils";
-import { DATA } from "@/data";
+import { PERSONAL_DATA } from "@/data/personal";
 
 export default function AvatarComponent({ className }: { className?: string }) {
   return (
-    <Avatar className={cn("size-14", className)}>
-      <AvatarImage src={DATA.githubAvatar || DATA.avatar} alt={DATA.name}></AvatarImage>
-      <AvatarFallback>{DATA.nickname.charAt(0)}</AvatarFallback>
+    <Avatar className={className}>
+      <AvatarImage src={PERSONAL_DATA.githubAvatar || PERSONAL_DATA.avatar} alt={PERSONAL_DATA.name}></AvatarImage>
+      <AvatarFallback>{PERSONAL_DATA.nickname.charAt(0)}</AvatarFallback>
     </Avatar>
   );
 }

@@ -1,35 +1,34 @@
-import { getInitials } from "@/lib/utils";
+import { PERSONAL_DATA } from "@/data/personal";
 import { MetadataRoute } from "next";
-import { DATA } from "@/lib/data";
 
 // TODO: Add open-graph image and twitter card image
 export default function manifest(): MetadataRoute.Manifest {
-	return {
-		name: DATA.nickname,
-		short_name: getInitials(DATA.nickname.split(" ")[0]),
-		description: DATA.descriptionRaw,
-		start_url: "/",
-		display: "standalone",
-		background_color: "#0a0a0a",
-		theme_color: "#0a0a0a",
-		icons: [
-			{
-				src: "/favicon.ico",
-				sizes: "any",
-				type: "image/x-icon",
-			},
-			{
-				src: "/web-app-manifest-192x192.png",
-				sizes: "192x192",
-				type: "image/png",
-				purpose: "maskable",
-			},
-			{
-				src: "/web-app-manifest-512x512.png",
-				sizes: "512x512",
-				type: "image/png",
-				purpose: "maskable",
-			},
-		],
-	};
+  return {
+    name: PERSONAL_DATA.nickname,
+    short_name: PERSONAL_DATA.nickname.split(" ")[0],
+    description: PERSONAL_DATA.descriptionRaw,
+    start_url: "/",
+    display: "standalone",
+    background_color: "#0a0a0a",
+    theme_color: "#0a0a0a",
+    icons: [
+      {
+        src: "/favicon.ico",
+        sizes: "any",
+        type: "image/x-icon",
+      },
+      {
+        src: "/web-app-manifest-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "maskable",
+      },
+      {
+        src: "/web-app-manifest-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
+      },
+    ],
+  };
 }

@@ -1,9 +1,9 @@
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
+import { PERSONAL_DATA } from "@/data/personal";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { DATA } from "@/data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,14 +18,14 @@ const geistMono = Geist_Mono({
 
 // TODO: Add metadata for SEO and social sharing
 export const metadata: Metadata = {
-  metadataBase: new URL(DATA.portfolio),
+  metadataBase: new URL(PERSONAL_DATA.portfolio),
   title: {
-    default: DATA.nickname,
-    template: `%s | ${DATA.nickname}`,
+    default: PERSONAL_DATA.nickname,
+    template: `%s | ${PERSONAL_DATA.nickname}`,
   },
-  description: DATA.description,
-  applicationName: DATA.nickname,
-  authors: [{ name: DATA.nickname, url: DATA.portfolio }],
+  description: PERSONAL_DATA.description,
+  applicationName: PERSONAL_DATA.nickname,
+  authors: [{ name: PERSONAL_DATA.nickname, url: PERSONAL_DATA.portfolio }],
 };
 
 export default function RootLayout({
@@ -37,13 +37,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <main className="mx-auto max-w-2xl px-4 py-4 sm:px-0 sm:py-16 print:p-12">{children}</main>
+          <main className="mx-auto max-w-2xl px-4 py-4 sm:py-16 md:px-0 print:p-12">{children}</main>
         </ThemeProvider>
         {process.env.NODE_ENV === "production" && (
           <>
             <HighlightInit
               projectId={"4d7y176d"}
-              serviceName={DATA.nickname.split(" ").join("-").toLowerCase()}
+              serviceName={PERSONAL_DATA.nickname.split(" ").join("-").toLowerCase()}
               tracingOrigins
               networkRecording={{
                 enabled: true,
