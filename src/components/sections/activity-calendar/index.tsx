@@ -1,4 +1,5 @@
 "use client";
+
 import { GitPullRequestArrow, Loader2, WifiOff } from "lucide-react";
 import useGithubActivity from "@/hooks/use-github-activity";
 import { ActivityCalendar } from "react-activity-calendar";
