@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/theme-switcher/mode-toggle";
-import AvatarComponent from "@/components/avatar-component";
+import AvatarComponent from "@/components/avatar/avatar-component";
 import SocialComponent from "@/components/socials";
 import { PERSONAL_DATA } from "@/data/personal";
 

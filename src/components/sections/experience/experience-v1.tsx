@@ -10,20 +10,20 @@ import React from "react";
 export default function ExperienceV1() {
   return (
     <>
-      {EXPERIENCE_DATA.filter(exp => exp.featured).map(exp => (
+      {EXPERIENCE_DATA.filter(experience => experience.featured).map(experience => (
         <ExperienceCard
-          key={exp.company}
-          company={exp.company}
-          position={exp.position}
-          location={exp.location}
-          startDate={exp.startDate}
-          endDate={exp.endDate}
-          url={exp.url}
-          github={exp.github}
-          icon={exp.icon}
-          image={exp.image}
-          jobDescription={exp.jobDescription}
-          tags={exp.tags}
+          key={experience.company}
+          company={experience.company}
+          position={experience.position}
+          location={experience.location}
+          startDate={experience.startDate}
+          endDate={experience.endDate}
+          url={experience.url}
+          github={experience.github}
+          icon={experience.icon}
+          image={experience.image}
+          jobDescription={experience.jobDescription}
+          tags={experience.tags}
         />
       ))}
     </>
@@ -46,7 +46,7 @@ function ExperienceCard({
   const Icon = Icons[icon!];
   const GithubIcon = Icons.github;
   return (
-    <Link key={company} href={url} target="_blank" rel="noopener">
+    <Link href={url} target="_blank" rel="noopener">
       <Card className="group rounded-none border-none from-neutral-800/10 p-4 sm:rounded-lg dark:bg-neutral-900 dark:hover:bg-gradient-to-bl">
         <div className="flex flex-col gap-2">
           <div className="flex">
@@ -68,11 +68,11 @@ function ExperienceCard({
                 <div className="flex w-full items-center justify-between">
                   <h1 className="flex items-center gap-1 text-left text-lg leading-[1.3em] font-medium text-gray-300">
                     <span>{company}</span>
-                    {github && (
+                    {/* {github && (
                       <Link href={github} target="_blank" rel="noopener">
                         <GithubIcon className="size-4" />
                       </Link>
-                    )}
+                    )} */}
                   </h1>
                   <p className="text-sm text-gray-300">{location}</p>
                 </div>

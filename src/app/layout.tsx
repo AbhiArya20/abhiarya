@@ -3,8 +3,8 @@ import ReactQueryProvider from "@/components/providers/react-query";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PERSONAL_DATA } from "@/data/personal";
+import OneKo from "@/components/oneko/oneko";
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -57,8 +57,7 @@ export default function RootLayout({
             {/* TODO: Add analytics - Google Analytics, Vercel Analytics or Open-Panel more*/}
           </>
         )}
-        {/* TODO: Create React component for Oneko */}
-        <Script src="/oneko.js" strategy="afterInteractive" />
+        <OneKo />
       </body>
     </html>
   );
