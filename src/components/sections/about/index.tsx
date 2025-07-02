@@ -5,7 +5,7 @@ import FadeDown from "@/components/animation/fade-down";
 export default function About() {
   const headers = [AboutV1, AboutV2];
   // const randomIndex = Math.floor(Math.random() * headers.length);
-  const RandomAbout = headers[1];
+  const RandomAbout = headers[0];
   return (
     <FadeDown>
       <RandomAbout />

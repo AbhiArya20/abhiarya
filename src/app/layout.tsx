@@ -17,7 +17,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// TODO: Add metadata for SEO and social sharing
 export const metadata: Metadata = {
   metadataBase: new URL(PERSONAL_DATA.portfolio),
   title: {

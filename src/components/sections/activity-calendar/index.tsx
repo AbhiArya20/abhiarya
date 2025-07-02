@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 
 export default function ActivityCalendarComponent() {
+  // TODO: remove this to make this server component
   const { isPending, error, data } = useGithubActivity();
 
   const { resolvedTheme } = useTheme();

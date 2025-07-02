@@ -5,6 +5,7 @@ export default function AboutV1() {
     <div className="space-y-2">
       <h2 className="font-semibold">About me</h2>
       <p className="text-muted-foreground leading-6">{PERSONAL_DATA.descriptionRaw}</p>
+      <p className="text-muted-foreground leading-6">{PERSONAL_DATA.descriptionHtml}</p>
     </div>
   );
 }

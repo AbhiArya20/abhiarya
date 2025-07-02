@@ -1,7 +1,6 @@
 import { PERSONAL_DATA } from "@/data/personal";
 import { MetadataRoute } from "next";
 
-// TODO: Add open-graph image and twitter card image
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: PERSONAL_DATA.nickname,

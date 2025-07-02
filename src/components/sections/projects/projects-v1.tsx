@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProjectsV1 = ({ onlyFeatured = false }: { onlyFeatured?: boolean }) => {
+export const ProjectsV1 = ({ onlyFeatured = false }: { onlyFeatured?: boolean }) => {
   const projects = onlyFeatured ? PROJECT_DATA.filter(project => project.featured) : PROJECT_DATA;
 
   return (
@@ -31,7 +31,7 @@ const ProjectsV1 = ({ onlyFeatured = false }: { onlyFeatured?: boolean }) => {
   );
 };
 
-export const ProjectCard = ({ name, icon, description, image, url, tags, github }: Project) => {
+const ProjectCard = ({ name, icon, description, image, url, tags, github }: Project) => {
   const Icon = Icons[icon!];
   return (
     <Card className="group bg-accent/60 rounded-none border-none from-neutral-800/10 p-4 sm:rounded-lg dark:bg-neutral-900 dark:hover:bg-gradient-to-bl">
@@ -75,5 +75,3 @@ export const ProjectCard = ({ name, icon, description, image, url, tags, github 
     </Card>
   );
 };
-
-export default ProjectsV1;

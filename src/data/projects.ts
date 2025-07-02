@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { Tag } from "@/data";
+import { Tag } from "@/data/open-source";
 
 type OnlyIcon = { icon: keyof typeof Icons; image?: never };
 type OnlyImage = { image: string; icon?: never };
