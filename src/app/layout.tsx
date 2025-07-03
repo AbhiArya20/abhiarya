@@ -2,8 +2,12 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import ReactQueryProvider from "@/components/providers/react-query";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
+import { EXPERIENCE_DATA } from "@/data/experience";
+import { EDUCATION_DATA } from "@/data/education";
 import { PERSONAL_DATA } from "@/data/personal";
+import { PROJECT_DATA } from "@/data/projects";
 import OneKo from "@/components/oneko/oneko";
+import { SOCIAL_DATA } from "@/data/social";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -26,6 +30,19 @@ export const metadata: Metadata = {
   description: PERSONAL_DATA.description,
   applicationName: PERSONAL_DATA.nickname,
   authors: [{ name: PERSONAL_DATA.nickname, url: PERSONAL_DATA.portfolio }],
+  keywords: [
+    PERSONAL_DATA.name,
+    PERSONAL_DATA.nickname,
+    PERSONAL_DATA.title,
+    PERSONAL_DATA.github ?? "AbhiArya20",
+    PERSONAL_DATA.nickname.split(" ").join(""),
+    ...EDUCATION_DATA.map(education => education.college),
+    ...EDUCATION_DATA.map(education => education.university),
+    ...PROJECT_DATA.map(project => project.name),
+    ...EXPERIENCE_DATA.map(experience => experience.company),
+    ...EXPERIENCE_DATA.map(experience => experience.position),
+    ...SOCIAL_DATA.map(social => social.username),
+  ],
 };
 
 export default function RootLayout({
