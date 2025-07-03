@@ -46,7 +46,6 @@ export default function ActivityCalendarComponent() {
           <>
             <div className="block overflow-hidden">
               <ActivityCalendar
-                hideMonthLabels
                 fontSize={12}
                 labels={{
                   totalCount: "{{count}} contributions in the last year",
@@ -58,9 +57,6 @@ export default function ActivityCalendarComponent() {
                 }}
                 data={data}
                 ref={containerRef}
-                style={{
-                  overflow: "hidden",
-                }}
               />
             </div>
             <div className="mt-2 text-center">

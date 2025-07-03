@@ -33,4 +33,17 @@ export const EXPERIENCE_DATA: Experience[] = [
     jobDescription: ["Build and maintain the backend of the website", "Design and develop the frontend"],
     tags: [{ name: "Remix", icon: "react", url: "https://remix.run" }],
   },
+  {
+    company: "Mithila Stack -1",
+    position: "SDE",
+    location: "New Delhi, India",
+    startDate: "2023",
+    endDate: "Present",
+    url: "https://abhiarya.in",
+    github: "https://github.com/AbhiArya20",
+    image: "/abhi-arya.webp",
+    featured: true,
+    jobDescription: ["Build and maintain the backend of the website", "Design and develop the frontend"],
+    tags: [{ name: "Remix", icon: "react", url: "https://remix.run" }],
+  },
 ];

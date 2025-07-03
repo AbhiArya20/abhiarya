@@ -39,6 +39,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@iconify/json": "^2.2.354",
+    "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/postcss": "^4",
     "@tanstack/eslint-plugin-query": "^5.81.2",
     "@tanstack/react-query-devtools": "^5.81.5",

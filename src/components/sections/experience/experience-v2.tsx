@@ -8,7 +8,7 @@ import Link from "next/link";
 import React from "react";
 // import { ReadMore } from "@/components/read-more";
 
-export default function ExperienceV1() {
+export default function ExperienceV2() {
   return (
     <>
       {EXPERIENCE_DATA.filter(experience => experience.featured).map(experience => (
@@ -48,7 +48,7 @@ function ExperienceCard({
   const GithubIcon = Icons.github;
   return (
     <Link href={url} target="_blank" rel="noopener">
-      <Card className="group rounded-none border-none from-neutral-800/10 p-4 sm:rounded-lg dark:bg-neutral-900 dark:hover:bg-gradient-to-bl">
+      <Card className="group rounded-none border-none bg-transparent px-4 py-2 sm:rounded-lg">
         <div className="flex flex-col gap-2">
           <div className="flex">
             <div className="flex w-full gap-2">
@@ -86,25 +86,9 @@ function ExperienceCard({
               </div>
             </div>
           </div>
-          <div>
-            {tags && (
-              <ul className="mt-2 flex flex-wrap gap-1">
-                {tags.map((tag, idx) => {
-                  const Icon = Icons[tag.icon];
-                  return (
-                    <li key={idx}>
-                      <Badge variant={"outline"}>
-                        <Icon className="mr-1.5 h-3 w-3 transition-all group-hover:saturate-100 sm:saturate-0" />{" "}
-                        {tag.name}
-                      </Badge>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
         </div>
       </Card>
+      {/* <hr /> */}
     </Link>
   );
 }

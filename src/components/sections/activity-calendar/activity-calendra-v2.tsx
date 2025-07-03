@@ -58,9 +58,6 @@ export default function ActivityCalendarComponent() {
                 }}
                 data={data}
                 ref={containerRef}
-                style={{
-                  overflow: "hidden",
-                }}
               />
             </div>
             <div className="mt-2 text-center">

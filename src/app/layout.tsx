@@ -35,7 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen bg-repeat font-sans antialiased`}
+      >
         <ReactQueryProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <main className="mx-auto max-w-2xl px-4 py-4 sm:py-16 md:px-0 print:p-12">{children}</main>
