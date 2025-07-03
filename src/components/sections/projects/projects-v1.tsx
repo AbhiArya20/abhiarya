@@ -1,11 +1,8 @@
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { PROJECT_DATA, type Project } from "@/data/projects";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export const ProjectsV1 = ({ onlyFeatured = false }: { onlyFeatured?: boolean }) => {
@@ -31,7 +28,7 @@ export const ProjectsV1 = ({ onlyFeatured = false }: { onlyFeatured?: boolean })
   );
 };
 
-const ProjectCard = ({ name, icon, description, image, url, tags, github }: Project) => {
+export const ProjectCard = ({ name, icon, description, image, tags }: Project) => {
   const Icon = Icons[icon!];
   return (
     <Card className="group bg-accent/60 rounded-none border-none from-neutral-800/10 p-4 sm:rounded-lg dark:bg-neutral-900 dark:hover:bg-gradient-to-bl">

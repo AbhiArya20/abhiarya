@@ -1,10 +1,10 @@
 import { Icons } from "@/components/icons";
 
-type OnlyPercentage = { percentage: number; CGPA?: never };
-type OnlyCGPA = { CGPA: number; percentage?: never };
+// type OnlyPercentage = { percentage: number; CGPA?: never };
+// type OnlyCGPA = { CGPA: number; percentage?: never };
 
-type OnlyIcon = { icon: keyof typeof Icons; image?: never };
-type OnlyImage = { image: string; icon?: never };
+// type OnlyIcon = { icon: keyof typeof Icons; image?: never };
+// type OnlyImage = { image: string; icon?: never };
 
 type BaseEducation = {
   college: string;
@@ -16,9 +16,15 @@ type BaseEducation = {
   startDate: string;
   endDate?: string;
   url: string;
+
+  // TODO: Figure out how to make this work
+  percentage?: number;
+  CGPA?: number;
+  icon?: keyof typeof Icons;
+  image?: string;
 };
 
-export type Education = BaseEducation & (OnlyPercentage | OnlyCGPA) & (OnlyIcon | OnlyImage);
+export type Education = BaseEducation; //& (OnlyPercentage | OnlyCGPA) & (OnlyIcon | OnlyImage);
 
 export const EDUCATION_DATA: Education[] = [
   {

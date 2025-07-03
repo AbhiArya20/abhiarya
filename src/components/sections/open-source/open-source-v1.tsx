@@ -1,20 +1,12 @@
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { StarsChart } from "@/components/sections/open-source/stars-chart";
 import { getGithubPullRequest } from "@/actions/get-github-pull-request";
-import useGithubPullRequest from "@/hooks/use-github-pull-request";
-import { PROJECT_DATA, type Project } from "@/data/projects";
-import { Button } from "@/components/ui/button";
 import { formatDistanceToNow } from "date-fns";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Icons } from "@/components/icons";
 import { DATA } from "@/data/open-source";
 import { GitMerge } from "lucide-react";
-import Image from "next/image";
 import { Node } from "@/types";
 import Link from "next/link";
 import React from "react";
-import ms from "ms";
 
 interface RepoDetails {
   stargazers_count: number;
@@ -113,6 +105,7 @@ const OpenSourceV1 = async () => {
       {pullRequest.map((pr: Node) => (
         <OpenSourceCard
           key={pr.id}
+          id={pr.id}
           title={pr.title}
           url={pr.url}
           createdAt={pr.createdAt}
@@ -136,13 +129,13 @@ export default OpenSourceV1;
 export const OpenSourceCard = ({
   title,
   url,
-  createdAt,
-  state,
-  deletions,
-  additions,
-  commits,
-  changedFiles,
-  closedAt,
+  // createdAt,
+  // state,
+  // deletions,
+  // additions,
+  // commits,
+  // changedFiles,
+  // closedAt,
   mergedAt,
   author,
   repository,

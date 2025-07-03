@@ -1,5 +1,4 @@
 import { PERSONAL_DATA } from "@/data/personal";
-import Link from "next/link";
 
 export default function AboutV2() {
   return (

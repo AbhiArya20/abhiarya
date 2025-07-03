@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 "use client";
 import { ComponentProps, useState } from "react";
 import { cn } from "@/lib/utils";

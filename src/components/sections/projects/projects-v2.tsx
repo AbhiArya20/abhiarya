@@ -29,7 +29,7 @@ export const ProjectsV2 = ({ onlyFeatured = false }: { onlyFeatured?: boolean })
     </div>
   );
 };
-const ProjectCard = ({ name, icon, description, image, url, tags, github }: Project) => {
+const ProjectCard = ({ name, icon, description, image, tags }: Project) => {
   const Icon = Icons[icon!];
   return (
     <Card className="group bg-accent/60 rounded-none border-none from-neutral-800/10 p-4 sm:rounded-lg dark:bg-neutral-900 dark:hover:bg-gradient-to-bl">
@@ -764,8 +764,6 @@ const ProjectCard = ({ name, icon, description, image, url, tags, github }: Proj
                 width={200}
                 height={100}
                 src={image}
-                width={64}
-                height={64}
                 alt="fds"
                 className="h-12 w-auto shrink-0 transition-all group-hover:saturate-100 sm:saturate-0"
               />

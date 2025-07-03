@@ -1,5 +1,4 @@
 import { Experience, EXPERIENCE_DATA } from "@/data/experience";
-import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
@@ -41,7 +40,6 @@ function ExperienceCard({
   github,
   icon,
   image,
-  jobDescription,
   tags,
 }: Experience) {
   const Icon = Icons[icon!];

@@ -1,8 +1,8 @@
 import { Icons } from "@/components/icons";
 import { Tag } from "@/data/open-source";
 
-type OnlyIcon = { icon: keyof typeof Icons; image?: never };
-type OnlyImage = { image: string; icon?: never };
+// type OnlyIcon = { icon: keyof typeof Icons; image?: never };
+// type OnlyImage = { image: string; icon?: never };
 
 type BaseExperience = {
   company: string;
@@ -15,9 +15,13 @@ type BaseExperience = {
   featured?: boolean;
   jobDescription?: string[];
   tags?: Tag[];
+
+  // TODO: Figure out how to make this work
+  icon?: keyof typeof Icons;
+  image?: string;
 };
 
-export type Experience = BaseExperience & (OnlyIcon | OnlyImage);
+export type Experience = BaseExperience; // & (OnlyIcon | OnlyImage);
 
 export const EXPERIENCE_DATA: Experience[] = [
   {

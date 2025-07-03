@@ -3,11 +3,11 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { type transformData } from "@/components/sections/open-source/open-source-v1";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
-import { type transformData } from "@/components/open-source";
 import { Button } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
 import Link from "next/link";
+import { JSX } from "react";
 
 const chartConfig = {
   count: {
