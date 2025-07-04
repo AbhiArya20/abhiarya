@@ -41,7 +41,7 @@ export const SOCIAL_DATA: Social[] = [
   },
   {
     name: "Resume",
-    url: "https://drive.google.com/file/d/1b2a3c45d6e7f8g9h0i1j2k3l4m5n6o7/view?usp=sharing",
+    url: "https://drive.google.com/file/d/1kyc47uffptmaDb_305eemX14j8ophm5M/view?usp=sharing",
     username: "abhiarya",
     icon: "resume",
     withText: true,

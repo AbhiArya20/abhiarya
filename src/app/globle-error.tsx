@@ -1,5 +1,5 @@
-import React from "react";
+import PageErrorComponent from "@/components/error/error";
 
 export default function GlobalError() {
-  return <div>Error</div>;
+  return <PageErrorComponent />;
 }

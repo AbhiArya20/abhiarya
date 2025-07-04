@@ -233,7 +233,7 @@ export default function OneKo({ className, speed = 10, x = 16, y = 16, file = "/
       id="one"
       aria-hidden="true"
       ref={oneRef}
-      className={cn("pointer-events-none fixed z-[2147483647] size-8", className)}
+      className={cn("pointer-events-none fixed z-[2147483647] hidden size-8 sm:block", className)}
       style={{
         imageRendering: "pixelated",
         backgroundImage: `url(${file})`,

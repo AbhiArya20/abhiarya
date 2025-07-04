@@ -3,8 +3,6 @@ import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-// import { ReadMore } from "@/components/read-more";
 
 export default function ExperienceV2() {
   return (

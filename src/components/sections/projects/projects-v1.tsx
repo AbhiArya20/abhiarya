@@ -3,13 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Image from "next/image";
-import React from "react";
 
-export const ProjectsV1 = ({ onlyFeatured = false }: { onlyFeatured?: boolean }) => {
+export default function ProjectsV1({ onlyFeatured = false }: { onlyFeatured?: boolean }) {
   const projects = onlyFeatured ? PROJECT_DATA.filter(project => project.featured) : PROJECT_DATA;
 
   return (
-    <div className="animate-slide-from-down-and-fade-3 flex flex-col gap-3">
+    <div className="flex flex-col gap-3">
       <h2 className="font-semibold">Featured Projects</h2>
       {projects.map(project => (
         <ProjectCard
@@ -26,7 +25,7 @@ export const ProjectsV1 = ({ onlyFeatured = false }: { onlyFeatured?: boolean })
       ))}
     </div>
   );
-};
+}
 
 export const ProjectCard = ({ name, icon, description, image, tags }: Project) => {
   const Icon = Icons[icon!];

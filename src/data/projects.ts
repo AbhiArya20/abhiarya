@@ -1,23 +1,16 @@
 import { Icons } from "@/components/icons";
 import { Tag } from "@/data/open-source";
 
-// type OnlyIcon = { icon: keyof typeof Icons; image?: never };
-// type OnlyImage = { image: string; icon?: never };
-
-type BaseProject = {
+export type Project = {
   name: string;
   description: string[];
   url: string;
   tags: Tag[];
   github?: string;
   featured?: boolean;
-
-  // TODO: Figure out how to make this work
   icon?: keyof typeof Icons;
   image?: string;
 };
-
-export type Project = BaseProject; // & (OnlyIcon | OnlyImage);
 
 export const PROJECT_DATA: Project[] = [
   {

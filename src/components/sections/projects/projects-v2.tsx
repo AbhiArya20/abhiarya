@@ -1,13 +1,12 @@
+// import ImageWithLoader from "@/components/animation/loadingimage";
 import { PROJECT_DATA, type Project } from "@/data/projects";
-import ImageWithLoader from "@/components/loadingimage";
 import { PERSONAL_DATA } from "@/data/personal";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Image from "next/image";
-import React from "react";
 
-export const ProjectsV2 = ({ onlyFeatured = false }: { onlyFeatured?: boolean }) => {
+export default function ProjectsV2({ onlyFeatured = false }: { onlyFeatured?: boolean }) {
   const projects = onlyFeatured ? PROJECT_DATA.filter(project => project.featured) : PROJECT_DATA;
 
   return (
@@ -28,7 +27,7 @@ export const ProjectsV2 = ({ onlyFeatured = false }: { onlyFeatured?: boolean })
       ))}
     </div>
   );
-};
+}
 const ProjectCard = ({ name, icon, description, image, tags }: Project) => {
   const Icon = Icons[icon!];
   return (
@@ -56,7 +55,7 @@ const ProjectCard = ({ name, icon, description, image, tags }: Project) => {
                         width={200}
                         height={100}
                       /> */}
-
+                      {/* 
                       <ImageWithLoader
                         width={200}
                         height={100}
@@ -67,7 +66,7 @@ const ProjectCard = ({ name, icon, description, image, tags }: Project) => {
                         className="transition-transform duration-300 hover:scale-105"
                         sizes="100vw"
                         src={PERSONAL_DATA.avatar}
-                      ></ImageWithLoader>
+                      ></ImageWithLoader> */}
                       {/* <Image
                         width={200}
                         height={100}

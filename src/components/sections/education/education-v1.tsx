@@ -4,7 +4,6 @@ import { Icons } from "@/components/icons";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export default function EducationV1() {
   return (

@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Experience() {
   const experience = [ExperienceV1, ExperienceV2];
   // const randomIndex = Math.floor(Math.random() * experience.length);
-  const RandomExperience = experience[1];
+  const RandomExperience = experience[0];
   return (
     <FadeDown>
       <div className="flex flex-col gap-3">

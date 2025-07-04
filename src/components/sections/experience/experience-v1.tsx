@@ -4,8 +4,6 @@ import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-// import { ReadMore } from "@/components/read-more";
 
 export default function ExperienceV1() {
   return (
@@ -67,11 +65,11 @@ function ExperienceCard({
                 <div className="flex w-full items-center justify-between">
                   <h1 className="flex items-center gap-1 text-left text-lg leading-[1.3em] font-medium text-gray-300">
                     <span>{company}</span>
-                    {github && (
+                    {/* {github && (
                       <Link href={github} target="_blank" rel="noopener">
                         <GithubIcon className="size-4" />
                       </Link>
-                    )}
+                    )} */}
                   </h1>
                   <p className="text-sm text-gray-300">{location}</p>
                 </div>

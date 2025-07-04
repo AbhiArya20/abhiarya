@@ -1,8 +1,7 @@
 "use server";
 
+import { ActionsReturn, Edges, PullRequest } from "@/types";
 import { PERSONAL_DATA } from "@/data/personal";
-import { Edges } from "@/types";
-import axios from "axios";
 
 const query = `
 query {
@@ -42,52 +41,33 @@ query {
 }
 `;
 
-export async function getGithubPullRequest() {
-  try {
-    const { data } = await axios.post(
-      "https://api.github.com/graphql",
-      {
-        query: query,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        },
-      }
-    );
+export async function getGithubPullRequest(): Promise<ActionsReturn<PullRequest[]>> {
+  const res = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    body: JSON.stringify({
+      query,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    },
+  });
 
-    const pullRequest = data.data.search.edges.map((edge: Edges) => ({
-      id: edge.node.id,
-      title: edge.node.title,
-      url: edge.node.url,
-      createdAt: edge.node.createdAt,
-      state: edge.node.state,
-      deletions: edge.node.deletions,
-      additions: edge.node.additions,
-      commits: {
-        totalCount: edge.node.commits.totalCount,
-      },
-      changedFiles: edge.node.changedFiles,
-      closedAt: edge.node.closedAt,
-      mergedAt: edge.node.mergedAt,
-      author: {
-        login: edge.node.author.login,
-        avatarUrl: edge.node.author.avatarUrl,
-        url: edge.node.author.url,
-      },
-      repository: {
-        nameWithOwner: edge.node.repository.nameWithOwner,
-        url: edge.node.repository.url,
-        homepageUrl: edge.node.repository.homepageUrl,
-        isPrivate: edge.node.repository.isPrivate,
-        isInOrganization: edge.node.repository.isInOrganization,
-      },
-    }));
-
-    return pullRequest;
-  } catch (error) {
-    console.error("Error fetching pull request:", error);
-    throw new Error("Error fetching pull request");
+  if (!res.ok) {
+    return { error: { message: "Unable to fetch GitHub pull requests." } };
   }
+
+  const { data } = await res.json();
+
+  if (!data?.search?.edges) {
+    return {
+      error: {
+        message: "GitHub response is missing expected data.",
+      },
+    };
+  }
+
+  const pullRequest: PullRequest[] = data.search.edges.map((edge: Edges) => edge.node);
+
+  return { data: pullRequest };
 }

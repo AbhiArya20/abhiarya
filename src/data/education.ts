@@ -1,12 +1,6 @@
 import { Icons } from "@/components/icons";
 
-// type OnlyPercentage = { percentage: number; CGPA?: never };
-// type OnlyCGPA = { CGPA: number; percentage?: never };
-
-// type OnlyIcon = { icon: keyof typeof Icons; image?: never };
-// type OnlyImage = { image: string; icon?: never };
-
-type BaseEducation = {
+export type Education = {
   college: string;
   stream: string;
   degree: string;
@@ -16,23 +10,19 @@ type BaseEducation = {
   startDate: string;
   endDate?: string;
   url: string;
-
-  // TODO: Figure out how to make this work
   percentage?: number;
   CGPA?: number;
   icon?: keyof typeof Icons;
   image?: string;
 };
 
-export type Education = BaseEducation; //& (OnlyPercentage | OnlyCGPA) & (OnlyIcon | OnlyImage);
-
 export const EDUCATION_DATA: Education[] = [
   {
-    college: "Mithila Stack",
-    stream: "Computer Science",
-    degree: "Bachelor of Technology",
-    university: "University of Delhi",
-    location: "New Delhi, India",
+    college: "Darbhanga College of Engineering",
+    stream: "Computer Science Engineering",
+    degree: "B.Tech",
+    university: "BEU",
+    location: "Darbhanga, India",
     locationUrl: "https://www.udel.edu.in",
     startDate: "2023",
     endDate: "Present",

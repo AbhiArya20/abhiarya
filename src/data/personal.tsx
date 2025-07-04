@@ -1,5 +1,7 @@
+import BadgeV1 from "@/components/badges/badge-v1";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
+import { Tag } from "./open-source";
 import { JSX } from "react";
 
 export type Address = {
@@ -12,20 +14,48 @@ export type Personal = {
   name: string;
   nickname: string;
   avatar: string;
+  altAvatar: string;
   githubAvatar?: string;
   title: string;
   address: Address;
-  github?: string;
+  emails: string[];
+  phones: string[];
+  github: string;
+  twitter: string;
   portfolio: string;
   description: string;
   descriptionRaw: string;
   descriptionHtml: JSX.Element;
 };
 
+const tags: Tag[] = [
+  {
+    name: "React",
+    icon: "react",
+    url: "https://reactjs.org/",
+  },
+  {
+    name: "Next.js",
+    icon: "react",
+    url: "https://nextjs.org/",
+  },
+  {
+    name: "Flutter",
+    icon: "react",
+    url: "https://flutter.dev/",
+  },
+  {
+    name: "TypeScript",
+    icon: "typescript",
+    url: "https://www.typescriptlang.org/",
+  },
+];
+
 export const PERSONAL_DATA: Personal = {
   name: "Abhishek Kumar",
   nickname: "Abhi Arya",
   avatar: "/avatar.webp",
+  altAvatar: "/abhi-arya.webp",
   githubAvatar: "https://avatars.githubusercontent.com/u/188953429?v=4",
   title: "Software Engineer",
   address: {
@@ -33,29 +63,21 @@ export const PERSONAL_DATA: Personal = {
     country: "India",
     url: "https://www.google.com/maps/place/new-delhi",
   },
+  emails: ["career.abhiarya@gmail.com", "github.abhiarya@gmail.com"],
+  phones: ["+919546458806"],
   portfolio: "https://abhiarya.in",
   github: "AbhiArya20",
+  twitter: "AbhiArya200",
   description: `Full Stack Developer with a passion for building high-quality products.`,
-  descriptionRaw: `Hi, I'm Abhishek Kumar from New Delhi, India. I work as a part-time Full-stack Developer at Mithila Stack. I love building websites with good UI/UX, and I'm also passionate about new technologies, open-source software, and contributing to the community.`,
+  descriptionRaw: `Software Developer with over 1 year of experience in building web applications using React, Next.js, Node.js, TypeScript, and Flutter. Passionate about contributing to open-source software, working on personal projects, and continuous learning.`,
   descriptionHtml: (
     <>
-      Hi, I&apos;m Abhishek Kumar from India. I work as a part-time Full-stack Developer at{" "}
-      <a
-        href="https://hi-interns.com/"
-        target="_blank"
-        className="text-foreground decoration-muted-foreground font-medium whitespace-nowrap underline underline-offset-2"
-      >
-        Hi Interns
-        {/* <Icons.arrowUpRight className="inline-block size-4" /> */}
-      </a>
-      . I love building websites with good UI/UX, and I&apos;m also passionate about new technologies, open-source
-      software,{" "}
-      <li>
-        <Badge variant={"outline"} className="bg-accent/50 rounded-sm">
-          <Icons.react className="mr-1.5 h-3 w-3 transition-all" />
-          React
-        </Badge>
-      </li>{" "}
+      Software Developer with over 1 year of experience in building web applications using{" "}
+      <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
+        {tags.map(tag => {
+          return <BadgeV1 {...tag} key={tag.name}></BadgeV1>;
+        })}
+      </span>{" "}
       and contributing to the community.
     </>
   ),

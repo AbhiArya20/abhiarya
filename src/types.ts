@@ -1,4 +1,14 @@
-export type Node = {
+export type ContributionDays = {
+  color: string;
+  contributionCount: number;
+  date: string;
+};
+
+export type Week = {
+  contributionDays: ContributionDays[];
+};
+
+export type PullRequest = {
   id: string;
   title: string;
   url: string;
@@ -27,5 +37,12 @@ export type Node = {
 };
 
 export type Edges = {
-  node: Node;
+  node: PullRequest;
+};
+
+export type ActionsReturn<T> = {
+  error?: {
+    message: string;
+  };
+  data?: T;
 };

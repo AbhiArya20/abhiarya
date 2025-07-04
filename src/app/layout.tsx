@@ -1,15 +1,17 @@
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import ReactQueryProvider from "@/components/providers/react-query";
+import ReactQueryProvider from "@/components/providers/ react-query";
+import ThemeProvider from "@/components/providers/theme-provider";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
 import { EXPERIENCE_DATA } from "@/data/experience";
+import { Analytics } from "@vercel/analytics/next";
 import { EDUCATION_DATA } from "@/data/education";
 import { PERSONAL_DATA } from "@/data/personal";
 import { PROJECT_DATA } from "@/data/projects";
 import OneKo from "@/components/oneko/oneko";
 import { SOCIAL_DATA } from "@/data/social";
+import { headers } from "next/headers";
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,29 +23,61 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(PERSONAL_DATA.portfolio),
-  title: {
-    default: PERSONAL_DATA.nickname,
-    template: `%s | ${PERSONAL_DATA.nickname}`,
-  },
-  description: PERSONAL_DATA.description,
-  applicationName: PERSONAL_DATA.nickname,
-  authors: [{ name: PERSONAL_DATA.nickname, url: PERSONAL_DATA.portfolio }],
-  keywords: [
-    PERSONAL_DATA.name,
-    PERSONAL_DATA.nickname,
-    PERSONAL_DATA.title,
-    PERSONAL_DATA.github ?? "AbhiArya20",
-    PERSONAL_DATA.nickname.split(" ").join(""),
-    ...EDUCATION_DATA.map(education => education.college),
-    ...EDUCATION_DATA.map(education => education.university),
-    ...PROJECT_DATA.map(project => project.name),
-    ...EXPERIENCE_DATA.map(experience => experience.company),
-    ...EXPERIENCE_DATA.map(experience => experience.position),
-    ...SOCIAL_DATA.map(social => social.username),
-  ],
-};
+export async function generateMetadata(): Promise<Metadata> {
+  // We can use `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` to get the production URL of the project on Vercel
+  const headersList = await headers();
+  const host = headersList.get("host");
+  const protocol = headersList.get("x-forwarded-proto") || "http";
+  const domain = `${protocol}://${host}`;
+
+  return {
+    metadataBase: new URL(domain),
+    title: {
+      default: PERSONAL_DATA.nickname,
+      template: `%s | ${PERSONAL_DATA.nickname}`,
+    },
+    description: PERSONAL_DATA.descriptionRaw,
+    applicationName: PERSONAL_DATA.nickname,
+    authors: [
+      { name: PERSONAL_DATA.nickname, url: new URL(domain) },
+      { name: PERSONAL_DATA.name, url: new URL(domain) },
+    ],
+    keywords: [
+      PERSONAL_DATA.name,
+      PERSONAL_DATA.name.split(" ")[0],
+      PERSONAL_DATA.nickname,
+      PERSONAL_DATA.nickname.split(" ")[0],
+      PERSONAL_DATA.title,
+      PERSONAL_DATA.github,
+      PERSONAL_DATA.nickname.split(" ").join(""),
+      ...EDUCATION_DATA.map(education => education.college),
+      ...EDUCATION_DATA.map(education => education.university),
+      ...PROJECT_DATA.map(project => project.name),
+      ...EXPERIENCE_DATA.map(experience => experience.company),
+      ...EXPERIENCE_DATA.map(experience => experience.position),
+      ...SOCIAL_DATA.map(social => social.username),
+    ],
+    referrer: "strict-origin-when-cross-origin",
+    creator: PERSONAL_DATA.nickname,
+    publisher: PERSONAL_DATA.nickname,
+    openGraph: {
+      url: new URL(domain),
+      siteName: PERSONAL_DATA.nickname,
+      // TODO: Add og:video support
+      type: "website",
+      emails: PERSONAL_DATA.emails,
+      phoneNumbers: PERSONAL_DATA.phones,
+      countryName: "India",
+      locale: "en_IN",
+      ttl: 60 * 60 * 24,
+    },
+    twitter: {
+      siteId: "1859480388193701888",
+      creator: `@${PERSONAL_DATA.twitter}`,
+      creatorId: "1859480388193701888",
+    },
+  };
+}
 
 export default function RootLayout({
   children,
@@ -52,12 +86,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen bg-repeat font-sans antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
         <ReactQueryProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <main className="mx-auto max-w-2xl px-4 py-4 sm:py-16 md:px-0 print:p-12">{children}</main>
+            <main className="mx-auto max-w-2xl p-4 sm:py-16 md:px-0 print:px-0 print:py-12">{children}</main>
           </ThemeProvider>
         </ReactQueryProvider>
         {process.env.NODE_ENV === "production" && (
@@ -72,6 +104,8 @@ export default function RootLayout({
                 urlBlocklist: [],
               }}
             />
+            <Analytics />
+            {/* <GoogleAnalytics gaId={process.env.NEXT_GOOGLE_ANALYTICS_ID} /> */}
             {/* TODO: Add analytics - Google Analytics, Vercel Analytics or Open-Panel more*/}
           </>
         )}

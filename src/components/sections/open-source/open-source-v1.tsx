@@ -4,9 +4,8 @@ import { formatDistanceToNow } from "date-fns";
 import { Card } from "@/components/ui/card";
 import { DATA } from "@/data/open-source";
 import { GitMerge } from "lucide-react";
-import { Node } from "@/types";
+import { PullRequest } from "@/types";
 import Link from "next/link";
-import React from "react";
 
 interface RepoDetails {
   stargazers_count: number;
@@ -84,7 +83,7 @@ const OpenSourceV1 = async () => {
   // const { isPending, error, data } = useGithubPullRequest();
 
   const pullRequest = await getGithubPullRequest();
-
+  // TODO: Error handing is missing
   return (
     <div className="animate-slide-from-down-and-fade-2 space-y-2 px-4">
       <h2 className="font-semibold">Open source journey</h2>
@@ -102,7 +101,7 @@ const OpenSourceV1 = async () => {
         ))}
       </div>
 
-      {pullRequest.map((pr: Node) => (
+      {pullRequest?.data?.map(pr => (
         <OpenSourceCard
           key={pr.id}
           id={pr.id}
@@ -139,7 +138,7 @@ export const OpenSourceCard = ({
   mergedAt,
   author,
   repository,
-}: Node) => {
+}: PullRequest) => {
   // const Icon = Icons[icon!];
 
   return (

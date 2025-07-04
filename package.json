@@ -6,12 +6,14 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@highlight-run/next": "^7.9.30",
     "@hookform/resolvers": "^5.1.1",
     "@tanstack/react-query": "^5.81.5",
+    "@vercel/analytics": "^1.5.0",
     "axios": "^1.10.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -35,6 +37,7 @@
     "sonner": "^2.0.5",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",
+    "web-push": "^3.6.7",
     "zod": "^3.25.67"
   },
   "devDependencies": {
@@ -47,8 +50,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/web-push": "^3.6.4",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "husky": "^9.1.7",
     "prettier": "3.6.2",
     "prettier-plugin-sort-imports": "^1.8.8",
     "prettier-plugin-tailwindcss": "^0.6.13",

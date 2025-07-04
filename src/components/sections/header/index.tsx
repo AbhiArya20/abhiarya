@@ -4,7 +4,6 @@ import FadeDown from "@/components/animation/fade-down";
 
 export default function Header() {
   const headers = [HeaderV1, HeaderV2];
-  // const randomIndex = Math.floor(Math.random() * headers.length);
   const RandomHeader = headers[0];
   return (
     <FadeDown>

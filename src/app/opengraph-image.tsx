@@ -6,7 +6,8 @@ export const size = {
   height: 630,
 };
 
-export const contentType = "image/png";
+export const alt = PERSONAL_DATA.nickname;
+export const contentType = "image/svg+xml";
 
 export default async function Image() {
   return new ImageResponse(
@@ -23,11 +24,12 @@ export default async function Image() {
           borderRadius: "1.5rem",
           backgroundImage: "linear-gradient(to top, #282627, #0f0f0f 75%)",
           color: "#a1a1a1",
+          padding: "2rem",
         }}
       >
         <h1
           style={{
-            fontSize: "3rem",
+            fontSize: "5rem",
             lineHeight: 1,
             fontWeight: 700,
             margin: 0,
@@ -37,7 +39,7 @@ export default async function Image() {
         </h1>
         <p
           style={{
-            fontSize: "1.25rem",
+            fontSize: "2rem",
             lineHeight: 1.4,
             fontWeight: 500,
             margin: 0,
@@ -46,6 +48,9 @@ export default async function Image() {
           {PERSONAL_DATA.title}
         </p>
       </div>
-    )
+    ),
+    {
+      ...size,
+    }
   );
 }
