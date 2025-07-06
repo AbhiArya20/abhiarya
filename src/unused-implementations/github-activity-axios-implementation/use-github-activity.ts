@@ -1,4 +1,4 @@
-import { getGithubActivity } from "@/actions/get-github-activity";
+import { getGithubActivity } from "@/unused-implementations/github-activity-axios-implementation/get-github-activity";
 import { useQuery } from "@tanstack/react-query";
 
 export default function useGithubActivity() {

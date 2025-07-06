@@ -23,6 +23,7 @@ export type Personal = {
   github: string;
   twitter: string;
   portfolio: string;
+  olderPortfolio: string;
   description: string;
   descriptionRaw: string;
   descriptionHtml: JSX.Element;
@@ -66,6 +67,7 @@ export const PERSONAL_DATA: Personal = {
   emails: ["career.abhiarya@gmail.com", "github.abhiarya@gmail.com"],
   phones: ["+919546458806"],
   portfolio: "https://abhiarya.in",
+  olderPortfolio: "https://v1.abhiarya.in",
   github: "AbhiArya20",
   twitter: "AbhiArya200",
   description: `Full Stack Developer with a passion for building high-quality products.`,

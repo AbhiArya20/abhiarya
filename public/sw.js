@@ -20,3 +20,5 @@ self.addEventListener("notificationclick", function (event) {
   event.notification.close();
   event.waitUntil(clients.openWindow("https://localhost:3000"));
 });
+
+// TODO: Fixed this for PWA

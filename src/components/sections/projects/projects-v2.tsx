@@ -1,5 +1,6 @@
 // import ImageWithLoader from "@/components/animation/loadingimage";
 import { PROJECT_DATA, type Project } from "@/data/projects";
+import FadeIn from "@/components/animation/fade-in";
 import { PERSONAL_DATA } from "@/data/personal";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -285,39 +286,41 @@ const ProjectCard = ({ name, icon, description, image, tags }: Project) => {
                 <div className="bg-card text-card-foreground from-primary/10 to-secondary/10 overflow-hidden rounded-xl border border-none bg-gradient-to-br p-4 shadow transition-all duration-300 hover:shadow-lg">
                   <div className="space-y-4 p-0">
                     <div className="relative h-48 w-full overflow-hidden rounded-lg">
-                      <Image
-                        width={200}
-                        height={100}
-                        alt="Redditz project screenshot"
-                        loading="lazy"
-                        decoding="async"
-                        data-nimg="fill"
-                        className="transition-transform duration-300 hover:scale-105"
-                        // style="
-                        //   position: absolute;
-                        //   height: 100%;
-                        //   width: 100%;
-                        //   left: 0;
-                        //   top: 0;
-                        //   right: 0;
-                        //   bottom: 0;
-                        //   object-fit: cover;
-                        //   color: transparent;
-                        // "
-                        src={PERSONAL_DATA.avatar}
-                        sizes="100vw"
-                        // srcset="
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=640&amp;q=75   640w,
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=750&amp;q=75   750w,
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=828&amp;q=75   828w,
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=1080&amp;q=75 1080w,
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=1200&amp;q=75 1200w,
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=1920&amp;q=75 1920w,
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=2048&amp;q=75 2048w,
-                        //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=3840&amp;q=75 3840w
-                        // "
-                        // src="/_next/Image?url=%2Fimages%2Fredditz.png&amp;w=3840&amp;q=75"
-                      />
+                      <FadeIn>
+                        <Image
+                          width={200}
+                          height={100}
+                          alt="Redditz project screenshot"
+                          loading="lazy"
+                          decoding="async"
+                          data-nimg="fill"
+                          className="transition-transform duration-300 hover:scale-105"
+                          // style="
+                          //   position: absolute;
+                          //   height: 100%;
+                          //   width: 100%;
+                          //   left: 0;
+                          //   top: 0;
+                          //   right: 0;
+                          //   bottom: 0;
+                          //   object-fit: cover;
+                          //   color: transparent;
+                          // "
+                          src={PERSONAL_DATA.avatar}
+                          sizes="100vw"
+                          // srcset="
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=640&amp;q=75   640w,
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=750&amp;q=75   750w,
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=828&amp;q=75   828w,
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=1080&amp;q=75 1080w,
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=1200&amp;q=75 1200w,
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=1920&amp;q=75 1920w,
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=2048&amp;q=75 2048w,
+                          //   /_next/Image?url=%2Fimages%2Fredditz.png&amp;w=3840&amp;q=75 3840w
+                          // "
+                          // src="/_next/Image?url=%2Fimages%2Fredditz.png&amp;w=3840&amp;q=75"
+                        />
+                      </FadeIn>
                     </div>
                     <div className="flex items-center justify-between">
                       <h3 className="text-lg font-semibold">Redditz</h3>

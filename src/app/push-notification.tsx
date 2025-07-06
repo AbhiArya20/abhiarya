@@ -133,3 +133,5 @@ export default function Page() {
     </div>
   );
 }
+
+// TODO: Fixed this for PWA

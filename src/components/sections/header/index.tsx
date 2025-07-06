@@ -4,10 +4,10 @@ import FadeDown from "@/components/animation/fade-down";
 
 export default function Header() {
   const headers = [HeaderV1, HeaderV2];
-  const RandomHeader = headers[0];
+  const SelectedHeader = headers[1];
   return (
     <FadeDown>
-      <RandomHeader />
+      <SelectedHeader />
     </FadeDown>
   );
 }

@@ -1,34 +1,66 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 type ErrorProps = {
-  status?: number;
-  message?: string;
+  status: number;
+  message: string;
+  btn: string;
 };
 
-export default function PageErrorComponent({ status = 500, message }: ErrorProps) {
+export default function PageErrorComponent({ status, message, btn }: ErrorProps) {
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: -20,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.2,
+        staggerDirection: 1,
+      },
+    },
+  };
+
+  const child = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section
-      className="absolute inset-0 flex w-full flex-1 flex-col items-center justify-center p-4 text-center"
-      role="alert"
-      aria-label="server-error"
+    <motion.section
+      className="flex min-h-[calc(100vh-2rem)] w-full flex-1 flex-col items-center justify-center p-4 text-center sm:min-h-[calc(100vh-8rem)]"
+      variants={variants}
+      initial="hidden"
+      animate="show"
     >
-      <h1 className="text-destructive text-7xl font-extrabold sm:text-9xl">{status}</h1>
-      <p className="text-muted-foreground mt-2 mb-6 text-lg">
-        {message ?? "We’re sorry, something went wrong on our end."}
-      </p>
-      <Link href="/" passHref>
-        <Button
-          asChild
-          className="bg-accent text-accent-foreground hover:bg-accent/80 flex items-center justify-center gap-2"
-          aria-label="go-to-home"
-        >
-          <span>
-            Go Home <ArrowRight />
-          </span>
-        </Button>
-      </Link>
-    </section>
+      <motion.h1
+        variants={child}
+        className={cn("text-7xl font-extrabold sm:text-9xl", status >= 500 ? "text-destructive" : "")}
+      >
+        {status}
+      </motion.h1>
+      <motion.p variants={child} className="text-muted-foreground mt-2 mb-6 text-lg">
+        {message}
+      </motion.p>
+      <motion.div variants={child}>
+        <Link href="/" passHref>
+          <Button
+            asChild
+            className="bg-accent text-accent-foreground hover:bg-accent/80 flex items-center justify-center gap-2"
+            aria-label="go-to-home"
+          >
+            <span>
+              {btn} <ArrowRight />
+            </span>
+          </Button>
+        </Link>
+      </motion.div>
+    </motion.section>
   );
 }

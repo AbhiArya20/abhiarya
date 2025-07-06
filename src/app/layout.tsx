@@ -89,13 +89,13 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
         <ReactQueryProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <main className="mx-auto max-w-2xl p-4 sm:py-16 md:px-0 print:px-0 print:py-12">{children}</main>
+            <main className="mx-auto max-w-2xl p-4 sm:py-16 md:px-0">{children}</main>
           </ThemeProvider>
         </ReactQueryProvider>
         {process.env.NODE_ENV === "production" && (
           <>
             <HighlightInit
-              projectId={"4d7y176d"}
+              projectId={process.env.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
               serviceName={PERSONAL_DATA.nickname.split(" ").join("-").toLowerCase()}
               tracingOrigins
               networkRecording={{

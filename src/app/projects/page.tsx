@@ -7,7 +7,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ProjectCard } from "@/components/sections/projects/projects-v1";
-import { ModeToggle } from "@/components/theme-switcher/mode-toggle";
+import ModeToggle from "@/components/theme-switcher/mode-toggle";
 import Contact from "@/components/sections/contact/contact";
 import { PROJECT_DATA } from "@/data/projects";
 import Link from "next/link";

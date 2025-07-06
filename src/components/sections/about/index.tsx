@@ -6,10 +6,10 @@ import FadeDown from "@/components/animation/fade-down";
 
 export default function About() {
   const about = [AboutV1, AboutV2, AboutV3, AboutV4];
-  const RandomAbout = about[3];
+  const SelectedAbout = about[1];
   return (
     <FadeDown>
-      <RandomAbout />
+      <SelectedAbout />
     </FadeDown>
   );
 }

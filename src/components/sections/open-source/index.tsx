@@ -3,11 +3,10 @@ import FadeDown from "@/components/animation/fade-down";
 
 export default function OpenSource() {
   const openSource = [OpenSourceV1];
-  const randomIndex = Math.floor(Math.random() * openSource.length);
-  const RandomOpenSource = openSource[randomIndex];
+  const SelectedOpenSource = openSource[0];
   return (
     <FadeDown>
-      <RandomOpenSource />
+      <SelectedOpenSource />
     </FadeDown>
   );
 }
