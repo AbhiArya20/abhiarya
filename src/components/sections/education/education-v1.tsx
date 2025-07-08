@@ -52,7 +52,7 @@ function EducationCard({ education }: { education: Education }) {
                     rel="noopener"
                   >
                     <MapPin className="size-3" />
-                    {`${university}, ${location}`}
+                    {`${university.name}, ${university.location}`}
                   </Link>
                 </p>
               </div>
