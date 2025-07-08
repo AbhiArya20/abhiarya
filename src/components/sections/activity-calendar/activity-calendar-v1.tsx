@@ -1,8 +1,9 @@
 "use client";
 
+import ActivityCalendarLoading from "@/components/sections/activity-calendar/activity-calendar-loading";
 import { ActivityCalendar, type Activity } from "react-activity-calendar";
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
-import { use, useEffect, useRef } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { ActionsReturn } from "@/types";
 import { useTheme } from "next-themes";
 
@@ -12,16 +13,23 @@ export default function ActivityCalendarComponentV1({
   activities: Promise<ActionsReturn<Activity[]>>;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   const { data, error } = use(activities);
 
   useEffect(() => {
     const container = containerRef.current;
+    if (!mounted) {
+      setMounted(true);
+    }
     if (!container) return;
-    container.children[0].scrollBy({ left: container.scrollWidth, behavior: "smooth" });
-  }, [data]);
+    container.children[0].scrollBy({ left: container.children[0].scrollWidth, behavior: "smooth" });
+  }, [data, mounted]);
 
   const { resolvedTheme } = useTheme();
+
+  if (!mounted) return <ActivityCalendarLoading />;
+
   return (
     <>
       {error && (
@@ -33,7 +41,7 @@ export default function ActivityCalendarComponentV1({
       )}
 
       {data && data.length > 0 ? (
-        <div>
+        <>
           <div className="block overflow-hidden">
             <ActivityCalendar
               fontSize={12}
@@ -53,7 +61,7 @@ export default function ActivityCalendarComponentV1({
           <div className="mt-2 text-center">
             <p className="text-muted-foreground text-xs">← Scroll to view older contributions</p>
           </div>
-        </div>
+        </>
       ) : (
         <div className="border-border rounded-lg border p-4 shadow-sm">
           <div className="text-muted-foreground flex items-center justify-center gap-4 py-16">

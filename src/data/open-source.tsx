@@ -4,7 +4,7 @@ import { JSX } from "react";
 export type Tag = {
   name: string;
   icon: keyof typeof Icons;
-  url: string;
+  url?: string;
 };
 
 export type OpenSourceProject = {

@@ -33,6 +33,8 @@ function getLevel(count: number) {
 
 export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
   const res = await fetch("https://api.github.com/graphql", {
+    cache: "force-cache",
+    next: { revalidate: 5 * 60 }, // 5 minutes
     method: "POST",
     body: JSON.stringify({
       query,
@@ -53,7 +55,7 @@ export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
     return { error: { message: "GitHub response is missing expected data." } };
   }
 
-  const contributions = data.user.contributionsCollection.contributionCalendar.weeks.flatMap((week: Week) =>
+  const contributions: Activity[] = data.user.contributionsCollection.contributionCalendar.weeks.flatMap((week: Week) =>
     week.contributionDays.map(day => ({
       date: day.date,
       count: day.contributionCount,
@@ -61,5 +63,5 @@ export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
     }))
   );
 
-  return { data: contributions as Activity[] };
+  return { data: contributions };
 }

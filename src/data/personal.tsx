@@ -1,6 +1,4 @@
 import BadgeV1 from "@/components/badges/badge-v1";
-import { Badge } from "@/components/ui/badge";
-import { Icons } from "@/components/icons";
 import { Tag } from "./open-source";
 import { JSX } from "react";
 
@@ -64,8 +62,8 @@ export const PERSONAL_DATA: Personal = {
     country: "India",
     url: "https://www.google.com/maps/place/new-delhi",
   },
-  emails: ["career.abhiarya@gmail.com", "github.abhiarya@gmail.com"],
-  phones: ["+919546458806"],
+  emails: ["career.abhiarya@gmail.com", "github.abhiarya@gmail.com", "self.abhiarya@gmail.com", ""],
+  phones: ["+919546458806", "+919162388695"],
   portfolio: "https://abhiarya.in",
   olderPortfolio: "https://v1.abhiarya.in",
   github: "AbhiArya20",
@@ -77,7 +75,7 @@ export const PERSONAL_DATA: Personal = {
       Software Developer with over 1 year of experience in building web applications using{" "}
       <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
         {tags.map(tag => {
-          return <BadgeV1 {...tag} key={tag.name}></BadgeV1>;
+          return <BadgeV1 {...tag} key={tag.name} className="text-muted-foreground"></BadgeV1>;
         })}
       </span>{" "}
       and contributing to the community.

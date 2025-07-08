@@ -9,11 +9,11 @@ export default function HeaderV1() {
     <div className="flex items-center justify-between gap-4">
       <div className="flex-1 space-y-1.5">
         <span className="flex self-start sm:hidden">
-          <AvatarComponent className="size-18" />
+          <AvatarComponent className="size-36" />
         </span>
         <h1 className="text-2xl font-bold whitespace-nowrap">
           {PERSONAL_DATA.name}
-          <span className="ml-1 text-[10px] text-neutral-400 dark:text-neutral-700">
+          <span className="ml-1 hidden text-[10px] text-neutral-400 sm:inline dark:text-neutral-700">
             {"( " + PERSONAL_DATA.nickname + " )"}
           </span>
         </h1>

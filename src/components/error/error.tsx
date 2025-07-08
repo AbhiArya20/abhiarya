@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { motion, Variants } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -12,15 +12,18 @@ type ErrorProps = {
 };
 
 export default function PageErrorComponent({ status, message, btn }: ErrorProps) {
-  const variants = {
+  const variants: Variants = {
     hidden: {
       opacity: 0,
       y: -20,
+      filter: "blur(10px)",
     },
     show: {
       opacity: 1,
       y: 0,
+      filter: "blur(0px)",
       transition: {
+        startTime: 5,
         staggerChildren: 0.2,
         staggerDirection: 1,
       },
@@ -28,8 +31,8 @@ export default function PageErrorComponent({ status, message, btn }: ErrorProps)
   };
 
   const child = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+    show: { opacity: 1, y: 0, filter: "blur(0px)" },
   };
 
   return (

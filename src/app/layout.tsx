@@ -30,6 +30,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = headersList.get("x-forwarded-proto") || "http";
   const domain = `${protocol}://${host}`;
 
+  const educationKeywords = EDUCATION_DATA.map(education => [
+    education.college.name,
+    education.university.name,
+    education.college.shortName,
+    education.university.shortName,
+  ]).flatMap(keywords => keywords);
+
   return {
     metadataBase: new URL(domain),
     title: {
@@ -50,8 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
       PERSONAL_DATA.title,
       PERSONAL_DATA.github,
       PERSONAL_DATA.nickname.split(" ").join(""),
-      ...EDUCATION_DATA.map(education => education.college),
-      ...EDUCATION_DATA.map(education => education.university),
+      ...educationKeywords,
       ...PROJECT_DATA.map(project => project.name),
       ...EXPERIENCE_DATA.map(experience => experience.company),
       ...EXPERIENCE_DATA.map(experience => experience.position),
@@ -89,7 +95,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
         <ReactQueryProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <main className="mx-auto max-w-2xl p-4 sm:py-16 md:px-0">{children}</main>
+            <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
           </ThemeProvider>
         </ReactQueryProvider>
         {process.env.NODE_ENV === "production" && (
@@ -105,8 +111,6 @@ export default function RootLayout({
               }}
             />
             <Analytics />
-            {/* <GoogleAnalytics gaId={process.env.NEXT_GOOGLE_ANALYTICS_ID} /> */}
-            {/* TODO: Add analytics - Google Analytics, Vercel Analytics or Open-Panel more*/}
           </>
         )}
         <OneKo />

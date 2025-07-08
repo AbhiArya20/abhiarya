@@ -6,7 +6,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { ProjectCard } from "@/components/sections/projects/projects-v1";
+import ProjectCardV1 from "@/components/sections/projects/projects-card-v1";
 import ModeToggle from "@/components/theme-switcher/mode-toggle";
 import Contact from "@/components/sections/contact/contact";
 import { PROJECT_DATA } from "@/data/projects";
@@ -38,7 +38,7 @@ const ProjectPage = () => {
       <h1 className="scroll-m-20 px-4 text-4xl font-bold tracking-tight">All Projects</h1>
       <div className="space-y-3 pt-12">
         {PROJECT_DATA.map(project => (
-          <ProjectCard
+          <ProjectCardV1
             key={project.name}
             name={project.name}
             description={project.description}

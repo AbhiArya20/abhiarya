@@ -10,16 +10,34 @@ export type Project = {
   featured?: boolean;
   icon?: keyof typeof Icons;
   image?: string;
+  screenshot: string;
 };
 
 export const PROJECT_DATA: Project[] = [
   {
     name: "Coderoom",
     image: "/abhi-arya.webp",
-    description: ["A modern CDE."],
+    screenshot: "/abhi-arya.webp",
+    description: ["A modern CDE for everything you need to run your app."],
     url: "https://coderoom.abhiarya.in/",
     github: "https://github.com/AbhiArya20/coderoom",
     featured: true,
-    tags: [{ name: "Remix", icon: "react", url: "https://remix.run" }],
+    tags: [
+      { name: "Remix", icon: "react", url: "https://remix.run" },
+      { name: "React", icon: "react", url: "https://remix.run" },
+    ],
+  },
+  {
+    name: "Meeting Room",
+    image: "/abhi-arya.webp",
+    screenshot: "/abhi-arya.webp",
+    description: ["A modern CDE for everything you need to run your app."],
+    url: "https://coderoom.abhiarya.in/",
+    github: "https://github.com/AbhiArya20/coderoom",
+    featured: true,
+    tags: [
+      { name: "Remix", icon: "react", url: "https://remix.run" },
+      { name: "React", icon: "react", url: "https://remix.run" },
+    ],
   },
 ];

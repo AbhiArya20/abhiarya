@@ -18,6 +18,8 @@ interface Stargazer {
 async function getStargazersCount(repo: string): Promise<number> {
   const url = `https://api.github.com/repos/${repo}`;
   const response = await fetch(url, {
+    cache: "force-cache",
+    next: { revalidate: 5 * 60 }, // 5 minutes
     headers: {
       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
     },
@@ -29,6 +31,8 @@ async function getStargazersCount(repo: string): Promise<number> {
 async function fetchStargazersPage(repo: string, page: number): Promise<Stargazer[]> {
   const url = `https://api.github.com/repos/${repo}/stargazers?per_page=100&page=${page}`;
   const response = await fetch(url, {
+    cache: "force-cache",
+    next: { revalidate: 5 * 60 }, // 5 minutes
     headers: {
       Accept: "application/vnd.github.v3.star+json",
       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,

@@ -21,7 +21,6 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           aspectRatio: "16 / 9",
-          borderRadius: "1.5rem",
           backgroundImage: "linear-gradient(to top, #282627, #0f0f0f 75%)",
           color: "#a1a1a1",
           padding: "2rem",

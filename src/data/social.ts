@@ -28,16 +28,16 @@ export const SOCIAL_DATA: Social[] = [
     icon: "github",
   },
   {
+    name: "Leetcode",
+    url: "https://leetcode.com/AbhiArya20",
+    username: "AbhiArya20",
+    icon: "leetcode",
+  },
+  {
     name: "X",
     url: "https://x.com/AbhiArya200",
     username: "AbhiArya200",
     icon: "x",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/AbhiArya20",
-    username: "AbhiArya20",
-    icon: "linkedin",
   },
   {
     name: "Resume",

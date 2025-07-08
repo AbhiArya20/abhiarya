@@ -1,4 +1,3 @@
-// import { PERSONAL_DATA } from "@/data/personal";
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        crawlDelay: 60 * 60,
+        crawlDelay: 60 * 60 * 24, // 1 day
       },
     ],
     sitemap: `/sitemap.xml`,

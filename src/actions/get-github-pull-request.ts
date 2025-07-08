@@ -5,7 +5,7 @@ import { PERSONAL_DATA } from "@/data/personal";
 
 const query = `
 query {
-  search(query: "is:pr author:${PERSONAL_DATA.github} archived:false is:merged ", type: ISSUE, first: 10) {
+  search(query: "is:pr author:${PERSONAL_DATA.github} archived:false is:merged", type: ISSUE, first: 10) {
     edges {
       node {
         ... on PullRequest {
@@ -43,6 +43,8 @@ query {
 
 export async function getGithubPullRequest(): Promise<ActionsReturn<PullRequest[]>> {
   const res = await fetch("https://api.github.com/graphql", {
+    cache: "force-cache",
+    next: { revalidate: 5 * 60 }, // 5 minutes
     method: "POST",
     body: JSON.stringify({
       query,

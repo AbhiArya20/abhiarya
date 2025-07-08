@@ -1,48 +1,48 @@
 import { Icons } from "@/components/icons";
 import { Tag } from "@/data/open-source";
 
-type BaseExperience = {
+export type Experience = {
   company: string;
+  shortName?: string;
   position: string;
+  shortPosition?: string;
   location: string;
   startDate: string;
   endDate?: string;
   url: string;
   github?: string;
-  featured?: boolean;
-  jobDescription?: string[];
+  image?: string;
+  jobDescription: string[];
   tags?: Tag[];
   icon?: keyof typeof Icons;
-  image?: string;
+  featured?: boolean;
 };
-
-export type Experience = BaseExperience;
 
 export const EXPERIENCE_DATA: Experience[] = [
   {
     company: "Mithila Stack",
-    position: "SDE",
-    location: "New Delhi, India",
-    startDate: "2023",
-    endDate: "Present",
-    url: "https://abhiarya.in",
-    github: "https://github.com/AbhiArya20",
-    image: "/abhi-arya.webp",
+    shortName: "Mithilastack",
+    position: "Software Development Engineer",
+    shortPosition: "SDE",
+    location: "Remote",
+    startDate: "Oct 2023",
+    endDate: "Sep 2024",
+    url: "https://mithilastack.com",
+    github: "https://github.com/mithilastack",
+    image: "/mithilastack.webp",
     featured: true,
-    jobDescription: ["Build and maintain the backend of the website", "Design and develop the frontend"],
-    tags: [{ name: "Remix", icon: "react", url: "https://remix.run" }],
+    jobDescription: [],
   },
   {
-    company: "Mithila Stack -1",
-    position: "SDE",
-    location: "New Delhi, India",
-    startDate: "2023",
-    endDate: "Present",
-    url: "https://abhiarya.in",
-    github: "https://github.com/AbhiArya20",
-    image: "/abhi-arya.webp",
+    company: "Aaensa Tech",
+    position: "Software Development Engineer",
+    shortPosition: "SDE",
+    location: "Gurugram",
+    startDate: "Jun 2023",
+    endDate: "Sep 2023",
+    url: "https://aaensa.com/",
+    image: "/aaensa.webp",
     featured: true,
-    jobDescription: ["Build and maintain the backend of the website", "Design and develop the frontend"],
-    tags: [{ name: "Remix", icon: "react", url: "https://remix.run" }],
+    jobDescription: [],
   },
 ];
