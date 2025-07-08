@@ -5,7 +5,7 @@ import { PERSONAL_DATA } from "@/data/personal";
 
 const query = `
 query {
-  search(query: "is:pr author:${PERSONAL_DATA.github} archived:false is:merged", type: ISSUE, first: 10) {
+  search(query: "is:pr author:${PERSONAL_DATA.github} archived:false is:merged", type: ISSUE, first: 5) {
     edges {
       node {
         ... on PullRequest {

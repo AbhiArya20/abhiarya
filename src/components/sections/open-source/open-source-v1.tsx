@@ -1,60 +1,60 @@
-import { StarsChart } from "@/components/sections/open-source/stars-chart";
+// import { StarsChart } from "@/components/sections/open-source/stars-chart";
 import { getGithubPullRequest } from "@/actions/get-github-pull-request";
 import { formatDistanceToNow } from "date-fns";
 import { Card } from "@/components/ui/card";
-import { DATA } from "@/data/open-source";
+// import { DATA } from "@/data/open-source";
 import { GitMerge } from "lucide-react";
 import { PullRequest } from "@/types";
 import Link from "next/link";
 
-interface RepoDetails {
-  stargazers_count: number;
-}
+// interface RepoDetails {
+//   stargazers_count: number;
+// }
 
-interface Stargazer {
-  starred_at: string;
-}
+// interface Stargazer {
+//   starred_at: string;
+// }
 
-async function getStargazersCount(repo: string): Promise<number> {
-  const url = `https://api.github.com/repos/${repo}`;
-  const response = await fetch(url, {
-    cache: "force-cache",
-    next: { revalidate: 5 * 60 }, // 5 minutes
-    headers: {
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    },
-  });
-  const data: RepoDetails = await response.json();
-  return data.stargazers_count;
-}
+// async function getStargazersCount(repo: string): Promise<number> {
+//   const url = `https://api.github.com/repos/${repo}`;
+//   const response = await fetch(url, {
+//     cache: "force-cache",
+//     next: { revalidate: 5 * 60 }, // 5 minutes
+//     headers: {
+//       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+//     },
+//   });
+//   const data: RepoDetails = await response.json();
+//   return data.stargazers_count;
+// }
 
-async function fetchStargazersPage(repo: string, page: number): Promise<Stargazer[]> {
-  const url = `https://api.github.com/repos/${repo}/stargazers?per_page=100&page=${page}`;
-  const response = await fetch(url, {
-    cache: "force-cache",
-    next: { revalidate: 5 * 60 }, // 5 minutes
-    headers: {
-      Accept: "application/vnd.github.v3.star+json",
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    },
-  });
-  const data: Stargazer[] = await response.json();
-  return data;
-}
+// async function fetchStargazersPage(repo: string, page: number): Promise<Stargazer[]> {
+//   const url = `https://api.github.com/repos/${repo}/stargazers?per_page=100&page=${page}`;
+//   const response = await fetch(url, {
+//     cache: "force-cache",
+//     next: { revalidate: 5 * 60 }, // 5 minutes
+//     headers: {
+//       Accept: "application/vnd.github.v3.star+json",
+//       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+//     },
+//   });
+//   const data: Stargazer[] = await response.json();
+//   return data;
+// }
 
-async function getAllStargazers(repo: string): Promise<string[]> {
-  const stargazersCount = await getStargazersCount(repo);
-  const totalPages = Math.ceil(stargazersCount / 100);
-  let allStarredAtDates: string[] = [];
+// async function getAllStargazers(repo: string): Promise<string[]> {
+//   const stargazersCount = await getStargazersCount(repo);
+//   const totalPages = Math.ceil(stargazersCount / 100);
+//   let allStarredAtDates: string[] = [];
 
-  for (let page = 1; page <= totalPages; page++) {
-    const stargazers = await fetchStargazersPage(repo, page);
-    const starredAtDates = stargazers.map(stargazer => stargazer.starred_at);
-    allStarredAtDates = allStarredAtDates.concat(starredAtDates);
-  }
+//   for (let page = 1; page <= totalPages; page++) {
+//     const stargazers = await fetchStargazersPage(repo, page);
+//     const starredAtDates = stargazers.map(stargazer => stargazer.starred_at);
+//     allStarredAtDates = allStarredAtDates.concat(starredAtDates);
+//   }
 
-  return allStarredAtDates;
-}
+//   return allStarredAtDates;
+// }
 type TransformedEntry = {
   month: string;
   count: number;
@@ -84,27 +84,11 @@ export const transformData = (timestamps: string[]): TransformedEntry[] => {
 };
 
 const OpenSourceV1 = async () => {
-  // const { isPending, error, data } = useGithubPullRequest();
-
   const pullRequest = await getGithubPullRequest();
-  // TODO: Error handing is missing
-  return (
-    <div className="animate-slide-from-down-and-fade-2 space-y-2 px-4">
-      <h2 className="font-semibold">Open source journey</h2>
-      <p className="text-muted-foreground">{DATA.openSource?.description}</p>
-      <div className="divide-y divide-solid">
-        {DATA.openSource?.projects?.map(async (project, idx) => (
-          <div key={idx} className="py-4">
-            <StarsChart
-              data={transformData(await getAllStargazers(project.repository))}
-              title={project.title}
-              description={project.description}
-              link={project.link}
-            />
-          </div>
-        ))}
-      </div>
 
+  return (
+    <div className="flex flex-col gap-3">
+      <h2 className="font-semibold">Open source journey</h2>
       {pullRequest?.data?.map(pr => (
         <OpenSourceCard
           key={pr.id}
@@ -123,6 +107,20 @@ const OpenSourceV1 = async () => {
           repository={pr.repository}
         />
       ))}
+
+      {/* <p className="text-muted-foreground">{DATA.openSource?.description}</p> */}
+      {/* <div className="divide-y divide-solid">
+          {DATA.openSource?.projects?.map(async (project, idx) => (
+            <div key={idx} className="py-4">
+              <StarsChart
+                data={transformData(await getAllStargazers(project.repository))}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+              />
+            </div>
+          ))}
+        </div> */}
     </div>
   );
 };
@@ -146,44 +144,21 @@ export const OpenSourceCard = ({
   // const Icon = Icons[icon!];
 
   return (
-    <Card className="group bg-accent/60 rounded-none border-none from-neutral-800/10 p-4 sm:rounded-lg dark:bg-neutral-900 dark:hover:bg-gradient-to-bl">
-      <div className="flex flex-col gap-2">
-        <div className="flex items-start justify-between">
-          <div className="flex items-start gap-2">
-            <GitMerge className="size-5 shrink-0 text-violet-400 transition-all group-hover:saturate-100 sm:saturate-0" />
-            <div>
-              <h3 className="flex justify-center gap-2">
-                <Link href={url} target="_blank" rel="noopener" className="text-muted-foreground truncate">
-                  {repository.nameWithOwner}
-                </Link>
-                <Link href={url} target="_blank" rel="noopener" className="truncate">
-                  {title}
-                </Link>
-              </h3>
-              <p className="text-muted-foreground text-xs">{`#21 by ${author.login} was merged on ${formatDistanceToNow(new Date(mergedAt), { addSuffix: true })}`}</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          {/* {tags && (
-            <ul className="mt-2 flex flex-wrap gap-1">
-              {tags.map((tag, idx) => {
-                const Icon = Icons[tag.icon];
-                return (
-                  <li key={idx}>
-                    <Badge variant={"outline"}>
-                      <Icon className="mr-1.5 h-3 w-3 transition-all group-hover:saturate-100 sm:saturate-0" />{" "}
-                      {tag.name}
-                    </Badge>
-                  </li>
-                );
-              })}
-            </ul>
-          )} */}
+    <Card className="border-none p-4 sm:rounded-lg dark:bg-neutral-900">
+      <div className="flex items-start gap-2">
+        <GitMerge className="mt-2 size-5 shrink-0 text-violet-400" />
+        <div className="overflow-hidden">
+          <h3 className="flex justify-center gap-2">
+            <Link href={url} target="_blank" rel="noopener" className="text-muted-foreground truncate">
+              {repository.nameWithOwner}
+            </Link>
+            <Link href={url} target="_blank" rel="noopener" className="inline-block truncate">
+              {title}
+            </Link>
+          </h3>
+          <p className="text-muted-foreground text-xs">{`#21 by ${author.login} was merged ${formatDistanceToNow(new Date(mergedAt), { addSuffix: true })}`}</p>
         </div>
       </div>
     </Card>
   );
 };
-
-// TODO: Make everything printable

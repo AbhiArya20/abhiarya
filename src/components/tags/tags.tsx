@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Tags({ tags }: { tags: Tag[] }) {
   return (
-    <div>
+    <div className="mt-2">
       <ul className="flex flex-wrap gap-1">
         {tags.map(tag => {
           const Icon = Icons[tag.icon];
