@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { useTheme } from "next-themes";
 
-export default function ModeToggle() {
+export default function ThemeSwitcherV1() {
   const { setTheme, theme } = useTheme();
 
   const Sun = Icons.sun;

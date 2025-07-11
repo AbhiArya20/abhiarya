@@ -8,6 +8,7 @@ import Education from "@/components/sections/education";
 import Projects from "@/components/sections/projects";
 import Headers from "@/components/sections/header";
 import About from "@/components/sections/about";
+// import { PERSONAL_DATA } from "@/data/personal";
 
 export default function Home() {
   return (
@@ -20,9 +21,9 @@ export default function Home() {
       <OpenSource />
       <Education />
       <Contact />
-      {/* 
+      {/*
       <Footer />
-      <Learnings /> 
+      <Learnings />
       */}
     </div>
   );

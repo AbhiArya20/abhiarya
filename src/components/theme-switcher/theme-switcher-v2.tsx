@@ -59,7 +59,7 @@ const THEME_OPTIONS = [
   },
 ];
 
-function ThemeSwitcher() {
+export default function ThemeSwitcherV2() {
   const { theme, setTheme } = useTheme();
   return (
     <motion.div
@@ -82,5 +82,3 @@ function ThemeSwitcher() {
     </motion.div>
   );
 }
-
-export { ThemeSwitcher };

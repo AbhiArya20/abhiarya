@@ -1,10 +1,12 @@
 import ReactQueryProvider from "@/components/providers/ react-query";
 import ThemeProvider from "@/components/providers/theme-provider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { Analytics } from "@vercel/analytics/next";
 import { EDUCATION_DATA } from "@/data/education";
+import { clientEnv } from "@/config/client-env";
 import { PERSONAL_DATA } from "@/data/personal";
 import { PROJECT_DATA } from "@/data/projects";
 import OneKo from "@/components/oneko/oneko";
@@ -101,7 +103,7 @@ export default function RootLayout({
         {process.env.NODE_ENV === "production" && (
           <>
             <HighlightInit
-              projectId={process.env.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
+              projectId={clientEnv.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
               serviceName={PERSONAL_DATA.nickname.split(" ").join("-").toLowerCase()}
               tracingOrigins
               networkRecording={{
@@ -111,6 +113,7 @@ export default function RootLayout({
               }}
             />
             <Analytics />
+            <GoogleAnalytics gaId={clientEnv.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
           </>
         )}
         <OneKo />

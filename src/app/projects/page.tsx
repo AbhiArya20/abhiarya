@@ -7,7 +7,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import ProjectCardV1 from "@/components/sections/projects/projects-card-v1";
-import ModeToggle from "@/components/theme-switcher/mode-toggle";
+import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
 import Contact from "@/components/sections/contact/contact";
 import { PROJECT_DATA } from "@/data/projects";
 import Link from "next/link";
@@ -33,7 +33,7 @@ const ProjectPage = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <ModeToggle />
+        <ThemeSwitcherV1 />
       </div>
       <h1 className="scroll-m-20 px-4 text-4xl font-bold tracking-tight">All Projects</h1>
       <div className="space-y-3 pt-12">
@@ -44,6 +44,7 @@ const ProjectPage = () => {
             description={project.description}
             icon={project.icon}
             image={project.image}
+            screenshot={project.screenshot}
             url={project.url}
             tags={project.tags}
             github={project.github}

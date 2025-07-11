@@ -1,5 +1,6 @@
+import ThemeSwitcherV3 from "@/components/theme-switcher/theme-switcher-v3";
+import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
 import AvatarComponent from "@/components/avatar/avatar-component";
-import ModeToggle from "@/components/theme-switcher/mode-toggle";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import SocialComponent from "@/components/socials";
 import { PERSONAL_DATA } from "@/data/personal";
@@ -31,7 +32,8 @@ export default function HeaderV2() {
           </div>
         </div>
         <div className="hidden sm:block">
-          <ModeToggle />
+          <ThemeSwitcherV1 />
+          <ThemeSwitcherV3 />
         </div>
       </div>
       <SocialComponent />

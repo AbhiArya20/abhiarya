@@ -1,6 +1,7 @@
 "use server";
 
 import { ActionsReturn, Edges, PullRequest } from "@/types";
+import { serverEnv } from "@/config/server-env";
 import { PERSONAL_DATA } from "@/data/personal";
 
 const query = `
@@ -51,7 +52,7 @@ export async function getGithubPullRequest(): Promise<ActionsReturn<PullRequest[
     }),
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      Authorization: `Bearer ${serverEnv.GITHUB_TOKEN}`,
     },
   });
 

@@ -1,6 +1,7 @@
 "use server";
 
 import { Activity } from "react-activity-calendar";
+import { serverEnv } from "@/config/server-env";
 import { PERSONAL_DATA } from "@/data/personal";
 import { ActionsReturn, Week } from "@/types";
 
@@ -41,7 +42,7 @@ export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
     }),
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      Authorization: `Bearer ${serverEnv.GITHUB_TOKEN}`,
     },
   });
 

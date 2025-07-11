@@ -15,37 +15,109 @@ export default async function Image() {
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          height: "100%",
-          aspectRatio: "16 / 9",
-          backgroundImage: "linear-gradient(to top, #282627, #0f0f0f 75%)",
-          color: "#a1a1a1",
-          padding: "2rem",
+          position: "relative",
+          background: "#1d1d1c",
+          height: "100vh",
+          width: "100vw",
         }}
       >
-        <h1
+        <div
           style={{
-            fontSize: "5rem",
-            lineHeight: 1,
-            fontWeight: 700,
-            margin: 0,
+            width: "100%",
+            height: "0.5rem",
+            position: "absolute",
+            top: "5rem",
+            background: "#404040",
+          }}
+        ></div>
+        <div
+          style={{
+            width: "0.5rem",
+            height: "100%",
+            position: "absolute",
+            left: "5rem",
+            background: "#404040",
+          }}
+        ></div>
+        <div
+          style={{
+            width: "0.5rem",
+            height: "100%",
+            position: "absolute",
+            right: "5rem",
+            background: "#404040",
+          }}
+        ></div>
+        <div
+          style={{
+            width: "100%",
+            height: "0.5rem",
+            position: "absolute",
+            bottom: "5rem",
+            background: "#404040",
+          }}
+        ></div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            padding: "10rem",
           }}
         >
-          {PERSONAL_DATA.name}
-        </h1>
-        <p
-          style={{
-            fontSize: "2rem",
-            lineHeight: 1.4,
-            fontWeight: 500,
-            margin: 0,
-          }}
-        >
-          {PERSONAL_DATA.title}
-        </p>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              justifyContent: "start",
+              flexDirection: "column",
+            }}
+          >
+            <h1
+              style={{
+                fontSize: "5rem",
+                lineHeight: 1,
+                fontWeight: 700,
+                margin: 0,
+              }}
+            >
+              {PERSONAL_DATA.name}
+            </h1>
+            <p
+              style={{
+                fontSize: "2rem",
+                lineHeight: 1.4,
+                fontWeight: 500,
+                margin: 0,
+              }}
+            >
+              {PERSONAL_DATA.title}
+            </p>
+          </div>
+
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            <img
+              src={PERSONAL_DATA.avatar}
+              style={{
+                height: "50%",
+                width: "50%",
+                objectFit: "cover",
+                borderRadius: "50%",
+                alignSelf: "flex-end",
+              }}
+              alt={PERSONAL_DATA.nickname}
+            ></img>
+          </div>
+        </div>
       </div>
     ),
     {
@@ -53,3 +125,39 @@ export default async function Image() {
     }
   );
 }
+
+// <div
+//   style={{
+//     display: "flex",
+//     flexDirection: "column",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     width: "100%",
+//     height: "100%",
+//     aspectRatio: "16 / 9",
+//     backgroundImage: "linear-gradient(to top, #282627, #0f0f0f 75%)",
+//     color: "#a1a1a1",
+//     padding: "2rem",
+//   }}
+// >
+//   <h1
+//     style={{
+//       fontSize: "5rem",
+//       lineHeight: 1,
+//       fontWeight: 700,
+//       margin: 0,
+//     }}
+//   >
+//     {PERSONAL_DATA.name}
+//   </h1>
+//   <p
+//     style={{
+//       fontSize: "2rem",
+//       lineHeight: 1.4,
+//       fontWeight: 500,
+//       margin: 0,
+//     }}
+//   >
+//     {PERSONAL_DATA.title}
+//   </p>
+// </div>
