@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix --max-warnings=0 --no-inline-config --no-cache",
+    "lint:fix": "next lint --fix --max-warnings=0 --no-cache",
     "prepare": "husky"
   },
   "dependencies": {

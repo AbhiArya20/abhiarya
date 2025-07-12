@@ -13,7 +13,7 @@ export type Personal = {
   nickname: string;
   avatar: string;
   altAvatar: string;
-  githubAvatar?: string;
+  githubAvatar: string;
   title: string;
   address: Address;
   emails: string[];
