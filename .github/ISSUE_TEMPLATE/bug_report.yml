@@ -80,7 +80,7 @@ body:
         backticks.
       render: shell
 
-  - type: input
+  - type: textarea
     id: screenshots
     attributes:
       label: Screenshots
