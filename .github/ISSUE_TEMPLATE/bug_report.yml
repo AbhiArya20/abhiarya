@@ -1,3 +1,8 @@
+title: "[Bug]: "
+type: Bug
+assignees: AbhiArya20
+projects:
+  - abhiarya
 name: Bug Report
 description: Report a bug to help us improve
 labels: ["bug"]
