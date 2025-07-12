@@ -6,6 +6,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { Analytics } from "@vercel/analytics/next";
 import { EDUCATION_DATA } from "@/data/education";
+import { serverEnv } from "@/config/server-env";
 import { clientEnv } from "@/config/client-env";
 import { PERSONAL_DATA } from "@/data/personal";
 import { PROJECT_DATA } from "@/data/projects";
@@ -100,7 +101,7 @@ export default function RootLayout({
             <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
           </ThemeProvider>
         </ReactQueryProvider>
-        {process.env.NODE_ENV === "production" && (
+        {serverEnv.NODE_ENV === "production" && (
           <>
             <HighlightInit
               projectId={clientEnv.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}

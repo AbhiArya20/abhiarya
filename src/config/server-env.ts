@@ -6,6 +6,7 @@ export const serverEnv = createEnv({
     GITHUB_TOKEN: z
       .string({ message: "Environment variable GITHUB_TOKEN must be a string." })
       .min(1, { message: "GITHUB_TOKEN is required and cannot be empty. Please provide a valid GitHub token." }),
+    NODE_ENV: z.enum(["development", "production", "test"]),
   },
   experimental__runtimeEnv: process.env,
 });

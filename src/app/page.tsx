@@ -1,6 +1,6 @@
 import ActivityCalendarComponent from "@/components/sections/activity-calendar";
 import Contact from "@/components/sections/contact/contact";
-import OpenSource from "@/components/sections/open-source";
+// import OpenSource from "@/components/sections/open-source";
 import Experience from "@/components/sections/experience";
 // import Footer from "@/components/sections/footer/footer";
 // import Learnings from "@/components/sections/learnings";
@@ -18,7 +18,7 @@ export default function Home() {
       <Experience />
       <ActivityCalendarComponent />
       <Projects />
-      <OpenSource />
+      {/* <OpenSource /> */}
       <Education />
       <Contact />
       {/*

@@ -83,7 +83,7 @@ export const transformData = (timestamps: string[]): TransformedEntry[] => {
   }));
 };
 
-const OpenSourceV1 = async () => {
+export default async function OpenSourceV1() {
   const pullRequest = await getGithubPullRequest();
 
   return (
@@ -123,9 +123,7 @@ const OpenSourceV1 = async () => {
         </div> */}
     </div>
   );
-};
-
-export default OpenSourceV1;
+}
 
 export const OpenSourceCard = ({
   title,

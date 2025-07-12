@@ -23,7 +23,7 @@ interface StarsChartProps {
   link: string;
 }
 
-export const StarsChart = ({ data, title, description, link }: StarsChartProps) => {
+export default function StarsChart({ data, title, description, link }: StarsChartProps) {
   return (
     <Card className="border-none bg-transparent">
       <CardHeader className="px-0">
@@ -100,4 +100,4 @@ export const StarsChart = ({ data, title, description, link }: StarsChartProps) 
       </CardFooter>
     </Card>
   );
-};
+}
