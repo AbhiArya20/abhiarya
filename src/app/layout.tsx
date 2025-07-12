@@ -1,6 +1,6 @@
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import ReactQueryProvider from "@/components/providers/ react-query";
 import ThemeProvider from "@/components/providers/theme-provider";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
 import { EXPERIENCE_DATA } from "@/data/experience";
@@ -115,6 +115,10 @@ export default function RootLayout({
             />
             <Analytics />
             <GoogleAnalytics gaId={clientEnv.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+            <GoogleTagManager
+              gtmId={clientEnv.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
+              dataLayerName={PERSONAL_DATA.nickname}
+            />
           </>
         )}
         <OneKo />

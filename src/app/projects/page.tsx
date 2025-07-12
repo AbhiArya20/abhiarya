@@ -20,7 +20,7 @@ const ProjectPage = () => {
   return (
     <div>
       <div className="flex items-start justify-between">
-        <Breadcrumb className="mb-4 px-4">
+        <Breadcrumb className="mb-4">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
@@ -35,8 +35,8 @@ const ProjectPage = () => {
         </Breadcrumb>
         <ThemeSwitcherV1 />
       </div>
-      <h1 className="scroll-m-20 px-4 text-4xl font-bold tracking-tight">All Projects</h1>
-      <div className="space-y-3 pt-12">
+      <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">All Projects</h1>
+      <div className="space-y-3 py-12">
         {PROJECT_DATA.map(project => (
           <ProjectCardV1
             key={project.name}

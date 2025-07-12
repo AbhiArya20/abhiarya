@@ -1,10 +1,18 @@
+"use client";
+
+import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PERSONAL_DATA } from "@/data/personal";
+import { motion } from "motion/react";
 
 export default function AboutV1() {
   return (
     <div className="space-y-2">
-      <h2 className="font-semibold">About me</h2>
-      <p className="text-muted-foreground font-mono text-sm leading-6">{PERSONAL_DATA.descriptionRaw}</p>
+      <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
+        About me
+      </motion.h2>
+      <motion.p variants={fadeDownChildVariants} className="text-muted-foreground font-mono text-sm leading-6">
+        {PERSONAL_DATA.descriptionRaw}
+      </motion.p>
     </div>
   );
 }

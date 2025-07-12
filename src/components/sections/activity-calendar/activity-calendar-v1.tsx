@@ -48,7 +48,6 @@ export default function ActivityCalendarComponentV1({
               labels={{
                 totalCount: "{{count}} contributions in the last year",
               }}
-              // TODO: Fix the color scheme - it cause the flashing
               colorScheme={resolvedTheme as "light" | "dark" | undefined}
               theme={{
                 light: ["#eff2f5", "#aceebb", "#4ac26b", "#2da44e", "#116329"],
