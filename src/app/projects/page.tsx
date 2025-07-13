@@ -17,6 +17,9 @@ export const metadata = {
 };
 
 const ProjectPage = () => {
+  const projectCards = [ProjectCardV1];
+  const SelectedProjectCard = projectCards[0];
+
   return (
     <div>
       <div className="flex items-start justify-between">
@@ -38,7 +41,7 @@ const ProjectPage = () => {
       <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">All Projects</h1>
       <div className="space-y-3 py-12">
         {PROJECT_DATA.map(project => (
-          <ProjectCardV1
+          <SelectedProjectCard
             key={project.name}
             name={project.name}
             description={project.description}

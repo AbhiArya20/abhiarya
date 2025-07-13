@@ -1,6 +1,6 @@
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import ReactQueryProvider from "@/components/providers/ react-query";
 import ThemeProvider from "@/components/providers/theme-provider";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { HighlightInit } from "@highlight-run/next/client";
 import { Geist, Geist_Mono } from "next/font/google";
 import { EXPERIENCE_DATA } from "@/data/experience";
@@ -101,28 +101,27 @@ export default function RootLayout({
             <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
           </ThemeProvider>
         </ReactQueryProvider>
-        {serverEnv.NODE_ENV === "production" && (
-          <>
-            <HighlightInit
-              projectId={clientEnv.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
-              serviceName={PERSONAL_DATA.nickname.split(" ").join("-").toLowerCase()}
-              tracingOrigins
-              networkRecording={{
-                enabled: true,
-                recordHeadersAndBody: true,
-                urlBlocklist: [],
-              }}
-            />
-            <Analytics />
-            <GoogleAnalytics gaId={clientEnv.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
-            <GoogleTagManager
-              gtmId={clientEnv.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
-              dataLayerName={PERSONAL_DATA.nickname}
-            />
-          </>
-        )}
         <OneKo />
       </body>
+      {serverEnv.NODE_ENV === "production" && (
+        <>
+          <HighlightInit
+            projectId={clientEnv.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
+            serviceName={PERSONAL_DATA.nickname.split(" ").join("-").toLowerCase()}
+            tracingOrigins
+            networkRecording={{
+              enabled: true,
+              recordHeadersAndBody: true,
+              urlBlocklist: [],
+            }}
+          />
+          <Analytics />
+          <GoogleTagManager
+            gtmId={clientEnv.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
+            dataLayerName={PERSONAL_DATA.nickname}
+          />
+        </>
+      )}
     </html>
   );
 }

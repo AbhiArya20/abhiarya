@@ -63,7 +63,6 @@ export default function ThemeSwitcherV2() {
   const { theme, setTheme } = useTheme();
   return (
     <motion.div
-      // key={String(isMounted)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}

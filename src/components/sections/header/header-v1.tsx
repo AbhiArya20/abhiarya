@@ -1,7 +1,7 @@
 "use client";
-import AvatarComponent from "@/components/avatar/avatar-component";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import SocialComponent from "@/components/socials";
+import AvatarComponent from "@/components/avatar";
 import { PERSONAL_DATA } from "@/data/personal";
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";

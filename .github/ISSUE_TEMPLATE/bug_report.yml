@@ -86,4 +86,4 @@ body:
     attributes:
       value: |
         ---
-        By submitting this bug report, you agree to follow our [Code of Conduct](../../CODE_OF_CONDUCT.md) and understand that the information provided will be used to help resolve the issue.
+        By submitting this bug report, you agree to follow our [Code of Conduct](../CODE_OF_CONDUCT.md) and understand that the information provided will be used to help resolve the issue.

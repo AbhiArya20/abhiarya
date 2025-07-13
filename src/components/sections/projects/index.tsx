@@ -1,6 +1,10 @@
+"use client";
+
 import ProjectsCardV1 from "@/components/sections/projects/projects-card-v1";
-import FadeDown from "@/components/animation/fade-down";
+import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PROJECT_DATA } from "@/data/projects";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Projects() {
   const projectCards = [ProjectsCardV1];
@@ -8,24 +12,31 @@ export default function Projects() {
   const projects = PROJECT_DATA.filter(project => project.featured);
 
   return (
-    <FadeDown>
-      <div className="flex flex-col gap-3">
-        <h2 className="font-semibold">Featured Projects</h2>
-        {projects.map(project => (
-          <SelectedProjectCard
-            key={project.name}
-            name={project.name}
-            description={project.description}
-            icon={project.icon}
-            image={project.image}
-            url={project.url}
-            tags={project.tags}
-            github={project.github}
-            featured={project.featured}
-            screenshot={project.screenshot}
-          />
-        ))}
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center justify-between">
+        <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
+          Featured Projects
+        </motion.h2>
+        <Link href={"/projects"}>
+          <motion.div variants={fadeDownChildVariants} className="flex flex-row items-center justify-start gap-2">
+            <div className="flex shrink-0 justify-start opacity-100">See More</div>
+          </motion.div>
+        </Link>
       </div>
-    </FadeDown>
+      {projects.map(project => (
+        <SelectedProjectCard
+          key={project.name}
+          name={project.name}
+          description={project.description}
+          icon={project.icon}
+          image={project.image}
+          url={project.url}
+          tags={project.tags}
+          github={project.github}
+          featured={project.featured}
+          screenshot={project.screenshot}
+        />
+      ))}
+    </div>
   );
 }

@@ -53,9 +53,9 @@ export default function ExperienceCardV2({
               <p className="text-muted-frontend text-xs font-semibold">{location}</p>
             </div>
             <div className="flex items-center justify-between">
-              <p className="hidden text-sm text-neutral-400 sm:inline">{position}</p>
-              <p className="text-sm text-neutral-400 sm:hidden">{shortPosition}</p>
-              <p className={`text-end font-mono text-[10px] leading-[1.3em] tracking-tighter text-neutral-400`}>
+              <p className="text-muted-foreground hidden text-sm sm:inline">{position}</p>
+              <p className="text-muted-foreground text-sm sm:hidden">{shortPosition}</p>
+              <p className={`text-muted-foreground text-end font-mono text-[10px] leading-[1.3em] tracking-tighter`}>
                 {`${startDate} - ${endDate}`}
               </p>
             </div>

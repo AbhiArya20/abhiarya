@@ -1,5 +1,5 @@
 import BadgeV1 from "@/components/badges/badge-v1";
-import { Tag } from "./open-source";
+import { Tag } from "@/data/open-source";
 import { JSX } from "react";
 
 export type Address = {

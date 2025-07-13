@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <div className="mt-10">
+    <div>
       <div className="flex flex-col">
         <div className="flex flex-col gap-2 text-xs">
           <span>

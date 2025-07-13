@@ -43,7 +43,7 @@ function EducationCard({ education }: { education: Education }) {
             </div>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-neutral-400">{`${degree} in ${stream}`}</p>
+                <p className="text-muted-foreground text-sm">{`${degree} in ${stream}`}</p>
                 <p className="text-muted-foreground font-mono text-xs text-pretty sm:max-w-md">
                   <Link
                     className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
@@ -56,7 +56,7 @@ function EducationCard({ education }: { education: Education }) {
                   </Link>
                 </p>
               </div>
-              <p className={`text-end font-mono text-[10px] leading-[1.3em] tracking-tighter text-neutral-400`}>
+              <p className={`text-muted-foreground text-end font-mono text-[10px] leading-[1.3em] tracking-tighter`}>
                 {`${startDate} - ${endDate}`}
               </p>
             </div>

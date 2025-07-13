@@ -1,9 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PERSONAL_DATA } from "@/data/personal";
+import { cn } from "@/lib/utils";
 
-export default function AvatarComponent({ className }: { className?: string }) {
+// Square avatar
+export default function AvatarV2({ className }: { className?: string }) {
   return (
-    <Avatar className={className}>
+    <Avatar className={cn("rounded-xl", className)}>
       <AvatarImage src={PERSONAL_DATA.githubAvatar || PERSONAL_DATA.avatar} alt={PERSONAL_DATA.nickname}></AvatarImage>
       <AvatarFallback className="text-3xl">{PERSONAL_DATA.nickname.charAt(0)}</AvatarFallback>
     </Avatar>
