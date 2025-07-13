@@ -1,6 +1,10 @@
+title: "[Bug]: "
 name: Bug Report
 description: Report a bug to help us improve
 labels: ["bug"]
+assignees: AbhiArya20
+projects:
+  - abhiarya
 body:
   - type: markdown
     attributes:
@@ -76,11 +80,12 @@ body:
         backticks.
       render: shell
 
-  - type: markdown
+  - type: textarea
+    id: screenshots
     attributes:
-      value: |
-        ## Images
-        If applicable, add screenshots or screencast to help explain your problem.
+      label: Screenshots
+      description: If applicable, add screenshots or screencast to help explain your problem.
+      placeholder: Drag and drop files here...
 
   - type: markdown
     attributes:
