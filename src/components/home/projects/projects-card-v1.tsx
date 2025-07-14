@@ -39,11 +39,13 @@ export default function ProjectCardV1({ name, icon, description, github, url, im
                   {github && (
                     <Link href={github} target="_blank" rel="noopener">
                       <GithubIcon className="text-muted-foreground size-5 hover:text-blue-400" />
+                      <span className="sr-only">Visit Repository</span>
                     </Link>
                   )}
                   {url && (
                     <Link href={url} target="_blank" rel="noopener">
                       <Link2 className="text-muted-foreground size-5 hover:text-blue-400" />
+                      <span className="sr-only">Visit Website</span>
                     </Link>
                   )}
                 </p>

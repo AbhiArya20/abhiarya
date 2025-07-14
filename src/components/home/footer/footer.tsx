@@ -19,7 +19,7 @@ export default function Footer() {
         <span className="text-muted-foreground">
           Missing something?{" "}
           <Link
-            className="text-blue-200 hover:text-blue-400 hover:text-blue-500"
+            className="text-muted-foreground hover:text-blue-400"
             target="_blank"
             rel="noopener"
             href={PERSONAL_DATA.portfolio}

@@ -47,6 +47,7 @@ export default function ExperienceCardV1({
                   {github && (
                     <Link href={github} target="_blank" rel="noopener">
                       <GithubIcon className="text-muted-foreground size-4 hover:text-blue-400" />
+                      <span className="sr-only">Visit Repository</span>
                     </Link>
                   )}
                 </h1>
