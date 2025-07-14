@@ -1,8 +1,8 @@
-import ActivityCalendarComponentV1 from "@/components/home/activity-calendar/activity-calendar-v1";
+import ActivityCalendarComponent from "@/components/home/activity-calendar/activity-calendar";
 import { getGithubActivity } from "@/actions/get-github-activity";
 
-export default async function ActivityCalendarComponent() {
+export default async function ActivityCalendar() {
   const activities = await getGithubActivity();
 
-  return <ActivityCalendarComponentV1 activities={activities} />;
+  return <ActivityCalendarComponent activities={activities} />;
 }

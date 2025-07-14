@@ -1,7 +1,13 @@
+"use client";
+
 // import { StarsChart } from "@/components/sections/open-source/stars-chart";
 import OpenSourceCardV1 from "@/components/home/open-source/open-source-card-v1";
-import OpenSourceHeader from "@/components/home/open-source/open-source-header";
-import { getGithubPullRequest } from "@/actions/get-github-pull-request";
+import { fadeDownChildVariants } from "@/lib/animation-variants";
+import { GitPullRequestArrow, WifiOff } from "lucide-react";
+import { ActionsReturn, PullRequest } from "@/types";
+import { PERSONAL_DATA } from "@/data/personal";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 // import { DATA } from "@/data/open-source";
 
@@ -81,31 +87,66 @@ export const transformData = (timestamps: string[]): TransformedEntry[] => {
   }));
 };
 
-export default async function OpenSourceV1() {
-  const pullRequest = await getGithubPullRequest();
+export default function OpenSourceSection({ pullRequest }: { pullRequest: ActionsReturn<PullRequest[]> }) {
+  const { data, error } = pullRequest;
 
   return (
     <div className="flex flex-col gap-3">
-      <OpenSourceHeader />
-      {pullRequest?.data?.map(pr => (
-        <OpenSourceCardV1
-          key={pr.id}
-          id={pr.id}
-          title={pr.title}
-          url={pr.url}
-          createdAt={pr.createdAt}
-          state={pr.state}
-          deletions={pr.deletions}
-          additions={pr.additions}
-          number={pr.number}
-          commits={pr.commits}
-          changedFiles={pr.changedFiles}
-          closedAt={pr.closedAt}
-          mergedAt={pr.mergedAt}
-          author={pr.author}
-          repository={pr.repository}
-        />
-      ))}
+      <div className="flex items-end justify-between">
+        <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
+          Open source journey
+        </motion.h2>
+        <Link
+          href={`https://github.com/pulls?q=is:pr+author:${PERSONAL_DATA.github}+archived:false+is:closed`}
+          className="hover:text-blue-400"
+          target="_blank"
+          rel="noopener"
+        >
+          <motion.div variants={fadeDownChildVariants} className="flex flex-row items-center justify-start gap-2">
+            <div className="flex shrink-0 justify-start text-xs font-semibold">See More</div>
+          </motion.div>
+        </Link>
+      </div>
+
+      {error && (
+        <div className="border-border rounded-lg border p-4 shadow-sm">
+          <div className="text-destructive flex h-full items-center justify-center gap-4 py-16">
+            <WifiOff className="size-5" /> <span>{error.message}</span>
+          </div>
+        </div>
+      )}
+
+      {data && data.length > 0 && (
+        <>
+          {data?.map(pr => (
+            <OpenSourceCardV1
+              key={pr.id}
+              id={pr.id}
+              title={pr.title}
+              url={pr.url}
+              createdAt={pr.createdAt}
+              state={pr.state}
+              deletions={pr.deletions}
+              additions={pr.additions}
+              number={pr.number}
+              commits={pr.commits}
+              changedFiles={pr.changedFiles}
+              closedAt={pr.closedAt}
+              mergedAt={pr.mergedAt}
+              author={pr.author}
+              repository={pr.repository}
+            />
+          ))}
+        </>
+      )}
+
+      {data && data.length === 0 && (
+        <div className="border-border rounded-lg border p-4 shadow-sm">
+          <div className="text-muted-foreground flex items-center justify-center gap-4 py-16">
+            <GitPullRequestArrow className="size-5" /> <span>No Pull Requests found...</span>
+          </div>
+        </div>
+      )}
 
       {/* <p className="text-muted-foreground">{DATA.openSource?.description}</p> */}
       {/* <div className="divide-y divide-solid">

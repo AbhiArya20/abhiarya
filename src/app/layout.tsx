@@ -1,4 +1,4 @@
-import ReactQueryProvider from "@/components/providers/react-query";
+import ReactQueryProvider from "@/components/providers/ react-query";
 import ThemeProvider from "@/components/providers/theme-provider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { HighlightInit } from "@highlight-run/next/client";

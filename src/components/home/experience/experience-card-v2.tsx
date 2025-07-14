@@ -2,7 +2,6 @@ import { type Experience } from "@/data/experience";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Tags from "@/components/tags/tags";
-import { Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,16 +36,13 @@ export default function ExperienceCardV2({
           )}
           <div className="flex flex-grow flex-col justify-between">
             <div className="flex items-center justify-between">
-              <h1 className="flex items-center gap-1 text-left text-sm font-semibold">
-                <span>{company}</span>
+              <h1 className="flex items-center gap-2 text-left text-sm font-semibold">
+                <Link href={url} target="_blank" rel="noopener" className="hover:text-blue-400">
+                  {company}
+                </Link>
                 {github && (
                   <Link href={github} target="_blank" rel="noopener">
                     <GithubIcon className="text-muted-foreground size-4" />
-                  </Link>
-                )}
-                {url && (
-                  <Link href={url} target="_blank" rel="noopener">
-                    <Link2 className="text-muted-foreground size-4" />
                   </Link>
                 )}
               </h1>

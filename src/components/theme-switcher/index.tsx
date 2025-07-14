@@ -4,6 +4,6 @@ import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
 
 export default function ThemeSwitcherComponent() {
   const themes = [ThemeSwitcherV1, ThemeSwitcherV2, ThemeSwitcherV3];
-  const SelectedTheme = themes[1];
+  const SelectedTheme = themes[0];
   return <SelectedTheme />;
 }

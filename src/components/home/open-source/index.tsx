@@ -1,7 +1,7 @@
-import OpenSourceV1 from "@/components/home/open-source/open-source";
+import OpenSourceSection from "@/components/home/open-source/open-source";
+import { getGithubPullRequest } from "@/actions/get-github-pull-request";
 
-export default function OpenSource() {
-  const openSource = [OpenSourceV1];
-  const SelectedOpenSource = openSource[0];
-  return <SelectedOpenSource />;
+export default async function OpenSource() {
+  const pullRequest = await getGithubPullRequest();
+  return <OpenSourceSection pullRequest={pullRequest} />;
 }

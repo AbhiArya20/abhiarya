@@ -1,25 +1,30 @@
 "use client";
 
+import ActivityCalendarLoading from "@/components/home/activity-calendar/activity-calendar-loading";
 import { ActivityCalendar, type Activity } from "react-activity-calendar";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ActionsReturn } from "@/types";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
-export default function ActivityCalendarComponentV1({ activities }: { activities: ActionsReturn<Activity[]> }) {
+export default function ActivityCalendarComponent({ activities }: { activities: ActionsReturn<Activity[]> }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   const { data, error } = activities;
 
   useEffect(() => {
     const container = containerRef.current;
+    setMounted(true);
     if (!container) return;
     container.children[0].scrollBy({ left: container.children[0].scrollWidth, behavior: "smooth" });
-  }, [data]);
+  }, [data, mounted]);
 
   const { resolvedTheme } = useTheme();
+
+  if (!mounted) return <ActivityCalendarLoading />;
 
   return (
     <motion.div variants={fadeDownChildVariants} className="border-border rounded-lg border p-4 shadow-sm">

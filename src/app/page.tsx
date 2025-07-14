@@ -1,4 +1,4 @@
-import ActivityCalendarComponent from "@/components/home/activity-calendar";
+import ActivityCalendar from "@/components/home/activity-calendar";
 import Contact from "@/components/home/contact/contact";
 import FadeDown from "@/components/animation/fade-down";
 import OpenSource from "@/components/home/open-source";
@@ -19,7 +19,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <OpenSource />
-        <ActivityCalendarComponent />
+        <ActivityCalendar />
         {/* <Learnings />
         <Education /> */}
         <Contact />
