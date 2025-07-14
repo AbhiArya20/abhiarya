@@ -14,7 +14,7 @@ export const fadeDownParentVariants: Variants = {
       startTime: 5,
       staggerChildren: 0.2,
       staggerDirection: 1,
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 };

@@ -16,6 +16,7 @@ export type PullRequest = {
   state: string;
   deletions: number;
   additions: number;
+  number: number;
   commits: {
     totalCount: number;
   };

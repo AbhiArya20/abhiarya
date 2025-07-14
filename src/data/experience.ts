@@ -26,7 +26,7 @@ export const EXPERIENCE_DATA: Experience[] = [
     shortPosition: "SDE",
     location: "Remote",
     startDate: "Oct 2023",
-    endDate: "Sep 2024",
+    endDate: "present",
     url: "https://mithilastack.com",
     github: "https://github.com/mithilastack",
     image: "/mithilastack.webp",
