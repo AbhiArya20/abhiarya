@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <>
+    <div>
       <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
         Get in touch
       </motion.h2>
@@ -16,7 +16,7 @@ const Contact = () => {
       <motion.div variants={fadeDownChildVariants}>
         <SocialComponent />
       </motion.div>
-    </>
+    </div>
   );
 };
 
