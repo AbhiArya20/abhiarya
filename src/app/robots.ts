@@ -1,6 +1,12 @@
+import { headers } from "next/headers";
 import { MetadataRoute } from "next";
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const headersList = await headers();
+  const host = headersList.get("host");
+  const protocol = headersList.get("x-forwarded-proto") || "http";
+  const domain = `${protocol}://${host}`;
+
   return {
     rules: [
       {
@@ -8,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         crawlDelay: 60 * 60 * 24, // 1 day
       },
     ],
-    sitemap: `/sitemap.xml`,
+    sitemap: `${domain}/sitemap.xml`,
   };
 }

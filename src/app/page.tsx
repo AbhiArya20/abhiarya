@@ -1,14 +1,14 @@
-import ActivityCalendarComponent from "@/components/sections/activity-calendar";
-import Contact from "@/components/sections/contact/contact";
-import OpenSource from "@/components/sections/open-source";
-import Experience from "@/components/sections/experience";
-import Footer from "@/components/sections/footer/footer";
+import ActivityCalendarComponent from "@/components/home/activity-calendar";
+import Contact from "@/components/home/contact/contact";
 import FadeDown from "@/components/animation/fade-down";
-import Learnings from "@/components/sections/learnings";
-import Education from "@/components/sections/education";
-import Projects from "@/components/sections/projects";
-import Headers from "@/components/sections/header";
-import About from "@/components/sections/about";
+import OpenSource from "@/components/home/open-source";
+import Experience from "@/components/home/experience";
+import Footer from "@/components/home/footer/footer";
+// import Learnings from "@/components/sections/learnings";
+// import Education from "@/components/sections/education";
+import Projects from "@/components/home/projects";
+import Headers from "@/components/home/header";
+import About from "@/components/home/about";
 
 export default function Home() {
   return (
@@ -20,8 +20,8 @@ export default function Home() {
         <Projects />
         <OpenSource />
         <ActivityCalendarComponent />
-        <Learnings />
-        <Education />
+        {/* <Learnings />
+        <Education /> */}
         <Contact />
         <Footer />
       </div>

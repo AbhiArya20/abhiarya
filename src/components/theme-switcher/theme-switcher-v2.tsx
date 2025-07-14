@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { motion } from "motion/react";
 import type { JSX } from "react";
 
+import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { cn } from "@/lib/utils";
 
 function ThemeOption({
@@ -63,9 +64,7 @@ export default function ThemeSwitcherV2() {
   const { theme, setTheme } = useTheme();
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      variants={fadeDownChildVariants}
       className="inline-flex items-center overflow-hidden rounded-full bg-white ring-1 ring-zinc-200 ring-inset dark:bg-zinc-950 dark:ring-zinc-700"
       role="radiogroup"
     >

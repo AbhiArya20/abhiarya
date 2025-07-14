@@ -17,6 +17,7 @@ query {
           state
           deletions
           additions
+          number
           commits {
             totalCount
           }
