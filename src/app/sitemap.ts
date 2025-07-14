@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${url}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
-    images: [PERSONAL_DATA.avatar],
+    images: [`${domain}/${PERSONAL_DATA.avatar}`],
   })) as MetadataRoute.Sitemap;
 
   return routes;
