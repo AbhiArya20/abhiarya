@@ -1,4 +1,3 @@
-import ReactQueryProvider from "@/components/providers/ react-query";
 import ThemeProvider from "@/components/providers/theme-provider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { HighlightInit } from "@highlight-run/next/client";
@@ -96,11 +95,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
-        <ReactQueryProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
-          </ThemeProvider>
-        </ReactQueryProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
+        </ThemeProvider>
         <OneKo />
       </body>
       {serverEnv.NODE_ENV === "production" && (
