@@ -30,11 +30,11 @@ export default function ProjectCardV1({ name, icon, description, github, url, im
             )}
             <div className="flex flex-grow flex-col justify-between">
               <div className="flex items-center justify-between">
-                <h1 className="flex items-center gap-1 text-left text-sm font-semibold">
+                <h3 className="flex items-center gap-1 text-left text-sm font-semibold">
                   <Link href={url} target="_blank" rel="noopener" className="hover:text-blue-400">
                     {name}
                   </Link>
-                </h1>
+                </h3>
                 <p className="text-muted-frontend flex items-center gap-2">
                   {github && (
                     <Link href={github} target="_blank" rel="noopener">

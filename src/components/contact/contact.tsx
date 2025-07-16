@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="mb-2">
       <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
         Get in touch
       </motion.h2>

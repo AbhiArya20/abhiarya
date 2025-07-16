@@ -25,13 +25,14 @@ export default function Experience() {
           }
           rel="noopener"
           target="_blank"
+          className="hover:text-blue-400"
         >
           <motion.div
             variants={fadeDownChildVariants}
             className="flex flex-row items-center justify-start gap-2 font-semibold hover:text-blue-400"
           >
-            <div className="size-2.5 flex-none overflow-hidden rounded-full bg-green-500 will-change-transform"></div>
-            <div className="flex shrink-0 justify-start">
+            <div className="size-2 flex-none overflow-hidden rounded-full bg-green-500"></div>
+            <div className="flex shrink-0 justify-start text-xs font-semibold">
               <p>
                 Available <span className="hidden sm:inline">for new opportunities</span>
               </p>

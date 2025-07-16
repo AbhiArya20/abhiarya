@@ -43,7 +43,7 @@ export default function ExperienceCardV1({
             )}
             <div className="flex flex-grow flex-col justify-between">
               <div className="flex items-center justify-between">
-                <h1 className="flex items-center gap-2 text-left text-sm font-semibold">
+                <h3 className="flex items-center gap-2 text-left text-sm font-semibold">
                   <Link href={url} target="_blank" rel="noopener" className="hover:text-blue-400">
                     {company}
                   </Link>
@@ -60,15 +60,13 @@ export default function ExperienceCardV1({
                       <span className="sr-only">Visit Repository</span>
                     </Link>
                   )}
-                </h1>
+                </h3>
                 <p className="text-muted-frontend text-xs font-semibold">{location}</p>
               </div>
               <div className="flex items-center justify-between">
                 <p className="text-muted-foreground hidden text-sm sm:inline">{position}</p>
                 <p className="text-muted-foreground text-sm sm:hidden">{shortPosition} </p>
-                <p className={`text-muted-foreground text-end font-mono text-[10px] leading-[1.3em] tracking-tighter`}>
-                  {`${startDate} - ${endDate}`}
-                </p>
+                <p className={`text-muted-foreground text-end font-mono text-[10px]`}>{`${startDate} - ${endDate}`}</p>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ import {
 import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
 import ProjectCardV1 from "@/components/home/projects/projects-card-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import Contact from "@/components/home/contact/contact";
+import Contact from "@/components/contact/contact";
 import { PROJECT_DATA } from "@/data/projects";
 import { motion } from "framer-motion";
 import Link from "next/link";

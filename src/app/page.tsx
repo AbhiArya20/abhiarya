@@ -1,9 +1,9 @@
 import ActivityCalendar from "@/components/home/activity-calendar";
-import Contact from "@/components/home/contact/contact";
 import FadeDown from "@/components/animation/fade-down";
 import OpenSource from "@/components/home/open-source";
 import Experience from "@/components/home/experience";
 import Footer from "@/components/home/footer/footer";
+import Contact from "@/components/contact/contact";
 // import Learnings from "@/components/sections/learnings";
 // import Education from "@/components/sections/education";
 import Projects from "@/components/home/projects";
