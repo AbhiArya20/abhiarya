@@ -5,6 +5,6 @@ import AboutV1 from "@/components/home/about/about-v1";
 
 export default function About() {
   const about = [AboutV1, AboutV2, AboutV3, AboutV4];
-  const SelectedAbout = about[0];
+  const SelectedAbout = about[2];
   return <SelectedAbout />;
 }

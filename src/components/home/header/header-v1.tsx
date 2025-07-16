@@ -16,9 +16,6 @@ export default function HeaderV1() {
         </motion.span>
         <motion.h1 variants={fadeDownChildVariants} className="text-2xl font-bold whitespace-nowrap">
           {PERSONAL_DATA.name}
-          <span className="ml-1 hidden text-[10px] text-neutral-400 sm:inline dark:text-neutral-700">
-            {"( " + PERSONAL_DATA.nickname + " )"}
-          </span>
         </motion.h1>
         <motion.p
           variants={fadeDownChildVariants}

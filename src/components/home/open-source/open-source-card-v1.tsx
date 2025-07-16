@@ -26,7 +26,7 @@ export default function OpenSourceCardV1({
           <div className="flex-1 overflow-hidden">
             <h3 className="flex justify-start gap-2">
               <Link
-                href={url}
+                href={repository.url}
                 target="_blank"
                 rel="noopener"
                 className="text-muted-foreground truncate hover:text-blue-400"
@@ -43,7 +43,7 @@ export default function OpenSourceCardV1({
                   {`#${number}`}
                 </Link>
                 {" by "}
-                <Link href={url} target="_blank" rel="noopener" className="hover:text-blue-400">
+                <Link href={author.url} target="_blank" rel="noopener" className="hover:text-blue-400">
                   {author.login}
                 </Link>
                 {" was merged "}

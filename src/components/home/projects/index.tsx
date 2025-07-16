@@ -1,13 +1,14 @@
 "use client";
 
 import ProjectsCardV1 from "@/components/home/projects/projects-card-v1";
+import ProjectCardV2 from "@/components/home/projects/projects-card-v2";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PROJECT_DATA } from "@/data/projects";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Projects() {
-  const projectCards = [ProjectsCardV1];
+  const projectCards = [ProjectsCardV1, ProjectCardV2];
   const SelectedProjectCard = projectCards[0];
   const projects = PROJECT_DATA.filter(project => project.featured);
 

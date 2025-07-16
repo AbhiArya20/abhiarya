@@ -22,7 +22,7 @@ export default function Footer() {
             className="text-muted-foreground hover:text-blue-400"
             target="_blank"
             rel="noopener"
-            href={PERSONAL_DATA.portfolio}
+            href={PERSONAL_DATA.olderPortfolio}
           >
             Old Portfolio?
           </Link>

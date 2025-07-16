@@ -1,29 +1,16 @@
 "use client";
+
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import { type Experience } from "@/data/experience";
-// import BadgeComponent from "@/components/badges";
+import { type Project } from "@/data/projects";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Tags from "@/components/tags/tags";
 import { motion } from "framer-motion";
+import { Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-// import BadgeV1 from "@/components/badges/badge-v1";
 
-export default function ExperienceCardV1({
-  company,
-  position,
-  shortPosition,
-  location,
-  startDate,
-  endDate,
-  url,
-  github,
-  icon,
-  image,
-  tags,
-  // type,
-}: Experience) {
+export default function ProjectCardV2({ name, icon, description, github, url, image, tags }: Project) {
   const Icon = Icons[icon!];
   const GithubIcon = Icons.github;
   return (
@@ -37,39 +24,33 @@ export default function ExperienceCardV1({
                 src={image}
                 width={64}
                 height={64}
-                alt={company}
+                alt={name}
                 className="mr-2 h-10 w-10 shrink-0 rounded-md transition-all group-hover:saturate-100 sm:saturate-0"
               />
             )}
             <div className="flex flex-grow flex-col justify-between">
               <div className="flex items-center justify-between">
-                <h1 className="flex items-center gap-2 text-left text-sm font-semibold">
+                <h1 className="flex items-center gap-1 text-left text-sm font-semibold">
                   <Link href={url} target="_blank" rel="noopener" className="hover:text-blue-400">
-                    {company}
+                    {name}
                   </Link>
-                  {/* <BadgeV1
-                    tag={{
-                      name: type as string,
-                      icon: "x",
-                      
-                    }}
-                  /> */}
+                </h1>
+                <p className="text-muted-frontend flex items-center gap-2">
                   {github && (
                     <Link href={github} target="_blank" rel="noopener">
-                      <GithubIcon className="text-muted-foreground size-4 hover:text-blue-400" />
+                      <GithubIcon className="text-muted-foreground size-5 hover:text-blue-400" />
                       <span className="sr-only">Visit Repository</span>
                     </Link>
                   )}
-                </h1>
-                <p className="text-muted-frontend text-xs font-semibold">{location}</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <p className="text-muted-foreground hidden text-sm sm:inline">{position}</p>
-                <p className="text-muted-foreground text-sm sm:hidden">{shortPosition} </p>
-                <p className={`text-muted-foreground text-end font-mono text-[10px] leading-[1.3em] tracking-tighter`}>
-                  {`${startDate} - ${endDate}`}
+                  {url && (
+                    <Link href={url} target="_blank" rel="noopener">
+                      <Link2 className="text-muted-foreground size-5 hover:text-blue-400" />
+                      <span className="sr-only">Visit Website</span>
+                    </Link>
+                  )}
                 </p>
               </div>
+              {description.length > 0 && <p className="text-muted-foreground text-sm">{description[0]}</p>}
             </div>
           </div>
           {tags && <Tags tags={tags} />}

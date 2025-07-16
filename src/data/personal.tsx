@@ -1,4 +1,4 @@
-import BadgeV1 from "@/components/badges/badge-v1";
+import BadgeV2 from "@/components/badges/badge-v2";
 import { Tag } from "@/data/open-source";
 import { JSX } from "react";
 
@@ -68,14 +68,14 @@ export const PERSONAL_DATA: Personal = {
   olderPortfolio: "https://v1.abhiarya.in",
   github: "AbhiArya20",
   twitter: "AbhiArya200",
-  description: `Full Stack Developer with a passion for building high-quality products.`,
+  description: `Software engineer passionate about building high-quality products and contributing to open-source.`,
   descriptionRaw: `Software Developer with over 1 year of experience in building web applications using React, Next.js, Node.js, TypeScript, and Flutter. Passionate about contributing to open-source software, working on personal projects, and continuous learning.`,
   descriptionHtml: (
     <>
       Software Developer with over 1 year of experience in building web applications using{" "}
       <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
         {tags.map(tag => {
-          return <BadgeV1 {...tag} key={tag.name} className="text-muted-foreground"></BadgeV1>;
+          return <BadgeV2 {...tag} key={tag.name} className="text-muted-foreground"></BadgeV2>;
         })}
       </span>{" "}
       and contributing to the community.

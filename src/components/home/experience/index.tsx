@@ -55,6 +55,7 @@ export default function Experience() {
           image={experience.image}
           jobDescription={experience.jobDescription}
           tags={experience.tags}
+          type="full-time"
         />
       ))}
     </div>
