@@ -50,8 +50,8 @@ export default function OpenSourceCardV1({
                 {formatDistanceToNow(new Date(mergedAt), { addSuffix: true })}
               </p>
               <p className="text-muted-foreground text-xs whitespace-nowrap">
-                <span className="text-green-400">{`+${additions}`}</span>
-                {"       "} <span className="text-red-400">{`-${deletions}`}</span>
+                <span className="text-green-500">{`+${additions}`}</span>
+                {"       "} <span className="text-red-500">{`-${deletions}`}</span>
               </p>
             </div>
           </div>
