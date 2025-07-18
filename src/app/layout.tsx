@@ -113,10 +113,7 @@ export default function RootLayout({
             }}
           />
           <Analytics />
-          <GoogleTagManager
-            gtmId={clientEnv.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
-            dataLayerName={PERSONAL_DATA.nickname}
-          />
+          <GoogleTagManager gtmId={clientEnv.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
         </>
       )}
     </html>
