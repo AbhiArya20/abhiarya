@@ -19,6 +19,7 @@ export default function Projects() {
           Featured Projects
         </motion.h2>
         <Link href={"/projects"} className="hover:text-blue-400">
+          <span className="sr-only">See all projects</span>
           <motion.div variants={fadeDownChildVariants} className="flex flex-row items-center justify-start gap-2">
             <div className="flex shrink-0 justify-start text-xs font-semibold">See More</div>
           </motion.div>

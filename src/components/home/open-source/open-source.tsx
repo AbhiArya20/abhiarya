@@ -102,6 +102,7 @@ export default function OpenSourceSection({ pullRequest }: { pullRequest: Action
           target="_blank"
           rel="noopener"
         >
+          <span className="sr-only">Github pull requests</span>
           <motion.div variants={fadeDownChildVariants} className="flex flex-row items-center justify-start gap-2">
             <div className="flex shrink-0 justify-start text-xs font-semibold">See More</div>
           </motion.div>

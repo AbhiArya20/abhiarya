@@ -1,9 +1,9 @@
 "use client";
 import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import CircularAvatar from "@/components/avatar/avatar-v1";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import SocialComponent from "@/components/socials";
+import AvatarComponent from "@/components/avatar";
 import { PERSONAL_DATA } from "@/data/personal";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -16,7 +16,7 @@ export default function HeaderV2() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <motion.span variants={fadeDownChildVariants}>
-            <CircularAvatar className="size-14" />
+            <AvatarComponent className="size-14" />
           </motion.span>
           <div>
             <motion.h1 className="font-semibold whitespace-nowrap" variants={fadeDownChildVariants}>
