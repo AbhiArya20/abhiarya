@@ -158,6 +158,82 @@ const openGraphImages = [
       </div>
     ),
   },
+  {
+    image: (
+      <div
+        style={{
+          margin: 0,
+          padding: 0,
+          height: "100vh",
+          backgroundColor: "black",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          fontFamily: "'Roboto Condensed', sans-serif",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            gap: "2rem",
+            width: "100%",
+            height: "100%",
+            padding: "16px",
+            textAlign: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              width: "1px",
+              border: "1px solid #2D2D2D",
+              left: "3rem",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              width: "1px",
+              border: "1px solid #2D2D2D",
+              right: "3rem",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              height: "1px",
+              border: "1px solid #2D2D2D",
+              top: "3rem",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              height: "1px",
+              border: "1px solid #2D2D2D",
+              bottom: "3rem",
+            }}
+          ></div>
+          <h1 style={{ fontSize: "64px", fontWeight: 500, margin: 0 }}>{PERSONAL_DATA.name}</h1>
+          <p style={{ fontSize: "32px", fontWeight: 500, marginTop: "-20px", color: "darkgray" }}>
+            {PERSONAL_DATA.title}
+          </p>
+        </div>
+      </div>
+    ),
+  },
 ];
 
 export default openGraphImages;

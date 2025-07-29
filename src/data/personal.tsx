@@ -65,7 +65,7 @@ export const PERSONAL_DATA: Personal = {
   emails: ["career.abhiarya@gmail.com", "github.abhiarya@gmail.com", "self.abhiarya@gmail.com", ""],
   phones: ["+919546458806", "+919162388695"],
   portfolio: "https://abhiarya.in",
-  olderPortfolio: "https://v1.abhiarya.in",
+  olderPortfolio: "https://old-portfolio.abhiarya.in",
   github: "AbhiArya20",
   twitter: "AbhiArya200",
   description: `Software engineer passionate about building high-quality products and contributing to open-source.`,

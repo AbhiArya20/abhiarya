@@ -14,13 +14,24 @@ export default function BadgeV2({ name, icon, url, className }: Tag & { classNam
 }
 
 function BadgeWithoutLink({ name, icon, className }: Omit<Tag, "url"> & { className?: string }) {
-  const Icon = Icons[icon];
+  if (icon) {
+    const Icon = Icons[icon];
+    return (
+      <Badge
+        variant={"outline"}
+        className={cn("bg-accent/50 border-muted-foreground rounded-sm border-dashed", className)}
+      >
+        <Icon className="mr-1.5 h-3 w-3" /> {name}
+      </Badge>
+    );
+  }
+
   return (
     <Badge
       variant={"outline"}
       className={cn("bg-accent/50 border-muted-foreground rounded-sm border-dashed", className)}
     >
-      <Icon className="mr-1.5 h-3 w-3" /> {name}
+      {name}
     </Badge>
   );
 }

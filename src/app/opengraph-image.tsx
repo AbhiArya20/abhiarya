@@ -11,7 +11,7 @@ export const alt = PERSONAL_DATA.nickname;
 export const contentType = "image/svg+xml";
 
 export default async function Image() {
-  const SelectedOpenGraphImage = openGraphImages[0];
+  const SelectedOpenGraphImage = openGraphImages[1];
 
   return new ImageResponse(SelectedOpenGraphImage.image, {
     ...size,

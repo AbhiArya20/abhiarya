@@ -6,7 +6,7 @@ import { PERSONAL_DATA } from "@/data/personal";
 
 const query = `
 query {
-  search(query: "is:pr author:${PERSONAL_DATA.github} archived:false is:merged", type: ISSUE, first: 5) {
+  search(query: "is:pr author:${PERSONAL_DATA.github} archived:false is:merged -user:${PERSONAL_DATA.github}", type: ISSUE, first: 5) {
     edges {
       node {
         ... on PullRequest {
@@ -30,6 +30,7 @@ query {
             url
           }
           repository {
+            name
             nameWithOwner
             url
             homepageUrl

@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = ["", "/projects"].map(route => ({
     url: `${url}${route}`,
     lastModified: new Date(),
-    changeFrequency: "weekly",
+    changeFrequency: "daily",
     images: [`${domain}/${PERSONAL_DATA.avatar}`],
   })) as MetadataRoute.Sitemap;
 

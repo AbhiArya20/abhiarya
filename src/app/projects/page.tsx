@@ -1,5 +1,4 @@
-import FadeDown from "@/components/animation/fade-down";
-import ProjectsPage from "@/components/projects";
+import ProjectsPageV1 from "@/components/project-pages/project-page-v1";
 
 export const metadata = {
   title: "Projects",
@@ -8,11 +7,7 @@ export const metadata = {
 };
 
 const ProjectPage = () => {
-  return (
-    <FadeDown>
-      <ProjectsPage />
-    </FadeDown>
-  );
+  return <ProjectsPageV1 />;
 };
 
 export default ProjectPage;

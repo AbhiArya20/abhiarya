@@ -29,6 +29,7 @@ export type PullRequest = {
     url: string;
   };
   repository: {
+    name: string;
     nameWithOwner: string;
     url: string;
     homepageUrl: string;

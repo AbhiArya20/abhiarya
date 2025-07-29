@@ -14,8 +14,8 @@ export type Experience = {
   image?: string;
   jobDescription: string[];
   tags?: Tag[];
+  headingTags?: Tag[];
   icon?: keyof typeof Icons;
-  type: "full-time" | "part-time" | "freelance" | "internship";
   featured?: boolean;
 };
 
@@ -33,7 +33,6 @@ export const EXPERIENCE_DATA: Experience[] = [
     image: "/mithilastack.webp",
     featured: true,
     jobDescription: [],
-    type: "full-time",
   },
   {
     company: "Aaensa Tech",
@@ -46,6 +45,10 @@ export const EXPERIENCE_DATA: Experience[] = [
     image: "/aaensa.webp",
     featured: true,
     jobDescription: [],
-    type: "internship",
+    headingTags: [
+      {
+        name: "Internship",
+      },
+    ],
   },
 ];

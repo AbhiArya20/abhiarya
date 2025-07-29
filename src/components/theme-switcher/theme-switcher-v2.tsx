@@ -1,9 +1,9 @@
 "use client";
 
 import { MonitorIcon, MoonStarIcon, SunIcon } from "lucide-react";
+import { useEffect, useState, type JSX } from "react";
 import { useTheme } from "next-themes";
 import { motion } from "motion/react";
-import type { JSX } from "react";
 
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ function ThemeOption({
   return (
     <button
       className={cn(
-        "relative flex size-8 cursor-default items-center justify-center rounded-full transition-all [&_svg]:size-4",
+        "relative flex size-8 cursor-pointer items-center justify-center rounded-full transition-all [&_svg]:size-4",
         isActive
           ? "text-zinc-950 dark:text-zinc-50"
           : "text-zinc-400 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-50"
@@ -62,6 +62,16 @@ const THEME_OPTIONS = [
 
 export default function ThemeSwitcherV2() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <motion.div
       variants={fadeDownChildVariants}

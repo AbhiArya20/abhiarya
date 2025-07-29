@@ -3,7 +3,7 @@ import { JSX } from "react";
 
 export type Tag = {
   name: string;
-  icon: keyof typeof Icons;
+  icon?: keyof typeof Icons;
   url?: string;
 };
 
