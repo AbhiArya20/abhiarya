@@ -1,6 +1,7 @@
 import ThemeProvider from "@/components/providers/theme-provider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { HighlightInit } from "@highlight-run/next/client";
+import FadeDown from "@/components/animation/fade-down";
 import { Geist, Geist_Mono } from "next/font/google";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { Analytics } from "@vercel/analytics/next";
@@ -9,6 +10,7 @@ import { serverEnv } from "@/config/server-env";
 import { clientEnv } from "@/config/client-env";
 import { PERSONAL_DATA } from "@/data/personal";
 import { PROJECT_DATA } from "@/data/projects";
+import OneKo from "@/components/oneko/oneko";
 import { SOCIAL_DATA } from "@/data/social";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
@@ -95,7 +97,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <FadeDown>
+            <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
+            <OneKo />
+          </FadeDown>
         </ThemeProvider>
       </body>
       {serverEnv.NODE_ENV === "production" && (
