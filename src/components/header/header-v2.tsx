@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function HeaderV2() {
   const currentCompany = EXPERIENCE_DATA.find(experience => experience.endDate?.toLocaleLowerCase() === "present");
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <motion.span variants={fadeDownChildVariants}>

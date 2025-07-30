@@ -9,7 +9,6 @@ import { serverEnv } from "@/config/server-env";
 import { clientEnv } from "@/config/client-env";
 import { PERSONAL_DATA } from "@/data/personal";
 import { PROJECT_DATA } from "@/data/projects";
-import OneKo from "@/components/oneko/oneko";
 import { SOCIAL_DATA } from "@/data/social";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
@@ -98,7 +97,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
-        <OneKo />
       </body>
       {serverEnv.NODE_ENV === "production" && (
         <>
