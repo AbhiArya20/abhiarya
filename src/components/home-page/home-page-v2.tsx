@@ -4,7 +4,6 @@ import ProjectCardV2 from "@/components/projects/project-cards/projects-card-v2"
 import ExperienceCardV2 from "@/components/experience-cards/experience-card-v2";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import FadeDown from "@/components/animation/fade-down";
 import HeaderV3 from "@/components/header/header-v3";
 import FooterV1 from "@/components/footer/footer-v1";
 import { EXPERIENCE_DATA } from "@/data/experience";
@@ -14,44 +13,43 @@ import { motion } from "motion/react";
 
 export default function HomePageV2() {
   return (
-    <FadeDown>
-      <main className="mx-auto mt-16 max-w-xl px-4 py-4 text-zinc-900 dark:text-zinc-100">
-        <HeaderV3 />
-        <Tabs defaultValue="projects">
-          <motion.div variants={fadeDownChildVariants}>
-            <TabsList className="mb-4 -ml-[8px] border-none bg-transparent p-0">
-              <TabsTrigger value="projects" className="!border-none !bg-transparent !shadow-none">
-                Projects
-              </TabsTrigger>
-              <TabsTrigger value="experience" className="!border-none !bg-transparent !shadow-none">
-                Experience
-              </TabsTrigger>
-              <TabsTrigger value="open-source" className="!border-none !bg-transparent !shadow-none">
-                Open Source
-              </TabsTrigger>
-              <TabsTrigger value="tools" className="!border-none !bg-transparent !shadow-none">
-                Skills
-              </TabsTrigger>
-            </TabsList>
-          </motion.div>
-          <TabsContent value="projects">
-            <div className="flex flex-col gap-3">
-              {PROJECT_DATA.map(project => (
-                <ProjectCardV2
-                  key={project.name}
-                  name={project.name}
-                  description={project.description}
-                  icon={project.icon}
-                  image={project.image}
-                  url={project.url}
-                  tags={project.tags}
-                  github={project.github}
-                  featured={project.featured}
-                  screenshot={project.screenshot}
-                />
-              ))}
-            </div>
-            {/* <AnimateIn variant="fadeUp" delay={0}>
+    <main className="mx-auto mt-16 max-w-xl px-4 py-4 text-zinc-900 dark:text-zinc-100">
+      <HeaderV3 />
+      <Tabs defaultValue="projects">
+        <motion.div variants={fadeDownChildVariants}>
+          <TabsList className="mb-4 -ml-[8px] border-none bg-transparent p-0">
+            <TabsTrigger value="projects" className="!border-none !bg-transparent !shadow-none">
+              Projects
+            </TabsTrigger>
+            <TabsTrigger value="experience" className="!border-none !bg-transparent !shadow-none">
+              Experience
+            </TabsTrigger>
+            <TabsTrigger value="open-source" className="!border-none !bg-transparent !shadow-none">
+              Open Source
+            </TabsTrigger>
+            <TabsTrigger value="tools" className="!border-none !bg-transparent !shadow-none">
+              Skills
+            </TabsTrigger>
+          </TabsList>
+        </motion.div>
+        <TabsContent value="projects">
+          <div className="flex flex-col gap-3">
+            {PROJECT_DATA.map(project => (
+              <ProjectCardV2
+                key={project.name}
+                name={project.name}
+                description={project.description}
+                icon={project.icon}
+                image={project.image}
+                url={project.url}
+                tags={project.tags}
+                github={project.github}
+                featured={project.featured}
+                screenshot={project.screenshot}
+              />
+            ))}
+          </div>
+          {/* <AnimateIn variant="fadeUp" delay={0}>
               <section className="mb-12">
                 <div className="space-y-8">
                   <ul className="space-y-8">
@@ -104,29 +102,29 @@ export default function HomePageV2() {
                 </div>
               </section>
             </AnimateIn> */}
-          </TabsContent>
-          <TabsContent value="experience">
-            <div className="flex flex-col gap-3">
-              {EXPERIENCE_DATA.filter(experience => experience.featured).map(experience => (
-                <ExperienceCardV2
-                  key={experience.company}
-                  company={experience.company}
-                  position={experience.position}
-                  shortPosition={experience.shortPosition}
-                  location={experience.location}
-                  startDate={experience.startDate}
-                  endDate={experience.endDate}
-                  url={experience.url}
-                  github={experience.github}
-                  icon={experience.icon}
-                  image={experience.image}
-                  jobDescription={experience.jobDescription}
-                  tags={experience.tags}
-                  headingTags={experience.headingTags}
-                />
-              ))}
-            </div>
-            {/* <AnimateIn variant="fadeUp" delay={0}>
+        </TabsContent>
+        <TabsContent value="experience">
+          <div className="flex flex-col gap-3">
+            {EXPERIENCE_DATA.filter(experience => experience.featured).map(experience => (
+              <ExperienceCardV2
+                key={experience.company}
+                company={experience.company}
+                position={experience.position}
+                shortPosition={experience.shortPosition}
+                location={experience.location}
+                startDate={experience.startDate}
+                endDate={experience.endDate}
+                url={experience.url}
+                github={experience.github}
+                icon={experience.icon}
+                image={experience.image}
+                jobDescription={experience.jobDescription}
+                tags={experience.tags}
+                headingTags={experience.headingTags}
+              />
+            ))}
+          </div>
+          {/* <AnimateIn variant="fadeUp" delay={0}>
               <section className="mb-12">
               <div className="space-y-8">
               <ul className="space-y-8">
@@ -159,9 +157,9 @@ export default function HomePageV2() {
                 </div>
               </section>
             </AnimateIn> */}
-          </TabsContent>
-          <TabsContent value="tools">
-            {/* <AnimateIn variant="fadeUp" delay={0}>
+        </TabsContent>
+        <TabsContent value="tools">
+          {/* <AnimateIn variant="fadeUp" delay={0}>
               <h2 className="text-md mb-4 font-medium">Frontend</h2>
               <section className="mb-12">
                 <div className="flex flex-wrap justify-start gap-x-4 gap-y-6">
@@ -209,11 +207,10 @@ export default function HomePageV2() {
                 </div>
               </section>
             </AnimateIn> */}
-          </TabsContent>
-        </Tabs>
-        <FooterV1 />
-      </main>
-    </FadeDown>
+        </TabsContent>
+      </Tabs>
+      <FooterV1 />
+    </main>
   );
 }
 

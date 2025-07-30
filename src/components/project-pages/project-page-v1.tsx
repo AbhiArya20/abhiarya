@@ -11,7 +11,6 @@ import {
 import ProjectCardV1 from "@/components/projects/project-cards/projects-card-v1";
 import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import FadeDown from "@/components/animation/fade-down";
 import ContactV1 from "@/components/contact/contact-v1";
 import FooterV1 from "@/components/footer/footer-v1";
 import { PROJECT_DATA } from "@/data/projects";
@@ -20,7 +19,7 @@ import Link from "next/link";
 
 export default function ProjectsPageV1() {
   return (
-    <FadeDown>
+    <>
       <motion.div variants={fadeDownChildVariants} className="flex items-start justify-between">
         <Breadcrumb className="mb-4">
           <BreadcrumbList>
@@ -60,6 +59,6 @@ export default function ProjectsPageV1() {
         <ContactV1 />
         <FooterV1 />
       </div>
-    </FadeDown>
+    </>
   );
 }

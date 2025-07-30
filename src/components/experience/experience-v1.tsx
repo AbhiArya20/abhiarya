@@ -9,7 +9,7 @@ import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Experience() {
+export default function ExperienceV1() {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between">

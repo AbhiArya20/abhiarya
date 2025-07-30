@@ -88,7 +88,7 @@ export const transformData = (timestamps: string[]): TransformedEntry[] => {
   }));
 };
 
-export default function OpenSourceSection({ pullRequest }: { pullRequest: ActionsReturn<PullRequest[]> }) {
+export default function OpenSourceV1({ pullRequest }: { pullRequest: ActionsReturn<PullRequest[]> }) {
   const { data, error } = pullRequest;
 
   return (

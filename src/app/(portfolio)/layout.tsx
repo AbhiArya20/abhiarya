@@ -1,3 +1,4 @@
+import FadeDown from "@/components/animation/fade-down";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { EDUCATION_DATA } from "@/data/education";
 import { PERSONAL_DATA } from "@/data/personal";
@@ -75,9 +76,9 @@ export default function PortfolioLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <FadeDown>
       <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
       <OneKo />
-    </>
+    </FadeDown>
   );
 }

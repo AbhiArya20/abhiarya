@@ -1,3 +1,5 @@
+"use client";
+
 import { type Education, EDUCATION_DATA } from "@/data/education";
 import { Card } from "@/components/ui/card";
 import { track } from "@vercel/analytics";

@@ -1,5 +1,7 @@
 import BadgeV2 from "@/components/badges/badge-v2";
+import { track } from "@vercel/analytics";
 import { Tag } from "@/data/open-source";
+import Link from "next/link";
 import { JSX } from "react";
 
 export type Address = {
@@ -25,6 +27,7 @@ export type Personal = {
   description: string;
   descriptionRaw: string;
   descriptionHtml: JSX.Element;
+  shortDescriptionHtml: JSX.Element;
 };
 
 const tags: Tag[] = [
@@ -80,5 +83,31 @@ export const PERSONAL_DATA: Personal = {
       </span>{" "}
       and contributing to the community.
     </>
+  ),
+
+  shortDescriptionHtml: (
+    <p className="text-muted-foreground max-w-xl text-sm">
+      Software Engineer from India. Open to work. Contact me below. Currently building{" "}
+      <Link
+        href="https://coderoom.abhiarya.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-zinc-900 transition-colors hover:text-zinc-900 dark:text-zinc-100 dark:hover:text-zinc-100"
+        onClick={() => track("zero_email_clicked")}
+      >
+        coderoom
+      </Link>{" "}
+      and{" "}
+      <Link
+        href="meeting.abhiarya.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-zinc-900 transition-colors hover:text-zinc-900 dark:text-zinc-100 dark:hover:text-zinc-100"
+        onClick={() => track("oss.now_clicked")}
+      >
+        meeting room
+      </Link>
+      .
+    </p>
   ),
 };
