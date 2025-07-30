@@ -3,7 +3,7 @@ import { Variants } from "motion/react";
 export const fadeDownParentVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: -20,
+    y: 20,
     filter: "blur(10px)",
   },
   show: {

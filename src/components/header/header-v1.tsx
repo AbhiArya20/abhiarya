@@ -1,8 +1,8 @@
 "use client";
 
+import AvatarComponent from "@/components/avatar/avatar-component";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import SocialV1 from "@/components/socials/social-v1";
-import AvatarV2 from "@/components/avatar/avatar-v2";
 import { PERSONAL_DATA } from "@/data/personal";
 import { track } from "@vercel/analytics";
 import { motion } from "motion/react";
@@ -15,7 +15,7 @@ export default function HeaderV1({ image }: { image?: "left" | "right" }) {
     <div className={cn("flex items-center justify-between gap-4", image === "left" && "sm:flex-row-reverse")}>
       <div className="flex-1 space-y-1.5">
         <motion.span variants={fadeDownChildVariants} className="flex self-start sm:hidden">
-          <AvatarV2 className="size-36" />
+          <AvatarComponent className="size-36" />
         </motion.span>
         <motion.h1 variants={fadeDownChildVariants} className="text-2xl font-bold whitespace-nowrap">
           {PERSONAL_DATA.name}
@@ -46,7 +46,7 @@ export default function HeaderV1({ image }: { image?: "left" | "right" }) {
         </motion.div>
       </div>
       <motion.span variants={fadeDownChildVariants} className="hidden sm:flex">
-        <AvatarV2 className="size-36" />
+        <AvatarComponent className="size-36" />
       </motion.span>
     </div>
   );

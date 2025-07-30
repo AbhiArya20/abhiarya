@@ -7,23 +7,21 @@ import React from "react";
 
 export default function TagsV1({ tags }: { tags: Tag[] }) {
   return (
-    <div className="mt-2">
-      <ul className="flex flex-wrap gap-1">
-        {tags.map(tag => {
-          return (
-            <li key={tag.name}>
-              {tag.url ? (
-                <Link href={tag.url} target="_blank" rel="noopener" onClick={() => track(`tag_${tag.name}_clicked`)}>
-                  <BadgeWithoutLink name={tag.name} icon={tag.icon} />
-                </Link>
-              ) : (
+    <ul className="flex flex-wrap gap-1">
+      {tags.map(tag => {
+        return (
+          <li key={tag.name}>
+            {tag.url ? (
+              <Link href={tag.url} target="_blank" rel="noopener" onClick={() => track(`tag_${tag.name}_clicked`)}>
                 <BadgeWithoutLink name={tag.name} icon={tag.icon} />
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+              </Link>
+            ) : (
+              <BadgeWithoutLink name={tag.name} icon={tag.icon} />
+            )}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 

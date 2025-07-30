@@ -3,7 +3,6 @@ import { Tag } from "@/data/open-source";
 
 export type Experience = {
   company: string;
-  shortName?: string;
   position: string;
   shortPosition?: string;
   location: string;
@@ -12,17 +11,15 @@ export type Experience = {
   url: string;
   github?: string;
   image?: string;
-  jobDescription: string[];
-  tags?: Tag[];
-  headingTags?: Tag[];
   icon?: keyof typeof Icons;
+  tags?: Tag[];
+  jobDescription: string[];
   featured?: boolean;
 };
 
 export const EXPERIENCE_DATA: Experience[] = [
   {
     company: "Mithila Stack",
-    shortName: "Mithilastack",
     position: "Software Development Engineer",
     shortPosition: "SDE",
     location: "Remote",
@@ -45,10 +42,5 @@ export const EXPERIENCE_DATA: Experience[] = [
     image: "/aaensa.webp",
     featured: true,
     jobDescription: [],
-    headingTags: [
-      {
-        name: "Internship",
-      },
-    ],
   },
 ];

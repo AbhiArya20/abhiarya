@@ -2,9 +2,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PERSONAL_DATA } from "@/data/personal";
 import { cn } from "@/lib/utils";
 
-export default function AvatarV3({ className }: { className?: string }) {
+export default function AvatarComponent({ className }: { className?: string }) {
   return (
-    <Avatar className={cn("rounded-br-xl", className)}>
+    <Avatar className={cn("rounded-xl", className)}>
       <AvatarImage
         loading="lazy"
         src={PERSONAL_DATA.githubAvatar || PERSONAL_DATA.avatar}

@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import ProjectCardV1 from "@/components/projects/project-cards/projects-card-v1";
-import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
+import ThemeSwitcherV2 from "@/components/theme-switcher/theme-switcher-v2";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import ContactV1 from "@/components/contact/contact-v1";
 import FooterV1 from "@/components/footer/footer-v1";
@@ -34,7 +34,7 @@ export default function ProjectsPageV1() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <ThemeSwitcherV1 />
+        <ThemeSwitcherV2 />
       </motion.div>
       <div className="flex flex-col gap-8">
         <motion.h1 variants={fadeDownChildVariants} className="scroll-m-20 text-4xl font-bold tracking-tight">

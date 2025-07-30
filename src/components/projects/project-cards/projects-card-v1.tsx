@@ -79,7 +79,11 @@ export default function ProjectCardV1({ name, icon, description, github, url, im
               {description.length > 0 && <p className="text-muted-foreground text-sm">{description[0]}</p>}
             </div>
           </div>
-          {tags && <TagsV2 tags={tags} />}
+          {tags && (
+            <div className="mt-2">
+              <TagsV2 tags={tags} />
+            </div>
+          )}
         </div>
       </Card>
     </motion.div>

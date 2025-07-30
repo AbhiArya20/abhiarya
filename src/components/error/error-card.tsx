@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-export default function ActivityCalendarError({
+export default function ErrorCard({
   message,
   icon,
   className,
@@ -15,7 +15,6 @@ export default function ActivityCalendarError({
       <div className={cn("flex h-full items-center justify-center gap-4 py-16", className)}>
         {icon}
         <span>{message}</span>
-        {/* <WifiOff className="size-5" /> <span>{error.message}</span> */}
       </div>
     </div>
   );

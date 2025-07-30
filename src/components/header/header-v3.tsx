@@ -1,6 +1,6 @@
 "use client";
 
-import ThemeSwitcherV3 from "@/components/theme-switcher/theme-switcher-v3";
+import ThemeSwitcherV2 from "@/components/theme-switcher/theme-switcher-v2";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import SocialV3 from "@/components/socials/social-v3";
 import { PERSONAL_DATA } from "@/data/personal";
@@ -12,7 +12,7 @@ export default function HeaderV3() {
       {/* <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <motion.span variants={fadeDownChildVariants}>
-            <AvatarV2 className="size-14" />
+            <AvatarComponent className="size-14" />
           </motion.span>
           <div>
             <motion.h1 className="font-semibold whitespace-nowrap" variants={fadeDownChildVariants}>
@@ -24,15 +24,14 @@ export default function HeaderV3() {
           </div>
         </div>
         <motion.div className="hidden sm:block" variants={fadeDownChildVariants}>
-          <ThemeSwitcherV3 />
+          <ThemeSwitcherV2 />
         </motion.div>
       </div> */}
       <div className="flex items-center justify-between">
         <motion.h1 variants={fadeDownChildVariants} className="text-2xl font-medium tracking-tight">
-          {/* font-bold whitespace-nowrap */}
           Hey, I&apos;m {PERSONAL_DATA.name.split(" ")[0]}
         </motion.h1>
-        <ThemeSwitcherV3 />
+        <ThemeSwitcherV2 />
       </div>
       <motion.div variants={fadeDownChildVariants} className="flex items-center">
         {PERSONAL_DATA.shortDescriptionHtml}

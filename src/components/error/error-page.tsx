@@ -12,7 +12,7 @@ type ErrorProps = {
   btn: string;
 };
 
-export default function PageErrorComponent({ status, message, btn }: ErrorProps) {
+export default function ErrorPage({ status, message, btn }: ErrorProps) {
   return (
     <motion.section
       className="flex min-h-[calc(100vh-2rem)] w-full flex-1 flex-col items-center justify-center p-4 text-center sm:min-h-[calc(100vh-8rem)]"

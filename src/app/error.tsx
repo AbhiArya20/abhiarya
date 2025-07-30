@@ -1,7 +1,7 @@
 "use client";
 
-import PageErrorComponent from "@/components/error/error";
+import ErrorPage from "@/components/error/error-page";
 
 export default function Error() {
-  return <PageErrorComponent status={500} message="We’re sorry, something went wrong on our end." btn="Go Home" />;
+  return <ErrorPage status={500} message="We’re sorry, something went wrong on our end." btn="Go Home" />;
 }

@@ -10,8 +10,8 @@ export default function AboutV3() {
       <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
         About me
       </motion.h2>
-      <motion.p variants={fadeDownChildVariants} className="text-muted-foreground font-mono leading-6">
-        {PERSONAL_DATA.descriptionHtml}
+      <motion.p variants={fadeDownChildVariants} className="text-muted-foreground font-mono text-sm leading-6">
+        {PERSONAL_DATA.descriptionRaw}
       </motion.p>
     </div>
   );

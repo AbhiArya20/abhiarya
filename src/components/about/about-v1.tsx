@@ -11,7 +11,7 @@ export default function AboutV1() {
         About me
       </motion.h2>
       <motion.p variants={fadeDownChildVariants} className="text-muted-foreground font-mono text-sm leading-6">
-        {PERSONAL_DATA.descriptionRaw}
+        {PERSONAL_DATA.descriptionHtml}
       </motion.p>
     </div>
   );

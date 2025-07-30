@@ -1,6 +1,6 @@
 "use client";
 
-import ThemeSwitcherV2 from "@/components/theme-switcher/theme-switcher-v2";
+import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PERSONAL_DATA } from "@/data/personal";
 import { motion } from "framer-motion";
@@ -29,7 +29,7 @@ export default function FooterV1() {
           </Link>
         </span> */}
       </div>
-      <ThemeSwitcherV2 />
+      <ThemeSwitcherV1 />
     </motion.div>
   );
 }

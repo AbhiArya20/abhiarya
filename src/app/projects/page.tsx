@@ -1,4 +1,4 @@
-import ProjectsPageV1 from "@/components/project-pages/project-page-v1";
+import ProjectsPageV1 from "@/components/project-pages/project-page-v1/project-page-v1";
 
 export const metadata = {
   title: "Projects",
