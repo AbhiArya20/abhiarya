@@ -56,13 +56,18 @@ export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
     return { error: { message: "GitHub response is missing expected data." } };
   }
 
-  const contributions: Activity[] = data.user.contributionsCollection.contributionCalendar.weeks.flatMap((week: Week) =>
+  let contributions: Activity[] = data.user.contributionsCollection.contributionCalendar.weeks.flatMap((week: Week) =>
     week.contributionDays.map(day => ({
       date: day.date,
       count: day.contributionCount,
       level: getLevel(day.contributionCount),
     }))
   );
+
+  // Removed older contributions to keep the calendar clean
+  if (contributions.length > 350) {
+    contributions = contributions.slice(contributions.length - 350);
+  }
 
   return { data: contributions };
 }

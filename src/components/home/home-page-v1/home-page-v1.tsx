@@ -1,10 +1,10 @@
-import ActivityCalendarV1 from "@/components/activity-calendar/activity-calendar-v1";
+// import Learnings from "@/components/sections/learnings";
+// import Education from "@/components/sections/education";
+import ActivityCalendarV2 from "@/components/activity-calendar/activity-calendar-v2";
+import ProjectsV1 from "@/components/projects/projects-list/projects-list-v1";
 import OpenSource from "@/components/home/home-page-v1/open-source";
 import Experience from "@/components/home/home-page-v1/experience";
 import { getGithubActivity } from "@/actions/get-github-activity";
-// import Learnings from "@/components/sections/learnings";
-// import Education from "@/components/sections/education";
-import Projects from "@/components/home/home-page-v1/projects";
 import FadeDown from "@/components/animation/fade-down";
 import ContactV1 from "@/components/contact/contact-v1";
 import HeaderV1 from "@/components/header/header-v1";
@@ -20,9 +20,9 @@ export default async function HomePageV1() {
         <HeaderV1 />
         <AboutV3 />
         <Experience />
-        <Projects />
+        <ProjectsV1 />
         <OpenSource />
-        <ActivityCalendarV1 activities={activities} />
+        <ActivityCalendarV2 activities={activities} />
         {/* <Learnings />
         <Education /> */}
         <ContactV1 />

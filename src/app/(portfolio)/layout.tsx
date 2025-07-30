@@ -1,29 +1,11 @@
-import ThemeProvider from "@/components/providers/theme-provider";
-import { GoogleTagManager } from "@next/third-parties/google";
-import { HighlightInit } from "@highlight-run/next/client";
-import { Geist, Geist_Mono } from "next/font/google";
 import { EXPERIENCE_DATA } from "@/data/experience";
-import { Analytics } from "@vercel/analytics/next";
 import { EDUCATION_DATA } from "@/data/education";
-import { serverEnv } from "@/config/server-env";
-import { clientEnv } from "@/config/client-env";
 import { PERSONAL_DATA } from "@/data/personal";
 import { PROJECT_DATA } from "@/data/projects";
 import OneKo from "@/components/oneko/oneko";
 import { SOCIAL_DATA } from "@/data/social";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
-import "@/app/globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   // We can use `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` to get the production URL of the project on Vercel
@@ -87,35 +69,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+export default function PortfolioLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-background min-h-screen font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-        <OneKo />
-      </body>
-      {serverEnv.NODE_ENV === "production" && (
-        <>
-          <HighlightInit
-            projectId={clientEnv.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
-            serviceName={PERSONAL_DATA.nickname.split(" ").join("-").toLowerCase()}
-            tracingOrigins
-            networkRecording={{
-              enabled: true,
-              recordHeadersAndBody: true,
-              urlBlocklist: [],
-            }}
-          />
-          <Analytics />
-          <GoogleTagManager gtmId={clientEnv.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
-        </>
-      )}
-    </html>
+    <>
+      <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">{children}</main>
+      <OneKo />
+    </>
   );
 }

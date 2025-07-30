@@ -1,13 +1,13 @@
 "use client";
 
-import ProjectCardV1 from "@/components/project-cards/projects-card-v1";
+import ProjectCardV1 from "@/components/projects/project-cards/projects-card-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PROJECT_DATA } from "@/data/projects";
 import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Projects() {
+export default function ProjectsV1() {
   const projects = PROJECT_DATA.filter(project => project.featured);
   return (
     <div className="flex flex-col gap-3">

@@ -18,9 +18,7 @@ export const PROJECT_DATA: Project[] = [
     name: "Coderoom",
     image: "/abhi-arya.webp",
     screenshot: "/abhi-arya.webp",
-    description: [
-      "A modern CDE for everything you need to run your app. You can run any app on Coderoom.including the ones that are not supported by the browser.",
-    ],
+    description: ["A modern CDE for everything you need to run your app. You can run any app on Coderoom."],
     url: "https://coderoom.abhiarya.in/",
     github: "https://github.com/AbhiArya20/coderoom",
     featured: true,

@@ -3,6 +3,7 @@ import { fadeDownChildVariants } from "@/lib/animation-variants";
 import SocialV1 from "@/components/socials/social-v1";
 import AvatarV2 from "@/components/avatar/avatar-v2";
 import { PERSONAL_DATA } from "@/data/personal";
+import AvatarV7 from "../avatar/avatar-v7";
 import { track } from "@vercel/analytics";
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
@@ -44,7 +45,7 @@ export default function HeaderV1() {
         </motion.div>
       </div>
       <motion.span variants={fadeDownChildVariants} className="hidden sm:flex">
-        <AvatarV2 className="size-36" />
+        <AvatarV7 className="size-36" />
       </motion.span>
     </div>
   );

@@ -8,8 +8,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import ProjectCardV1 from "@/components/projects/project-cards/projects-card-v1";
 import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
-import ProjectCardV1 from "@/components/project-cards/projects-card-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import FadeDown from "@/components/animation/fade-down";
 import ContactV1 from "@/components/contact/contact-v1";
@@ -19,9 +19,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function ProjectsPageV1() {
-  const projectCards = [ProjectCardV1];
-  const SelectedProjectCard = projectCards[0];
-
   return (
     <FadeDown>
       <motion.div variants={fadeDownChildVariants} className="flex items-start justify-between">
@@ -46,7 +43,7 @@ export default function ProjectsPageV1() {
         </motion.h1>
         <div className="space-y-3 py-4">
           {PROJECT_DATA.map(project => (
-            <SelectedProjectCard
+            <ProjectCardV1
               key={project.name}
               name={project.name}
               description={project.description}

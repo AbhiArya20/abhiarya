@@ -12,7 +12,7 @@ import { ActionsReturn } from "@/types";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
-export default function ActivityCalendarV1({
+export default function ActivityCalendarV2({
   activities,
   color,
 }: {
@@ -36,7 +36,7 @@ export default function ActivityCalendarV1({
   const theme = color ? THEMES[color] : undefined;
 
   return (
-    <motion.div variants={fadeDownChildVariants} className="border-border rounded-lg border p-4 shadow-sm">
+    <motion.div variants={fadeDownChildVariants}>
       {error && (
         <ActivityCalendarError
           message={error.message}
@@ -46,30 +46,27 @@ export default function ActivityCalendarV1({
       )}
 
       {data && data.length > 0 && (
-        <>
-          <div className="flex justify-center overflow-hidden">
-            <ActivityCalendar
-              fontSize={12}
-              labels={{
-                totalCount: "{{count}} contributions in the last year",
-              }}
-              colorScheme={mounted ? (resolvedTheme as "light" | "dark" | undefined) : undefined}
-              theme={theme}
-              data={data}
-              ref={containerRef}
-              renderBlock={(block, activity) =>
-                cloneElement(block, {
-                  "data-tooltip-id": "react-tooltip",
-                  "data-tooltip-html": `${activity.count} activities on ${activity.date}`,
-                })
-              }
-            />
-            <ReactTooltip id="react-tooltip" />
-          </div>
-          <div className="mt-2 text-center">
-            <p className="text-muted-foreground text-xs">← Scroll to view older contributions</p>
-          </div>
-        </>
+        <div className="flex justify-center overflow-hidden">
+          <ActivityCalendar
+            blockSize={11}
+            fontSize={12}
+            blockMargin={2}
+            labels={{
+              totalCount: "{{count}} contributions in the last year",
+            }}
+            theme={theme}
+            colorScheme={mounted ? (resolvedTheme as "light" | "dark" | undefined) : undefined}
+            data={data}
+            ref={containerRef}
+            renderBlock={(block, activity) =>
+              cloneElement(block, {
+                "data-tooltip-id": "react-tooltip",
+                "data-tooltip-html": `${activity.count} activities on ${activity.date}`,
+              })
+            }
+          />
+          <ReactTooltip id="react-tooltip" />
+        </div>
       )}
 
       {data && data.length === 0 && (
