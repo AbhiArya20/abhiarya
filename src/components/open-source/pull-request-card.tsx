@@ -7,6 +7,7 @@ import { track } from "@vercel/analytics";
 import { GitMerge } from "lucide-react";
 import { motion } from "framer-motion";
 import { PullRequest } from "@/types";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function PullRequestCard({
@@ -18,10 +19,11 @@ export default function PullRequestCard({
   mergedAt,
   author,
   repository,
-}: PullRequest) {
+  className,
+}: PullRequest & { className?: string }) {
   return (
     <motion.div variants={fadeDownChildVariants}>
-      <Card className="border-none p-4 sm:rounded-lg dark:bg-neutral-900">
+      <Card className={cn("border-none p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
         <div className="flex items-start gap-2">
           <GitMerge className="mt-2 size-5 shrink-0 text-violet-400" />
           <div className="flex-1 overflow-hidden">

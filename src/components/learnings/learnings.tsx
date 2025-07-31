@@ -37,6 +37,7 @@ export default function Learnings() {
           url={experience.url}
           image={experience.image}
           icon={experience.icon}
+          className="bg-transparent dark:bg-transparent"
         />
       ))}
     </div>
