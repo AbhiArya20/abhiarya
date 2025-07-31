@@ -53,6 +53,7 @@ export default function ProjectsPage() {
               tags={project.tags}
               github={project.github}
               featured={project.featured}
+              className="border-accent border-2 bg-transparent dark:bg-transparent"
             />
           ))}
         </div>
