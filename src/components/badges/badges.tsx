@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
-import { Tag } from "@/data/open-source";
 import { cn } from "@/lib/utils";
+import { Tag } from "@/types";
 import Link from "next/link";
 
 export default function Badges({ name, icon, url, className }: Tag & { className?: string }) {

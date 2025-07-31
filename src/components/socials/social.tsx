@@ -1,4 +1,5 @@
 "use client";
+
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { SOCIAL_DATA } from "@/data/social";
 import { Icons } from "@/components/icons";

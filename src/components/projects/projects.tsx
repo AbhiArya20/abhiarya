@@ -29,6 +29,7 @@ export default function Projects() {
           description={project.description}
           icon={project.icon}
           image={project.image}
+          preview={project.preview}
           url={project.url}
           tags={project.tags}
           github={project.github}

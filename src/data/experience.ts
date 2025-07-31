@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { Tag } from "@/data/open-source";
+import { Tag } from "@/types";
 
 export type Experience = {
   company: string;

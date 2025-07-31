@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { Tag } from "@/data/open-source";
+import { Tag } from "@/types";
 
 export type Project = {
   name: string;
@@ -10,6 +10,7 @@ export type Project = {
   featured?: boolean;
   icon?: keyof typeof Icons;
   image?: string;
+  preview?: string;
   screenshot: string;
 };
 
@@ -30,6 +31,7 @@ export const PROJECT_DATA: Project[] = [
   {
     name: "Meeting Room",
     image: "/abhi-arya.webp",
+    preview: "/abhi-arya.webp",
     screenshot: "/abhi-arya.webp",
     description: ["A modern CDE for everything you need to run your app."],
     url: "https://coderoom.abhiarya.in/",

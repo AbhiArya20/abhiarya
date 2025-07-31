@@ -1,13 +1,13 @@
 "use client";
 
 import { fadeDownChildVariants } from "@/lib/animation-variants";
+import { AnimatePresence, motion } from "framer-motion";
 import { Eye, EyeClosed, Link2 } from "lucide-react";
 import { type Project } from "@/data/projects";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import Tags from "@/components/tags/tags";
 import { track } from "@vercel/analytics";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Image from "next/image";
@@ -20,18 +20,48 @@ export default function ProjectCard({
   github,
   url,
   image,
+  preview,
   tags,
   className,
 }: Project & { className?: string }) {
   const Icon = Icons[icon!];
   const GithubIcon = Icons.github;
 
-  const [preview, setPreview] = useState(false);
+  const [openPreview, setOpenPreview] = useState(false);
 
   return (
     <motion.div variants={fadeDownChildVariants}>
       <Card className={cn("group border-none p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
         <div className="flex flex-col gap-2">
+          {preview && (
+            <AnimatePresence>
+              {openPreview && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0, transformOrigin: "bottom" }}
+                  animate={{
+                    opacity: 1,
+                    height: openPreview ? "auto" : 0,
+                    marginBottom: openPreview ? "1rem" : 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    height: 0,
+                    marginBottom: 0,
+                  }}
+                  transition={{ duration: 1 }}
+                  className="overflow-hidden rounded-xl"
+                >
+                  <Image
+                    src={preview}
+                    width={64}
+                    height={64}
+                    alt={name}
+                    className="aspect-video w-full shrink-0 rounded-xl transition-all group-hover:saturate-100 sm:saturate-0"
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          )}
           <div className="flex w-full gap-2">
             {icon && <Icon className="mr-2 h-10 w-10 shrink-0 transition-all group-hover:saturate-100 sm:saturate-0" />}
             {image && (
@@ -57,9 +87,9 @@ export default function ProjectCard({
                   </Link>
                 </h3>
                 <p className="text-muted-frontend flex items-center gap-2">
-                  {image && (
-                    <span onClick={() => setPreview(!preview)} className="cursor-pointer">
-                      {preview ? (
+                  {preview && (
+                    <span onClick={() => setOpenPreview(!openPreview)} className="cursor-pointer">
+                      {openPreview ? (
                         <EyeClosed className="text-muted-foreground size-5 hover:text-blue-400" />
                       ) : (
                         <Eye className="text-muted-foreground size-5 hover:text-blue-400" />

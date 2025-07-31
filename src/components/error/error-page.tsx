@@ -1,4 +1,5 @@
 "use client";
+
 import { fadeDownChildVariants, fadeDownParentVariants } from "@/lib/animation-variants";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";

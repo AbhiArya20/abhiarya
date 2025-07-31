@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
 import { track } from "@vercel/analytics";
-import { Tag } from "@/data/open-source";
+import { Tag } from "@/types";
 import Link from "next/link";
 import React from "react";
 

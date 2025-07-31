@@ -1,11 +1,10 @@
 "use client";
 
 import { MonitorIcon, MoonStarIcon, SunIcon } from "lucide-react";
+import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { useEffect, useState, type JSX } from "react";
 import { useTheme } from "next-themes";
 import { motion } from "motion/react";
-
-import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { cn } from "@/lib/utils";
 
 function ThemeOption({

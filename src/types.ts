@@ -1,3 +1,5 @@
+import { Icons } from "@/components/icons";
+
 export type ContributionDays = {
   color: string;
   contributionCount: number;
@@ -47,4 +49,10 @@ export type ActionsReturn<T> = {
     message: string;
   };
   data?: T;
+};
+
+export type Tag = {
+  name: string;
+  icon?: keyof typeof Icons;
+  url?: string;
 };

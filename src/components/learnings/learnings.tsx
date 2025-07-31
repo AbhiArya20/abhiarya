@@ -2,7 +2,7 @@
 
 import LearningCard from "@/components/learnings/learnings-card";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import { EXPERIENCE_DATA } from "@/data/experience";
+import { LEARNINGS_DATA } from "@/data/learnings";
 import { track } from "@vercel/analytics";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -28,21 +28,15 @@ export default function Learnings() {
         </Link>
       </div>
 
-      {EXPERIENCE_DATA.filter(experience => experience.featured).map(experience => (
+      {LEARNINGS_DATA.map(experience => (
         <LearningCard
-          key={experience.company}
-          company={experience.company}
-          position={experience.position}
-          shortPosition={experience.shortPosition}
-          location={experience.location}
-          startDate={experience.startDate}
-          endDate={experience.endDate}
+          key={experience.title}
+          title={experience.title}
+          description={experience.description}
+          date={experience.date}
           url={experience.url}
-          github={experience.github}
-          icon={experience.icon}
           image={experience.image}
-          jobDescription={experience.jobDescription}
-          tags={experience.tags}
+          icon={experience.icon}
         />
       ))}
     </div>
