@@ -1,10 +1,10 @@
 "use client";
 
-import PullRequestCardV1 from "@/components/pull-request-cards/pull-request-card-v1";
-import ActivityCalendarV1 from "@/components/activity-calendar/activity-calendar-v1";
+import PullRequestCardV1 from "@/components/open-source/pull-request-cards/pull-request-card-v1";
+import ActivityCalendarV1 from "@/components/open-source/activity-calendar/activity-calendar-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
+import ErrorCard from "@/components/shared/error/error-card";
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
-import ErrorCard from "@/components/error/error-card";
 import { ActionsReturn, PullRequest } from "@/types";
 import { Activity } from "react-activity-calendar";
 import { PERSONAL_DATA } from "@/data/personal";

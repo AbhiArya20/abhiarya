@@ -1,6 +1,6 @@
 "use client";
 
-import ExperienceCardV1 from "@/components/experience-cards/experience-card-v1";
+import ExperienceCardV1 from "@/components/experience/experience-cards/experience-card-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { PERSONAL_DATA } from "@/data/personal";

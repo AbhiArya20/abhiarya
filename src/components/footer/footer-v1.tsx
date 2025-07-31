@@ -1,6 +1,6 @@
 "use client";
 
-import ThemeSwitcherV1 from "@/components/theme-switcher/theme-switcher-v1";
+import ThemeSwitcherV1 from "@/components/shared/theme-switcher/theme-switcher-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PERSONAL_DATA } from "@/data/personal";
 import { motion } from "framer-motion";

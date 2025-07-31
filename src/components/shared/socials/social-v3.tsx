@@ -1,6 +1,6 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Icons } from "@/components/shared/icons";
 import { SOCIAL_DATA } from "@/data/social";
-import { Icons } from "@/components/icons";
 import { track } from "@vercel/analytics";
 import { cn } from "@/lib/utils";
 import Link from "next/link";

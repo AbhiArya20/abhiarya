@@ -1,12 +1,12 @@
 "use client";
 
+import { THEMES } from "@/components/open-source/activity-calendar/themes";
 import { ActivityCalendar, type Activity } from "react-activity-calendar";
 import { cloneElement, useEffect, useRef, useState } from "react";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import { THEMES } from "@/components/activity-calendar/themes";
+import ErrorCard from "@/components/shared/error/error-card";
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import ErrorCard from "@/components/error/error-card";
 import "react-tooltip/dist/react-tooltip.css";
 import { ActionsReturn } from "@/types";
 import { motion } from "framer-motion";

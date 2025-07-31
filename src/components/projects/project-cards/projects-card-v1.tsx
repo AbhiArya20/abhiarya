@@ -1,22 +1,36 @@
 "use client";
 
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import TagsV2 from "@/components/tags/tags-v2";
+import TagsV1 from "@/components/shared/tags/tags-v1";
+import { Eye, EyeClosed, Link2 } from "lucide-react";
+import { Icons } from "@/components/shared/icons";
 import { type Project } from "@/data/projects";
 import { Card } from "@/components/ui/card";
-import { Icons } from "@/components/icons";
 import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
-import { Link2 } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectCardV1({ name, icon, description, github, url, image, tags }: Project) {
+export default function ProjectCardV1({
+  name,
+  icon,
+  description,
+  github,
+  url,
+  image,
+  tags,
+  className,
+}: Project & { className?: string }) {
   const Icon = Icons[icon!];
   const GithubIcon = Icons.github;
+
+  const [preview, setPreview] = useState(false);
+
   return (
     <motion.div variants={fadeDownChildVariants}>
-      <Card className="group border-none bg-transparent p-4 sm:rounded-lg">
+      <Card className={cn("group border-none p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
         <div className="flex flex-col gap-2">
           <div className="flex w-full gap-2">
             {icon && <Icon className="mr-2 h-10 w-10 shrink-0 transition-all group-hover:saturate-100 sm:saturate-0" />}
@@ -43,6 +57,16 @@ export default function ProjectCardV1({ name, icon, description, github, url, im
                   </Link>
                 </h3>
                 <p className="text-muted-frontend flex items-center gap-2">
+                  {image && (
+                    <span onClick={() => setPreview(!preview)} className="cursor-pointer">
+                      {preview ? (
+                        <EyeClosed className="text-muted-foreground size-5 hover:text-blue-400" />
+                      ) : (
+                        <Eye className="text-muted-foreground size-5 hover:text-blue-400" />
+                      )}
+                      <span className="sr-only">Preview</span>
+                    </span>
+                  )}
                   {github && (
                     <Link
                       href={github}
@@ -65,7 +89,11 @@ export default function ProjectCardV1({ name, icon, description, github, url, im
               {description.length > 0 && <p className="text-muted-foreground text-sm">{description[0]}</p>}
             </div>
           </div>
-          {tags && <TagsV2 tags={tags} />}
+          {tags && (
+            <div className="mt-2">
+              <TagsV1 tags={tags} />
+            </div>
+          )}
         </div>
       </Card>
     </motion.div>

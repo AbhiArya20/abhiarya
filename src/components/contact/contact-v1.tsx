@@ -1,7 +1,7 @@
 "use client";
 
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import SocialV1 from "@/components/socials/social-v1";
+import SocialV1 from "@/components/shared/socials/social-v1";
 import { motion } from "framer-motion";
 
 const ContactV1 = () => {

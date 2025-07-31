@@ -2,10 +2,10 @@
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import TagsV1 from "@/components/tags/tags-v1";
+import TagsV1 from "@/components/shared/tags/tags-v1";
+import { Icons } from "@/components/shared/icons";
 import { type Project } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
-import { Icons } from "@/components/icons";
 import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 import { Link2 } from "lucide-react";

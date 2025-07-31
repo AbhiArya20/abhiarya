@@ -1,4 +1,4 @@
-import { Icons } from "@/components/icons";
+import { Icons } from "@/components/shared/icons";
 import { JSX } from "react";
 
 export type Tag = {

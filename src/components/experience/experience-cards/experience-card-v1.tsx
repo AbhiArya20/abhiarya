@@ -1,17 +1,17 @@
 "use client";
 
 import { fadeDownChildVariants } from "@/lib/animation-variants";
+import TagsV2 from "@/components/shared/tags/tags-v1";
 import { type Experience } from "@/data/experience";
-import TagsV2 from "@/components/tags/tags-v1";
+import { Icons } from "@/components/shared/icons";
 import { Card } from "@/components/ui/card";
-import { Icons } from "@/components/icons";
 import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function LearningCardV1({
+export default function ExperienceCardV1({
   company,
   position,
   shortPosition,

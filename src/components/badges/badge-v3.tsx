@@ -1,6 +1,6 @@
 "use client";
 
-import { Icons } from "@/components/icons";
+import { Icons } from "@/components/shared/icons";
 import { track } from "@vercel/analytics";
 import { Tag } from "@/data/open-source";
 import { cn } from "@/lib/utils";

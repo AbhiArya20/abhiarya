@@ -1,5 +1,5 @@
+import ProjectsV1 from "@/components/projects/projects-list/projects-list-v1";
 import { getGithubPullRequest } from "@/actions/get-github-pull-request";
-import ProjectsV1 from "@/components/projects-list/projects-list-v1";
 import OpenSourceV1 from "@/components/open-source/open-source-v1";
 import { getGithubActivity } from "@/actions/get-github-activity";
 import ExperienceV1 from "@/components/experience/experience-v1";

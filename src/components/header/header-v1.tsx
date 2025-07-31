@@ -2,7 +2,7 @@
 
 import AvatarComponent from "@/components/avatar/avatar-component";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import SocialV1 from "@/components/socials/social-v1";
+import SocialV1 from "@/components/shared/socials/social-v1";
 import { PERSONAL_DATA } from "@/data/personal";
 import { track } from "@vercel/analytics";
 import { motion } from "motion/react";

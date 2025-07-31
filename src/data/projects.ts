@@ -1,4 +1,4 @@
-import { Icons } from "@/components/icons";
+import { Icons } from "@/components/shared/icons";
 import { Tag } from "@/data/open-source";
 
 export type Project = {

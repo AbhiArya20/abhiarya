@@ -1,9 +1,9 @@
 "use client";
 
-import ThemeSwitcherV2 from "@/components/theme-switcher/theme-switcher-v2";
+import ThemeSwitcherV2 from "@/components/shared/theme-switcher/theme-switcher-v2";
 import AvatarComponent from "@/components/avatar/avatar-component";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import SocialV1 from "@/components/socials/social-v1";
+import SocialV1 from "@/components/shared/socials/social-v1";
 import { PERSONAL_DATA } from "@/data/personal";
 import { motion } from "motion/react";
 
