@@ -1,4 +1,4 @@
-import { Icons } from "@/components/shared/icons";
+import { Icons } from "@/components/icons";
 
 export type Social = {
   name: string;

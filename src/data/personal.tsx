@@ -1,4 +1,4 @@
-import BadgeV2 from "@/components/badges/badge-v2";
+import Badges from "@/components/badges/badges";
 import { track } from "@vercel/analytics";
 import { Tag } from "@/data/open-source";
 import Link from "next/link";
@@ -78,7 +78,7 @@ export const PERSONAL_DATA: Personal = {
       Software Developer with over 1 year of experience in building web applications using{" "}
       <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
         {tags.map(tag => {
-          return <BadgeV2 {...tag} key={tag.name} className="text-muted-foreground"></BadgeV2>;
+          return <Badges {...tag} key={tag.name} className="text-muted-foreground"></Badges>;
         })}
       </span>{" "}
       and contributing to the community.
