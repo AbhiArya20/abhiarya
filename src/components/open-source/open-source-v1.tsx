@@ -1,16 +1,24 @@
 "use client";
 
 import PullRequestCardV1 from "@/components/pull-request-cards/pull-request-card-v1";
+import ActivityCalendarV1 from "@/components/activity-calendar/activity-calendar-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
 import ErrorCard from "@/components/error/error-card";
 import { ActionsReturn, PullRequest } from "@/types";
+import { Activity } from "react-activity-calendar";
 import { PERSONAL_DATA } from "@/data/personal";
 import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function OpenSourceV1({ pullRequest }: { pullRequest: ActionsReturn<PullRequest[]> }) {
+export default function OpenSourceV1({
+  pullRequest,
+  activities,
+}: {
+  pullRequest: ActionsReturn<PullRequest[]>;
+  activities: ActionsReturn<Activity[]>;
+}) {
   const { data, error } = pullRequest;
 
   return (
@@ -32,6 +40,8 @@ export default function OpenSourceV1({ pullRequest }: { pullRequest: ActionsRetu
           </motion.div>
         </Link>
       </div>
+
+      <ActivityCalendarV1 activities={activities} />
 
       {error && (
         <ErrorCard message={error.message} icon={<WifiOff className="size-5" />} className="text-destructive" />

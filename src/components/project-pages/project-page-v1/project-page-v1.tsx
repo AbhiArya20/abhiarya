@@ -8,8 +8,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import ProjectCardV1 from "@/components/projects/project-cards/projects-card-v1";
 import ThemeSwitcherV2 from "@/components/theme-switcher/theme-switcher-v2";
+import ProjectCardV1 from "@/components/project-cards/projects-card-v1";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import ContactV1 from "@/components/contact/contact-v1";
 import FooterV1 from "@/components/footer/footer-v1";

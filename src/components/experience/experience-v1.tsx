@@ -55,7 +55,6 @@ export default function ExperienceV1() {
           image={experience.image}
           jobDescription={experience.jobDescription}
           tags={experience.tags}
-          headingTags={experience.headingTags}
         />
       ))}
     </div>

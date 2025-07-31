@@ -1,11 +1,11 @@
 "use client";
+
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import { PERSONAL_DATA } from "@/data/personal";
 import { track } from "@vercel/analytics";
 import { motion } from "motion/react";
 import Link from "next/link";
 
-export default function BlogV1() {
+export default function LearningsV1() {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-end justify-between">
@@ -13,7 +13,7 @@ export default function BlogV1() {
           Recent Learnings
         </motion.h2>
         <Link
-          href={`https://github.com/pulls?q=is:pr+author:${PERSONAL_DATA.github}+archived:false+is:closed`}
+          href={`https://learnings.abhiarya.in`}
           className="hover:text-blue-400"
           target="_blank"
           rel="noopener"

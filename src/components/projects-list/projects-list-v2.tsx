@@ -1,13 +1,13 @@
 "use client";
 
-import ProjectCardV1 from "@/components/projects/project-cards/projects-card-v1";
+import ProjectCardV4 from "@/components/project-cards/projects-card-v4";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PROJECT_DATA } from "@/data/projects";
 import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function ProjectsV1() {
+export default function ProjectsV2() {
   const projects = PROJECT_DATA.filter(project => project.featured);
   return (
     <div className="flex flex-col gap-3">
@@ -22,20 +22,22 @@ export default function ProjectsV1() {
           </motion.div>
         </Link>
       </div>
-      {projects.map(project => (
-        <ProjectCardV1
-          key={project.name}
-          name={project.name}
-          description={project.description}
-          icon={project.icon}
-          image={project.image}
-          url={project.url}
-          tags={project.tags}
-          github={project.github}
-          featured={project.featured}
-          screenshot={project.screenshot}
-        />
-      ))}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {projects.map(project => (
+          <ProjectCardV4
+            key={project.name}
+            name={project.name}
+            description={project.description}
+            icon={project.icon}
+            image={project.image}
+            url={project.url}
+            tags={project.tags}
+            github={project.github}
+            featured={project.featured}
+            screenshot={project.screenshot}
+          />
+        ))}
+      </div>
     </div>
   );
 }

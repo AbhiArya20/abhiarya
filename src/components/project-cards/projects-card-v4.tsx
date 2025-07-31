@@ -1,8 +1,8 @@
 "use client";
 
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
-import TagsV2 from "@/components/tags/tags-v2";
+import TagsV1 from "@/components/tags/tags-v1";
 import { type Project } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
@@ -12,23 +12,21 @@ import { Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectCardV3({ name, icon, description, github, url, image, tags }: Project) {
+export default function ProjectCardV4({ name, icon, description, github, url, image, tags }: Project) {
   const Icon = Icons[icon!];
   const GithubIcon = Icons.github;
   return (
     <motion.div variants={fadeDownChildVariants} className="flex">
-      <Card className="group flex-grow border-none py-4 sm:rounded-lg dark:bg-neutral-900">
-        <CardHeader className="px-4">
-          {image && (
-            <Image
-              src={image}
-              width={64}
-              height={64}
-              alt={name}
-              className="aspect-video w-full shrink-0 rounded-md transition-all group-hover:saturate-100 sm:saturate-0"
-            />
-          )}
-        </CardHeader>
+      <Card className="group flex-grow border-none pt-0 sm:rounded-lg dark:bg-neutral-900">
+        {image && (
+          <Image
+            src={image}
+            width={64}
+            height={64}
+            alt={name}
+            className="aspect-video w-full shrink-0 rounded-md transition-all group-hover:saturate-100 sm:saturate-0"
+          />
+        )}
         <CardContent className="flex flex-col gap-2 px-4">
           <div className="flex w-full gap-2">
             {icon && <Icon className="mr-2 h-10 w-10 shrink-0 transition-all group-hover:saturate-100 sm:saturate-0" />}
@@ -68,7 +66,7 @@ export default function ProjectCardV3({ name, icon, description, github, url, im
               {description.length > 0 && <p className="text-muted-foreground text-sm">{description[0]}</p>}
             </div>
           </div>
-          {tags && <TagsV2 tags={tags} />}
+          {tags && <TagsV1 tags={tags} />}
         </CardContent>
         <CardFooter className="px-4">
           <div className="flex flex-row flex-wrap items-start gap-1">

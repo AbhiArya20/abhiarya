@@ -7,7 +7,7 @@ import React from "react";
 
 export default function TagsV1({ tags }: { tags: Tag[] }) {
   return (
-    <ul className="flex flex-wrap gap-1">
+    <ul className="flex flex-wrap gap-2">
       {tags.map(tag => {
         return (
           <li key={tag.name}>
@@ -29,14 +29,14 @@ export function BadgeWithoutLink({ name, icon }: Omit<Tag, "url">) {
   if (icon) {
     const Icon = Icons[icon];
     return (
-      <Badge variant={"outline"} className="bg-accent/50 rounded-sm">
+      <Badge variant={"outline"} className="bg-accent/50 border-muted-foreground/50 rounded-sm border-dashed">
         <Icon className="mr-1.5 h-3 w-3 transition-all group-hover:saturate-100 sm:saturate-0" /> {name}
       </Badge>
     );
   }
 
   return (
-    <Badge variant={"outline"} className="bg-accent/50 rounded-sm">
+    <Badge variant={"outline"} className="bg-accent/50 border-muted-foreground/50 rounded-sm border-dashed">
       {name}
     </Badge>
   );
