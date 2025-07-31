@@ -29,7 +29,7 @@ export default function ExperienceCard({
   const GithubIcon = Icons.github;
   return (
     <motion.div variants={fadeDownChildVariants}>
-      <Card className={cn("group border-none p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
+      <Card className={cn("group p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
         <div className="flex flex-col gap-2">
           <div className="flex w-full gap-2">
             {icon && <Icon className="mr-2 h-10 w-10 shrink-0 transition-all group-hover:saturate-100 sm:saturate-0" />}

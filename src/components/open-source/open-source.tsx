@@ -66,7 +66,7 @@ export default function OpenSource({
               mergedAt={pr.mergedAt}
               author={pr.author}
               repository={pr.repository}
-              className="bg-transparent dark:bg-transparent"
+              className="border-accent border-2 bg-transparent dark:bg-transparent"
             />
           ))}
         </>

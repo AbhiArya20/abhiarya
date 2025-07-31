@@ -31,7 +31,7 @@ export default function ProjectCard({
 
   return (
     <motion.div variants={fadeDownChildVariants}>
-      <Card className={cn("group border-none p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
+      <Card className={cn("group p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
         <div className="flex flex-col gap-2">
           {preview && (
             <AnimatePresence>

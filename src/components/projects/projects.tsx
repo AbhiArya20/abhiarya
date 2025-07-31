@@ -35,7 +35,7 @@ export default function Projects() {
           github={project.github}
           featured={project.featured}
           screenshot={project.screenshot}
-          className="bg-transparent dark:bg-transparent"
+          className="border-accent border-2 bg-transparent dark:bg-transparent"
         />
       ))}
     </div>

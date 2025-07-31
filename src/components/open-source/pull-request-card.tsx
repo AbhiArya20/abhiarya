@@ -23,7 +23,7 @@ export default function PullRequestCard({
 }: PullRequest & { className?: string }) {
   return (
     <motion.div variants={fadeDownChildVariants}>
-      <Card className={cn("border-none p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
+      <Card className={cn("p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
         <div className="flex items-start gap-2">
           <GitMerge className="mt-2 size-5 shrink-0 text-violet-400" />
           <div className="flex-1 overflow-hidden">
