@@ -10,7 +10,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <motion.div variants={fadeDownChildVariants} className="-mb-8 flex items-end justify-between">
+    <motion.div variants={fadeDownChildVariants} className="flex items-end justify-between">
       <div className="flex flex-col gap-2 text-xs">
         <span>
           Designed &amp; Made with <span className="bg-muted-foreground bg-clip-text">❤️</span>

@@ -43,9 +43,11 @@ export default function OpenSource({
 
       <ActivityCalendarComponent activities={activities} />
 
-      {error && (
-        <ErrorCard message={error.message} icon={<WifiOff className="size-5" />} className="text-destructive" />
-      )}
+      <motion.div variants={fadeDownChildVariants}>
+        {error && (
+          <ErrorCard message={error.message} icon={<WifiOff className="size-5" />} className="text-destructive" />
+        )}
+      </motion.div>
 
       {data && data.length > 0 && (
         <>
@@ -71,13 +73,15 @@ export default function OpenSource({
         </>
       )}
 
-      {data && data.length === 0 && (
-        <ErrorCard
-          message={"No Pull Requests found..."}
-          icon={<GitPullRequestArrow className="size-5" />}
-          className="text-muted-foreground"
-        />
-      )}
+      <motion.div variants={fadeDownChildVariants}>
+        {data && data.length === 0 && (
+          <ErrorCard
+            message={"No Pull Requests found..."}
+            icon={<GitPullRequestArrow className="size-5" />}
+            className="text-muted-foreground"
+          />
+        )}
+      </motion.div>
     </div>
   );
 }
