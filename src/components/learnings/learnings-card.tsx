@@ -35,23 +35,23 @@ export default function LearningCard({
                 className="mr-2 h-10 w-10 shrink-0 rounded-md transition-all group-hover:saturate-100 sm:saturate-0"
               />
             )}
-            <div className="flex flex-grow flex-col justify-between">
-              <div className="flex items-center justify-between">
-                <h3 className="flex flex-wrap items-center gap-2 text-left text-sm font-semibold">
+            <div className="flex flex-grow flex-col justify-between overflow-hidden">
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="flex justify-start overflow-hidden text-left text-sm font-semibold">
                   <Link
                     href={url}
                     target="_blank"
                     rel="noopener"
-                    className="whitespace-nowrap hover:text-blue-400"
-                    onClick={() => track(`learnings_${title}_clicked`)}
+                    className="truncate hover:text-blue-400"
+                    onClick={() => track(`learnings_${title.split(" ").join("_")}_clicked`)}
                   >
                     {title}
                   </Link>
                 </h3>
-                <p className="text-muted-frontend text-xs font-semibold">{date}</p>
+                <p className="text-muted-frontend text-xs font-semibold whitespace-nowrap">{date}</p>
               </div>
               <div className="flex items-center justify-between">
-                <p className="text-muted-foreground text-sm">{description}</p>
+                <p className="text-muted-foreground line-clamp-2 text-sm">{description}</p>
               </div>
             </div>
           </div>

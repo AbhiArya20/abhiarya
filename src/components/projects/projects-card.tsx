@@ -73,14 +73,14 @@ export default function ProjectCard({
                 className="mr-2 h-10 w-10 shrink-0 rounded-md transition-all group-hover:saturate-100 sm:saturate-0"
               />
             )}
-            <div className="flex flex-grow flex-col justify-between">
-              <div className="flex items-center justify-between">
-                <h3 className="flex items-center gap-1 text-left text-sm font-semibold">
+            <div className="flex flex-grow flex-col justify-between overflow-hidden">
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="flex items-center gap-1 overflow-hidden text-left text-sm font-semibold">
                   <Link
                     href={url}
                     target="_blank"
                     rel="noopener"
-                    className="hover:text-blue-400"
+                    className="truncate hover:text-blue-400"
                     onClick={() => track(`project_${name}_clicked`)}
                   >
                     {name}
@@ -116,7 +116,7 @@ export default function ProjectCard({
                   )}
                 </p>
               </div>
-              {description.length > 0 && <p className="text-muted-foreground text-sm">{description[0]}</p>}
+              {description.length > 0 && <p className="text-muted-foreground line-clamp-2 text-sm">{description[0]}</p>}
             </div>
           </div>
           {tags && (
