@@ -2,14 +2,13 @@
 
 import ActivityCalendarComponent from "@/components/open-source/activity-calendar";
 import PullRequestCard from "@/components/open-source/pull-request-card";
-import { fadeDownChildVariants } from "@/lib/animation-variants";
+
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
 import ErrorCard from "@/components/error/error-card";
 import { ActionsReturn, PullRequest } from "@/types";
 import { Activity } from "react-activity-calendar";
 import { PERSONAL_DATA } from "@/data/personal";
 import { track } from "@vercel/analytics";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function OpenSource({
@@ -24,9 +23,7 @@ export default function OpenSource({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-end justify-between">
-        <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
-          Open source journey
-        </motion.h2>
+        <h2 className="font-semibold">Open source journey</h2>
         <Link
           href={`https://github.com/pulls?q=is:pr+author:${PERSONAL_DATA.github}+archived:false+is:closed`}
           className="hover:text-blue-400"
@@ -35,19 +32,19 @@ export default function OpenSource({
           onClick={() => track("see_all_open_source_pull_requests_clicked")}
         >
           <span className="sr-only">Github pull requests</span>
-          <motion.div variants={fadeDownChildVariants} className="flex flex-row items-center justify-start gap-2">
+          <div className="flex flex-row items-center justify-start gap-2">
             <div className="flex shrink-0 justify-start text-xs font-semibold">See More</div>
-          </motion.div>
+          </div>
         </Link>
       </div>
 
       <ActivityCalendarComponent activities={activities} />
 
-      <motion.div variants={fadeDownChildVariants}>
+      <div>
         {error && (
           <ErrorCard message={error.message} icon={<WifiOff className="size-5" />} className="text-destructive" />
         )}
-      </motion.div>
+      </div>
 
       {data && data.length > 0 && (
         <>
@@ -73,7 +70,7 @@ export default function OpenSource({
         </>
       )}
 
-      <motion.div variants={fadeDownChildVariants}>
+      <div>
         {data && data.length === 0 && (
           <ErrorCard
             message={"No Pull Requests found..."}
@@ -81,7 +78,7 @@ export default function OpenSource({
             className="text-muted-foreground"
           />
         )}
-      </motion.div>
+      </div>
     </div>
   );
 }

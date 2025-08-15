@@ -1,19 +1,15 @@
 "use client";
 
 import LearningCard from "@/components/learnings/learnings-card";
-import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { LEARNINGS_DATA } from "@/data/learnings";
 import { track } from "@vercel/analytics";
-import { motion } from "motion/react";
 import Link from "next/link";
 
 export default function Learnings() {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-end justify-between">
-        <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
-          Recent Learnings
-        </motion.h2>
+        <h2 className="font-semibold">Recent Learnings</h2>
         <Link
           href={`https://learnings.abhiarya.in`}
           className="hover:text-blue-400"
@@ -22,9 +18,9 @@ export default function Learnings() {
           onClick={() => track("blog_more_clicked")}
         >
           <span className="sr-only">Recent Learnings</span>
-          <motion.div variants={fadeDownChildVariants} className="flex flex-row items-center justify-start gap-2">
+          <div className="flex flex-row items-center justify-start gap-2">
             <div className="flex shrink-0 justify-start text-xs font-semibold">See More</div>
-          </motion.div>
+          </div>
         </Link>
       </div>
 

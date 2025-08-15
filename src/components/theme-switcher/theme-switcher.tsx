@@ -1,10 +1,10 @@
 "use client";
 
 import { MonitorIcon, MoonStarIcon, SunIcon } from "lucide-react";
-import { fadeDownChildVariants } from "@/lib/animation-variants";
+
 import { useEffect, useState, type JSX } from "react";
 import { useTheme } from "next-themes";
-import { motion } from "motion/react";
+
 import { cn } from "@/lib/utils";
 
 function ThemeOption({
@@ -33,13 +33,7 @@ function ThemeOption({
     >
       {icon}
 
-      {isActive && (
-        <motion.div
-          layoutId="theme-option"
-          transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-          className="absolute inset-0 rounded-full border border-zinc-200 dark:border-zinc-700"
-        />
-      )}
+      {isActive && <div className="absolute inset-0 rounded-full border border-zinc-200 dark:border-zinc-700" />}
     </button>
   );
 }
@@ -72,8 +66,7 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <motion.div
-      variants={fadeDownChildVariants}
+    <div
       className="inline-flex items-center overflow-hidden rounded-full bg-white ring-1 ring-zinc-200 ring-inset dark:bg-zinc-950 dark:ring-zinc-700"
       role="radiogroup"
     >
@@ -86,6 +79,6 @@ export default function ThemeSwitcher() {
           onClick={setTheme}
         />
       ))}
-    </motion.div>
+    </div>
   );
 }

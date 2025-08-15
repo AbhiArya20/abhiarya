@@ -1,16 +1,13 @@
 "use client";
 
 import ThemeSwitcher from "@/components/theme-switcher/theme-switcher";
-import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { PERSONAL_DATA } from "@/data/personal";
-import { motion } from "framer-motion";
-// import Link from "next/link";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <motion.div variants={fadeDownChildVariants} className="flex items-end justify-between">
+    <div className="flex items-end justify-between">
       <div className="flex flex-col gap-2 text-xs">
         <span>
           Designed &amp; Made with <span className="bg-muted-foreground bg-clip-text">❤️</span>
@@ -30,6 +27,6 @@ export default function Footer() {
         </span> */}
       </div>
       <ThemeSwitcher />
-    </motion.div>
+    </div>
   );
 }

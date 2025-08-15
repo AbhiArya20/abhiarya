@@ -1,11 +1,9 @@
 "use client";
 
-import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { type LEARNINGS } from "@/data/learnings";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import { track } from "@vercel/analytics";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +19,7 @@ export default function LearningCard({
 }: LEARNINGS & { className?: string }) {
   const Icon = Icons[icon!];
   return (
-    <motion.div variants={fadeDownChildVariants}>
+    <div>
       <Card className={cn("group border-none p-4 sm:rounded-lg dark:bg-neutral-900", className)}>
         <div className="flex flex-col gap-2">
           <div className="flex w-full gap-2">
@@ -57,6 +55,6 @@ export default function LearningCard({
           </div>
         </div>
       </Card>
-    </motion.div>
+    </div>
   );
 }

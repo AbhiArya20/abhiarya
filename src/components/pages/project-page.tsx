@@ -9,18 +9,17 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import ThemeSwitcherCompact from "@/components/theme-switcher/theme-switcher-compact";
-import { fadeDownChildVariants } from "@/lib/animation-variants";
+
 import ProjectCard from "@/components/projects/projects-card";
 import Contact from "@/components/contact/contact";
 import Footer from "@/components/footer/footer";
 import { PROJECT_DATA } from "@/data/projects";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function ProjectsPage() {
   return (
     <>
-      <motion.div variants={fadeDownChildVariants} className="flex items-start justify-between">
+      <div className="flex items-start justify-between">
         <Breadcrumb className="mb-4">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -35,11 +34,9 @@ export default function ProjectsPage() {
           </BreadcrumbList>
         </Breadcrumb>
         <ThemeSwitcherCompact />
-      </motion.div>
+      </div>
       <div className="flex flex-col gap-8">
-        <motion.h1 variants={fadeDownChildVariants} className="scroll-m-20 text-4xl font-bold tracking-tight">
-          All Projects
-        </motion.h1>
+        <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">All Projects</h1>
         <div className="space-y-3 py-4">
           {PROJECT_DATA.map(project => (
             <ProjectCard

@@ -1,21 +1,18 @@
 "use client";
 
 import ExperienceCard from "@/components/experience/experience-card";
-import { fadeDownChildVariants } from "@/lib/animation-variants";
+
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { PERSONAL_DATA } from "@/data/personal";
 import { SOCIAL_DATA } from "@/data/social";
 import { track } from "@vercel/analytics";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Experience() {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
-        <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
-          Experience
-        </motion.h2>
+        <h2 className="font-semibold">Experience</h2>
         <Link
           href={
             SOCIAL_DATA.find(social => social.name.toLowerCase() === "x")?.url ??
@@ -26,17 +23,14 @@ export default function Experience() {
           className="hover:text-blue-400"
           onClick={() => track("see_all_experience_clicked")}
         >
-          <motion.div
-            variants={fadeDownChildVariants}
-            className="flex flex-row items-center justify-start gap-2 font-semibold hover:text-blue-400"
-          >
+          <div className="flex flex-row items-center justify-start gap-2 font-semibold hover:text-blue-400">
             <div className="size-2 flex-none overflow-hidden rounded-full bg-green-500"></div>
             <div className="flex shrink-0 justify-start text-xs font-semibold">
               <p>
                 Available <span className="hidden sm:inline">for new opportunities</span>
               </p>
             </div>
-          </motion.div>
+          </div>
         </Link>
       </div>
 

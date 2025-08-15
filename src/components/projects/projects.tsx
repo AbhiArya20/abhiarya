@@ -1,10 +1,8 @@
 "use client";
 
-import { fadeDownChildVariants } from "@/lib/animation-variants";
 import ProjectCard from "@/components/projects/projects-card";
 import { PROJECT_DATA } from "@/data/projects";
 import { track } from "@vercel/analytics";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Projects() {
@@ -12,14 +10,12 @@ export default function Projects() {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-end justify-between">
-        <motion.h2 variants={fadeDownChildVariants} className="font-semibold">
-          Featured Projects
-        </motion.h2>
+        <h2 className="font-semibold">Featured Projects</h2>
         <Link href={"/projects"} className="hover:text-blue-400" onClick={() => track("see_all_projects_clicked")}>
           <span className="sr-only">See all projects</span>
-          <motion.div variants={fadeDownChildVariants} className="flex flex-row items-center justify-start gap-2">
+          <div className="flex flex-row items-center justify-start gap-2">
             <div className="flex shrink-0 justify-start text-xs font-semibold">See More</div>
-          </motion.div>
+          </div>
         </Link>
       </div>
       {projects.map(project => (

@@ -2,14 +2,13 @@
 
 import { ActivityCalendar, type Activity } from "react-activity-calendar";
 import { cloneElement, useEffect, useRef, useState } from "react";
-import { fadeDownChildVariants } from "@/lib/animation-variants";
+
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
 import { THEMES } from "@/components/open-source/themes";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import ErrorCard from "@/components/error/error-card";
 import "react-tooltip/dist/react-tooltip.css";
 import { ActionsReturn } from "@/types";
-import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
 export default function ActivityCalendarComponent({
@@ -36,7 +35,7 @@ export default function ActivityCalendarComponent({
   const theme = color ? THEMES[color] : undefined;
 
   return (
-    <motion.div variants={fadeDownChildVariants}>
+    <div>
       {error && (
         <ErrorCard message={error.message} icon={<WifiOff className="size-5" />} className="text-destructive" />
       )}
@@ -72,6 +71,6 @@ export default function ActivityCalendarComponent({
           className="text-muted-foreground"
         />
       )}
-    </motion.div>
+    </div>
   );
 }

@@ -1,11 +1,9 @@
 "use client";
 
-import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { formatDistanceToNow } from "date-fns";
 import { Card } from "@/components/ui/card";
 import { track } from "@vercel/analytics";
 import { GitMerge } from "lucide-react";
-import { motion } from "framer-motion";
 import { PullRequest } from "@/types";
 import Link from "next/link";
 
@@ -20,7 +18,7 @@ export default function PullRequestCard({
   repository,
 }: PullRequest) {
   return (
-    <motion.div variants={fadeDownChildVariants}>
+    <div>
       <Card className="border-none p-4 sm:rounded-lg dark:bg-neutral-900">
         <div className="flex items-start gap-2">
           <GitMerge className="mt-2 size-5 shrink-0 text-violet-400" />
@@ -77,6 +75,6 @@ export default function PullRequestCard({
           </div>
         </div>
       </Card>
-    </motion.div>
+    </div>
   );
 }
