@@ -69,9 +69,9 @@ export default function PullRequestCard({
                 {" was merged "}
                 {formatDistanceToNow(new Date(mergedAt), { addSuffix: true })}
               </p>
-              <p className="text-muted-foreground text-xs whitespace-nowrap">
-                <span className="text-green-500">{`+${additions}`}</span>
-                {"       "} <span className="text-red-500">{`-${deletions}`}</span>
+              <p className="text-muted-foreground flex items-center justify-between gap-1 text-xs whitespace-nowrap">
+                <span className="text-green-700 dark:text-green-500">{`+${additions}`}</span>
+                <span className="text-red-700 dark:text-red-500">{`-${deletions}`}</span>
               </p>
             </div>
           </div>
