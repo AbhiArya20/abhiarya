@@ -1,42 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Hi <img src="https://raw.githubusercontent.com/wasabeef/wasabeef/master/icons/wave.gif" height="20px" /> Welcome to [Abhishek Kumar's](https://abhiarya.in) GitHub!
 
-## Getting Started
+I&apos;m a software engineer experienced in building scalable backend systems with tools like
+[TypeScript](https://www.typescriptlang.org), [Node](https://nodejs.org), [Redis](https://redis.io),
+[Kafka](https://kafka.apache.org), and [Docker](https://www.docker.com). Currently, I&apos;m building
+[Currunt](https://currunt.abhiarya.in) an open-sourced unified AI suite.
 
-First, run the development server:
+Currently exploring every node in the technology graph, using DFS or BFS — you can track my visited nodes on
+[learnings](https://learnings.abhiarya.in).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Always excited when my PRs get merged! 😄
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[More about me &rarr;](https://abhiarya.in)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically
-optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions
-are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for
-more details.
+|                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://github-readme-stats.vercel.app/api?username=AbhiArya20&include_all_commits=true&show_icons=true&rank_icon=percentile&border_radius=20&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage" /> <br> <img width="468px" src="https://github-readme-stats.vercel.app/api/pin/?username=AbhiArya20&repo=currunt&description_lines_count=1&border_radius=20&show_owner=true" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbhiArya20&layout=donut-vertical&border_radius=20&langs_count=14&size_weight=0.5&count_weight=0.5" /> |
+| [Currunt](https://currunt.abhiarya.in)                                                                                                                                                                                                                                                                                                                                                                                          | [Code](https://github.com/AbhiArya20/currunt)                                                                                                                                  |
