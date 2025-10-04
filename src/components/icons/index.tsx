@@ -1,5 +1,5 @@
 import Currunt from "@/components/icons/currunt";
-import Learnings from "@/components/icons/currunt";
+import Learnings from "@/components/icons/learnings";
 import { LucideMail, LucidePhone, LucideProps } from "lucide-react";
 
 export const Icons = {

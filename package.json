@@ -36,7 +36,11 @@
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",
-    "zod": "^4.1.11"
+    "zod": "^4.1.11",
+    "@t3-oss/env-nextjs": "^0.13.8",
+    "react-activity-calendar": "^2.7.14",
+    "react-tooltip": "^5.29.1",
+    "react-use": "^17.6.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
