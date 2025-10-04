@@ -1,3 +1,7 @@
+import Badges from "@/components/badges/badges";
+import { Tag } from "@/types";
+import { Fragment, JSX } from "react";
+
 export type Address = {
   state: string;
   country: string;
@@ -19,7 +23,48 @@ export type Personal = {
   emails: string[];
   bio: string;
   summary: string;
+  about: JSX.Element;
   address: Address;
+};
+
+const tags: Tag[] = [
+  {
+    name: "TypeScript",
+    icon: "typescript",
+    url: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "React",
+    icon: "react",
+    url: "https://reactjs.org/",
+  },
+  {
+    name: "Node",
+    icon: "node",
+    url: "https://nodejs.org/en",
+  },
+  {
+    name: "Redis",
+    icon: "redis",
+    url: "https://bun.sh",
+  },
+  {
+    name: "Docker",
+    icon: "docker",
+    url: "https://bun.sh",
+  },
+];
+
+const currentProject: Tag = {
+  name: "Currunt",
+  icon: "currunt",
+  url: "https://currunt.abhiarya.in",
+};
+
+const learnings: Tag = {
+  name: "learnings",
+  icon: "learnings",
+  url: "https://learnings.abhiarya.in",
 };
 
 export const PERSONAL_DATA: Personal = {
@@ -37,6 +82,25 @@ export const PERSONAL_DATA: Personal = {
   emails: ["career.abhiarya@gmail.com", "github.abhiarya@gmail.com", "self.abhiarya@gmail.com"],
   bio: `Software engineer passionate about building high-quality products and contributing to open-source.`,
   summary: `I&apos;m a software engineer experienced in building backend systems with tools like TypeScript, React, Node, Redis and Docker. Currently, I&apos;m building Currunt an open-source unified AI suite. When I&apos;m not writing code, you&apos;ll find me writing articles about my learnings.`,
+  about: (
+    <>
+      I&apos;m a software engineer experienced in building backend systems with tools like{" "}
+      <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
+        {tags.map((tag, index) => (
+          <Fragment key={tag.name}>
+            <Badges {...tag} className="text-muted-foreground" />
+            {index === tags.length - 2 && <span>and</span>}
+          </Fragment>
+        ))}{" "}
+      </span>{" "}
+      and actively contributing to open-source projects. Currently, I&apos;m building{" "}
+      <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
+        <Badges {...currentProject} className="text-muted-foreground" />
+      </span>{" "}
+      a unified AI suite. When I&apos;m not writing code, you&apos;ll find me writing articles about my{" "}
+      <Badges {...learnings} className="text-muted-foreground" />
+    </>
+  ),
   address: {
     state: "New Delhi",
     country: "India",

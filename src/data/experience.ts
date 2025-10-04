@@ -1,3 +1,6 @@
+import { Icons } from "@/components/icons";
+import { Tag } from "@/types";
+
 export type Experience = {
   company: string;
   position: string;
@@ -8,6 +11,8 @@ export type Experience = {
   url: string;
   github?: string;
   image?: string;
+  icon?: keyof typeof Icons;
+  tags?: Tag[];
   jobDescription: string[];
   featured?: boolean;
 };
