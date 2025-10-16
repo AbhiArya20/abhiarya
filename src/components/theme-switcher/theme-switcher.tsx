@@ -1,10 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { MonitorIcon, MoonStarIcon, SunIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
-import { useEffect, useState, type JSX } from "react";
+import { type JSX, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 function ThemeOption({
   icon,
