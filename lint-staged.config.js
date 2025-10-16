@@ -5,7 +5,7 @@
  * @type {import('lint-staged').Configuration}
  */
 const config = {
-  "*": ["npm run lint:fix"],
+  "*": ["bun run lint:fix"],
 };
 
 export default config;
