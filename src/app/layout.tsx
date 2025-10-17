@@ -2,9 +2,9 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import FadeDown from "@/components/animation/fade-down";
 import OneKo from "@/components/oneko/oneko";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-
 import "@/app/globals.css";
 
 const geistSans = Geist({
@@ -38,7 +38,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">
+            {/* FadeDown component should be always in layout.tsx - To avoid animation on page change */}
+            <FadeDown>{children}</FadeDown>
+          </main>
           <OneKo />
         </ThemeProvider>
         <SpeedInsights />
