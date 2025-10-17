@@ -39,15 +39,20 @@ const tags: Tag[] = [
     icon: "typescript",
     url: "https://www.typescriptlang.org/",
   },
-  {
-    name: "React",
-    icon: "react",
-    url: "https://reactjs.org/",
-  },
+  // {
+  //   name: "React",
+  //   icon: "react",
+  //   url: "https://reactjs.org/",
+  // },
   {
     name: "Node",
     icon: "node",
     url: "https://nodejs.org/en",
+  },
+  {
+    name: "Postgres",
+    icon: "postgres",
+    url: "https://www.postgresql.org/",
   },
   {
     name: "Redis",
@@ -59,19 +64,33 @@ const tags: Tag[] = [
     icon: "docker",
     url: "https://bun.sh",
   },
+  {
+    name: "Kafka",
+    icon: "docker",
+    url: "https://bun.sh",
+  },
+  {
+    name: "AWS",
+    icon: "aws",
+    url: "",
+  },
 ];
 
-const currentProject: Tag = {
-  name: "Currunt",
-  icon: "currunt",
-  url: "https://currunt.abhiarya.in",
-};
+const currentProjects: Tag[] = [
+  {
+    name: "Currunt",
+    icon: "currunt",
+    url: "https://currunt.abhiarya.in",
+  },
+];
 
-const learnings: Tag = {
-  name: "learnings",
-  icon: "typescript",
-  url: "https://learnings.abhiarya.in",
-};
+const learnings: Tag[] = [
+  {
+    name: "learnings",
+    icon: "typescript",
+    url: "https://learnings.abhiarya.in",
+  },
+];
 
 export const PERSONAL_DATA: Personal = {
   name: "Abhishek Kumar",
@@ -94,24 +113,11 @@ export const PERSONAL_DATA: Personal = {
   summary: `Software engineer experienced in building scalable backend systems using TypeScript, Node, Redis, Kafka, Docker, AWS, and more. Currently building Currunt, while also contributing to open-source projects. When I'm not coding, I enjoy writing articles to share what I learn.`,
   about: (
     <>
-      I&apos;m a software engineer experienced in building backend systems with
-      tools like{" "}
-      <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
-        {tags.map((tag, index) => (
-          <Fragment key={tag.name}>
-            <Badges {...tag} className="text-muted-foreground" />
-            {index === tags.length - 2 && <span>and</span>}
-          </Fragment>
-        ))}{" "}
-      </span>{" "}
-      and actively contributing to open-source projects. Currently, I&apos;m
-      building{" "}
-      <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
-        <Badges {...currentProject} className="text-muted-foreground" />
-      </span>{" "}
-      a unified AI suite. When I&apos;m not writing code, you&apos;ll find me
-      writing articles about my{" "}
-      <Badges {...learnings} className="text-muted-foreground" />
+      I&apos;m a software engineer experienced in building scalable backend
+      systems using <TagList tags={tags} /> and more. Currently, I&apos;m
+      building <TagList tags={currentProjects} /> while contributing to
+      open-source projects. When I&apos;m not writing code, you&apos;ll find me
+      writing articles about my <TagList tags={learnings} />
     </>
   ),
   address: {
@@ -120,3 +126,22 @@ export const PERSONAL_DATA: Personal = {
     url: "https://www.google.com/maps/place/new-delhi",
   },
 };
+
+function TagList({
+  tags,
+  showAndBeforeLast = false,
+}: {
+  tags: Tag[];
+  showAndBeforeLast?: boolean;
+}) {
+  return (
+    <span className="space-y-1.5 space-x-1.5 whitespace-pre-line">
+      {tags.map((tag, index) => (
+        <Fragment key={tag.name}>
+          <Badges {...tag} className="text-muted-foreground" />
+          {showAndBeforeLast && index === tags.length - 2 && <span>and</span>}
+        </Fragment>
+      ))}
+    </span>
+  );
+}
