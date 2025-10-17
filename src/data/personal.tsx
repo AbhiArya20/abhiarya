@@ -1,6 +1,6 @@
 import { Fragment, type JSX } from "react";
 import Badges from "@/components/badges/badges";
-import type { Icons } from "@/components/icons";
+import type { Tag } from "@/types";
 
 export type Address = {
   state: string;
@@ -13,7 +13,7 @@ export type Personal = {
   nickname: string;
   avatar: string;
   alternateAvatar: string;
-  githubAvatar: string; // High priority over avatar
+  githubAvatar: string;
   title: string;
   portfolio: string;
   github: string;
@@ -27,23 +27,12 @@ export type Personal = {
   address: Address;
 };
 
-export type Tag = {
-  name: string;
-  icon?: Icons;
-  url?: string;
-};
-
 const tags: Tag[] = [
   {
     name: "TypeScript",
     icon: "typescript",
     url: "https://www.typescriptlang.org/",
   },
-  // {
-  //   name: "React",
-  //   icon: "react",
-  //   url: "https://reactjs.org/",
-  // },
   {
     name: "Node",
     icon: "node",
@@ -80,7 +69,7 @@ const currentProjects: Tag[] = [
   {
     name: "Currunt",
     icon: "currunt",
-    url: "https://currunt.abhiarya.in",
+    url: "https://currunt.in",
   },
 ];
 
