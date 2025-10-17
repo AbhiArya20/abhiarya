@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export default function AvatarComponent({ className }: { className?: string }) {
   return (
-    <Avatar className={cn("rounded-2xl size-36", className)}>
+    <Avatar className={cn("rounded-2xl", className)}>
       <AvatarImage
         loading="lazy"
         src={
