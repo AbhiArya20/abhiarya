@@ -4,13 +4,13 @@ import { track } from "@vercel/analytics";
 import { MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import AvatarComponent from "@/components/avatar/avatar-component";
-import Social from "@/components/socials/social";
+import { AvatarComponent } from "@/components/avatar/avatar-component";
+import { Social } from "@/components/socials/social";
 import { PERSONAL_DATA } from "@/data/personal";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { cn } from "@/lib/utils";
 
-export default function Header() {
+export function Header() {
   return (
     <div className={cn("flex items-center justify-between gap-4")}>
       <div className="flex-1 space-y-1.5">

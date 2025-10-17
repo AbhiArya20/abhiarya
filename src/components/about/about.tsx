@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { PERSONAL_DATA } from "@/data/personal";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 
-export default function About() {
+export function About() {
   return (
     <div className="space-y-2">
       <motion.h2 variants={fadeDownChildVariants} className="font-semibold">

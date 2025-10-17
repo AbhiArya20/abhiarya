@@ -4,7 +4,7 @@ import { icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
 import type { Tag } from "@/types";
 
-export default function Tags({ tags }: { tags: Tag[] }) {
+export function Tags({ tags }: { tags: Tag[] }) {
   return (
     <ul className="flex flex-wrap gap-2">
       {tags.map((tag) => {

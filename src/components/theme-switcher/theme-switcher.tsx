@@ -59,7 +59,7 @@ const THEME_OPTIONS = [
   },
 ];
 
-export default function ThemeSwitcher() {
+export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 

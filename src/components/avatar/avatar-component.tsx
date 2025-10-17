@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PERSONAL_DATA } from "@/data/personal";
 import { cn } from "@/lib/utils";
 
-export default function AvatarComponent({ className }: { className?: string }) {
+export function AvatarComponent({ className }: { className?: string }) {
   return (
     <Avatar className={cn("rounded-2xl", className)}>
       <AvatarImage

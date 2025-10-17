@@ -6,12 +6,12 @@ import { useTheme } from "next-themes";
 import { cloneElement, useEffect, useRef, useState } from "react";
 import { type Activity, ActivityCalendar } from "react-activity-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import ErrorCard from "@/components/error/error-card";
+import { ErrorCard } from "@/components/error/error-card";
 import { THEMES } from "@/components/open-source/themes";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import type { ActionsReturn } from "@/types";
 
-export default function ActivityCalendarComponent({
+export function ActivityCalendarComponent({
   activities,
   color,
 }: {

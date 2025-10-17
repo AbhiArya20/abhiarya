@@ -10,7 +10,7 @@ import type { Experience } from "@/data/experience";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import { cn } from "@/lib/utils";
 
-export default function ExperienceCard({
+export function ExperienceCard({
   company,
   position,
   shortPosition,

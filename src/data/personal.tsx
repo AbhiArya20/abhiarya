@@ -1,5 +1,5 @@
 import { Fragment, type JSX } from "react";
-import Badges from "@/components/badges/badges";
+import { Badges } from "@/components/badges/badges";
 import type { Tag } from "@/types";
 
 export type Address = {

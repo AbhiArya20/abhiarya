@@ -76,7 +76,7 @@ type OneKoProps = {
   file?: string;
 };
 
-export default function OneKo({
+export function OneKo({
   className,
   speed = 10,
   x = 16,

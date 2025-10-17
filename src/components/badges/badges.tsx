@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import type { Tag } from "@/types";
 
-export default function Badges({
+export function Badges({
   name,
   icon,
   url,

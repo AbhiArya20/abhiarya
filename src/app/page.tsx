@@ -1,9 +1,9 @@
 import { getGithubActivity } from "@/actions/get-github-activity";
 import { getGithubPullRequest } from "@/actions/get-github-pull-request";
-import About from "@/components/about/about";
-import Experience from "@/components/experience/experience";
-import Header from "@/components/header/header";
-import OpenSource from "@/components/open-source/open-source";
+import { About } from "@/components/about/about";
+import { Experience } from "@/components/experience/experience";
+import { Header } from "@/components/header/header";
+import { OpenSource } from "@/components/open-source/open-source";
 
 export default async function Home() {
   const activities = await getGithubActivity();

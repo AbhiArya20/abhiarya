@@ -12,7 +12,7 @@ import {
 import { SOCIAL_DATA } from "@/data/social";
 import { cn } from "@/lib/utils";
 
-export default function Social() {
+export function Social() {
   return (
     <div className="text-muted-foreground flex gap-1 pt-1 font-mono text-sm">
       <TooltipProvider>

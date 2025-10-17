@@ -3,13 +3,13 @@
 import { track } from "@vercel/analytics";
 import { motion } from "motion/react";
 import Link from "next/link";
-import ExperienceCard from "@/components/experience/experience-card";
+import { ExperienceCard } from "@/components/experience/experience-card";
 import { EXPERIENCE_DATA } from "@/data/experience";
 import { PERSONAL_DATA } from "@/data/personal";
 import { SOCIAL_DATA } from "@/data/social";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 
-export default function Experience() {
+export function Experience() {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between">

@@ -4,13 +4,13 @@ import { track } from "@vercel/analytics";
 import { motion } from "motion/react";
 import Link from "next/link";
 import type { Activity } from "react-activity-calendar";
-import ActivityCalendarComponent from "@/components/open-source/activity-calendar";
-import PullRequestComponent from "@/components/open-source/pull-request";
+import { ActivityCalendarComponent } from "@/components/open-source/activity-calendar";
+import { PullRequestComponent } from "@/components/open-source/pull-request";
 import { PERSONAL_DATA } from "@/data/personal";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import type { ActionsReturn, PullRequest } from "@/types";
 
-export default function OpenSource({
+export function OpenSource({
   pullRequest,
   activities,
 }: {

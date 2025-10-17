@@ -2,12 +2,12 @@
 
 import { GitPullRequestArrow, WifiOff } from "lucide-react";
 import { motion } from "motion/react";
-import ErrorCard from "@/components/error/error-card";
-import PullRequestCard from "@/components/open-source/pull-request-card";
+import { ErrorCard } from "@/components/error/error-card";
+import { PullRequestCard } from "@/components/open-source/pull-request-card";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import type { ActionsReturn, PullRequest } from "@/types";
 
-export default function PullRequestComponent({
+export function PullRequestComponent({
   pullRequest,
 }: {
   pullRequest: ActionsReturn<PullRequest[]>;

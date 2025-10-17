@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/card";
 import { fadeDownChildVariants } from "@/lib/animation-variants";
 import type { PullRequest } from "@/types";
 
-export default function PullRequestCard({
+export function PullRequestCard({
   title,
   url,
   deletions,
