@@ -23,7 +23,9 @@ export default function ExperienceCard({
   image,
   className,
 }: Experience & { className?: string }) {
-  const Icon = icons[icon];
+  // TODO: Remove this when we marked icon as non-nullable in Experience type
+  // biome-ignore lint/style/noNonNullAssertion: Let's keep it simple for now
+  const Icon = icons[icon!];
   const GithubIcon = icons.github;
   return (
     <motion.div variants={fadeDownChildVariants}>
