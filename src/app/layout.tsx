@@ -39,7 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="mx-auto max-w-2xl min-w-xs p-4 sm:py-16 md:px-0">
-            {/* FadeDown component should be always in layout.tsx - To avoid animation on page change */}
+            {/* FadeDown component should be always in layout.tsx - To avoid animation on navigation */}
             <FadeDown>{children}</FadeDown>
           </main>
           <OneKo />
