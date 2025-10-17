@@ -1,6 +1,6 @@
 import { Fragment, type JSX } from "react";
 import Badges from "@/components/badges/badges";
-import type { Icons } from "@/components/icons";
+import type { Tag } from "@/types";
 
 export type Address = {
   state: string;
@@ -25,12 +25,6 @@ export type Personal = {
   summary: string;
   about: JSX.Element;
   address: Address;
-};
-
-export type Tag = {
-  name: string;
-  icon?: Icons;
-  url?: string;
 };
 
 const tags: Tag[] = [
