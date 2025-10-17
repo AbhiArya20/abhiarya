@@ -13,7 +13,7 @@ export type Personal = {
   nickname: string;
   avatar: string;
   alternateAvatar: string;
-  githubAvatar: string; // High priority over avatar
+  githubAvatar: string;
   title: string;
   portfolio: string;
   github: string;
@@ -37,13 +37,8 @@ const tags: Tag[] = [
   {
     name: "TypeScript",
     icon: "typescript",
-    url: "https://www.typescriptlang.org/",
+    url: "https://www.typescriptlang.org",
   },
-  // {
-  //   name: "React",
-  //   icon: "react",
-  //   url: "https://reactjs.org/",
-  // },
   {
     name: "Node",
     icon: "node",
@@ -52,27 +47,27 @@ const tags: Tag[] = [
   {
     name: "Postgres",
     icon: "postgres",
-    url: "https://www.postgresql.org/",
+    url: "https://www.postgresql.org",
   },
   {
     name: "Redis",
     icon: "redis",
-    url: "https://bun.sh",
+    url: "https://redis.io",
   },
   {
     name: "Docker",
     icon: "docker",
-    url: "https://bun.sh",
+    url: "https://www.docker.com",
   },
   {
     name: "Kafka",
     icon: "docker",
-    url: "https://bun.sh",
+    url: "https://kafka.apache.org",
   },
   {
     name: "AWS",
     icon: "aws",
-    url: "",
+    url: "https://aws.amazon.com",
   },
 ];
 
@@ -80,7 +75,7 @@ const currentProjects: Tag[] = [
   {
     name: "Currunt",
     icon: "currunt",
-    url: "https://currunt.abhiarya.in",
+    url: "https://currunt.in",
   },
 ];
 
