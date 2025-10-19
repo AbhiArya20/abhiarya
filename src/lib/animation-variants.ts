@@ -3,11 +3,9 @@ import type { Variants } from "motion/react";
 export const fadeDownParentVariants: Variants = {
   hidden: {
     opacity: 0,
-    filter: "blur(10px)",
   },
   show: {
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
       startTime: 5,
       staggerChildren: 0.2,
