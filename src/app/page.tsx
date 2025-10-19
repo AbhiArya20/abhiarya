@@ -6,8 +6,10 @@ import { Header } from "@/components/header/header";
 import { OpenSource } from "@/components/open-source/open-source";
 
 export default async function Home() {
-  const activities = await getGithubActivity();
-  const pullRequest = await getGithubPullRequest();
+  const [activities, pullRequest] = await Promise.all([
+    getGithubActivity(),
+    getGithubPullRequest(),
+  ]);
 
   return (
     <div className="flex flex-col gap-8">
